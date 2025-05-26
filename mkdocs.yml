@@ -1,0 +1,17 @@
+site_name: Falcoria Documentation
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.instant
+    - content.code.copy
+
+nav:
+  - What is Falcoria: index.md
+  - Installation: installation.md
+  - Quick Start: quick-start.md
+  - Use Cases: use-cases.md
+  - Import Modes: import-modes.md
+  - Architecture: architecture.md
