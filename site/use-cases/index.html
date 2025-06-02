@@ -12,7 +12,7 @@
         <link rel="prev" href="../quick-start/">
       
       
-        <link rel="next" href="../architecture/">
+        <link rel="next" href="common-operations/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Use Cases - Falcoria Documentation</title>
+        <title>Overview - Falcoria Documentation</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Use Cases
+              Overview
             
           </span>
         </div>
@@ -215,9 +215,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+    
+    
+    
+    
+      
         
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -226,7 +244,88 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/falcli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI (falcli)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/scanledger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ScanLedger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -261,6 +360,51 @@
   
   
   
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -274,7 +418,7 @@
   
   
   <span class="md-ellipsis">
-    Use Cases
+    Overview
     
   </span>
   
@@ -287,7 +431,7 @@
   
   
   <span class="md-ellipsis">
-    Use Cases
+    Overview
     
   </span>
   
@@ -310,101 +454,167 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-scan-strategies" class="md-nav__link">
+  <a href="#cli-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Scan Strategies
+      CLI Patterns
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. Scan Strategies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#port-sharding-across-workers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Port Sharding Across Workers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fast-scan-only-no-service-detection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Scan Only (No Service Detection)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#service-detection-behavior-default-and-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Service Detection Behavior (Default and Optional)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#offline-project-imports" class="md-nav__link">
-    <span class="md-ellipsis">
-      Offline Project Imports
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-report-handling" class="md-nav__link">
+  <a href="#scan-behavior-note" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Report Handling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Report Handling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enrich-partial-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enrich Partial Results
+      Scan Behavior Note
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-changed-hosts" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#scan-configs-reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Replace Changed Hosts
+      Scan Configs Reference
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#initial-import-and-deduplication" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Initial Import and Deduplication
+      Use Cases Covered
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="common-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="import-external-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import External Reports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rescan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rescan
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="update-enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Enrichment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="port-sharding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Port Sharding (Evasion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -416,9 +626,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../import-modes.md" class="md-nav__link">
+    
+    
+    
+    
+      
         
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -427,7 +655,134 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Import Modes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-modes/insert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insert
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-modes/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Replace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-modes/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-modes/append/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Append
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -481,95 +836,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-scan-strategies" class="md-nav__link">
+  <a href="#cli-patterns" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Scan Strategies
+      CLI Patterns
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1. Scan Strategies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#port-sharding-across-workers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Port Sharding Across Workers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fast-scan-only-no-service-detection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fast Scan Only (No Service Detection)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#service-detection-behavior-default-and-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      Service Detection Behavior (Default and Optional)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#offline-project-imports" class="md-nav__link">
-    <span class="md-ellipsis">
-      Offline Project Imports
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-report-handling" class="md-nav__link">
+  <a href="#scan-behavior-note" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Report Handling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Report Handling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enrich-partial-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enrich Partial Results
+      Scan Behavior Note
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#replace-changed-hosts" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#scan-configs-reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Replace Changed Hosts
+      Scan Configs Reference
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#initial-import-and-deduplication" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#use-cases-covered" class="md-nav__link">
     <span class="md-ellipsis">
-      Initial Import and Deduplication
+      Use Cases Covered
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -590,87 +888,60 @@
 
 
 <h1 id="falcoria-use-cases">Falcoria Use Cases<a class="headerlink" href="#falcoria-use-cases" title="Permanent link">&para;</a></h1>
-<p>Falcoria supports a wide range of real-world workflows through two primary categories:</p>
-<ul>
-<li><strong>Scan Strategies</strong> – how scans are executed</li>
-<li><strong>Report Handling</strong> – how scan results are imported, enriched, or merged</li>
-</ul>
-<p>This document outlines the <strong>most essential use cases</strong> for the MVP release.</p>
+<p>Falcoria supports structured workflows for scanning, importing, filtering, and managing scan results.<br />
+This section documents common usage patterns and provides real-world CLI sequences for each.</p>
+<p>Each use case reflects actual red team and recon workflows — from fast scans to controlled project management.</p>
 <hr />
-<h2 id="1-scan-strategies">1. Scan Strategies<a class="headerlink" href="#1-scan-strategies" title="Permanent link">&para;</a></h2>
-<h3 id="port-sharding-across-workers">Port Sharding Across Workers<a class="headerlink" href="#port-sharding-across-workers" title="Permanent link">&para;</a></h3>
-<p>Distribute port ranges across multiple workers to parallelize scans and reduce detection by IDS/IPS.</p>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>fast-scan<span class="w"> </span>--config<span class="w"> </span>ports_0-10000.yaml<span class="w"> </span>--hosts<span class="w"> </span>targets.txt
-falcli<span class="w"> </span>fast-scan<span class="w"> </span>--config<span class="w"> </span>ports_10001-65535.yaml<span class="w"> </span>--hosts<span class="w"> </span>targets.txt
-</code></pre></div>
-<p><strong>Import Mode:</strong> <code>append</code></p>
-<blockquote>
-<p>⚠️ To ensure optimal task distribution, launch the scans one by one with short delays between commands. This gives workers time to claim tasks without conflicts.</p>
-</blockquote>
-<hr />
-<h3 id="fast-scan-only-no-service-detection">Fast Scan Only (No Service Detection)<a class="headerlink" href="#fast-scan-only-no-service-detection" title="Permanent link">&para;</a></h3>
-<p>Run a lightweight scan to detect open ports quickly, skipping service detection entirely.</p>
-<p><strong>Why This Matters:</strong></p>
+<h2 id="cli-patterns">CLI Patterns<a class="headerlink" href="#cli-patterns" title="Permanent link">&para;</a></h2>
+<p>These commands form the base of interaction:</p>
 <ul>
-<li>Speeds up scanning time, especially for large scopes</li>
-<li>Minimizes noise to avoid detection by firewalls, IDS, and honeypots</li>
-<li>Allows chaining with external tools for post-processing</li>
-</ul>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>fast-scan<span class="w"> </span>--config<span class="w"> </span>fast_ports.yaml<span class="w"> </span>--hosts<span class="w"> </span>targets.txt
-</code></pre></div>
-<hr />
-<h3 id="service-detection-behavior-default-and-optional">Service Detection Behavior (Default and Optional)<a class="headerlink" href="#service-detection-behavior-default-and-optional" title="Permanent link">&para;</a></h3>
-<p>By default, Falcoria first discovers open ports and then performs service detection for those ports.</p>
-<ul>
-<li>You can disable service detection in the configuration file to run only the discovery phase.</li>
-<li>Falcoria saves open ports found during the first phase.</li>
-<li>If some ports are later closed (e.g., by firewall rules) during service detection, they will still be retained in the project.</li>
+<li><code>create</code> — create new projects or scan jobs</li>
+<li><code>list</code> — list projects, IPs, ports, or results</li>
+<li><code>get</code> — retrieve detailed data per asset or scan</li>
+<li><code>delete</code> — remove data cleanly from the system</li>
+<li><code>help</code> — introspect available commands and options</li>
 </ul>
 <hr />
-<h3 id="offline-project-imports">Offline Project Imports<a class="headerlink" href="#offline-project-imports" title="Permanent link">&para;</a></h3>
-<p>Useful for air-gapped or internal environments where scan results are collected manually.</p>
-<p><strong>Why This Matters:</strong></p>
+<h2 id="scan-behavior-note">Scan Behavior Note<a class="headerlink" href="#scan-behavior-note" title="Permanent link">&para;</a></h2>
+<p>By default, Falcoria performs <strong>open port detection first</strong>, and then automatically <strong>runs service scan</strong> only on ports that are confirmed open.</p>
 <ul>
-<li>Supports internal pentests or red team ops without internet access</li>
-<li>Integrates legacy tool output (e.g., Nmap XML)</li>
-<li>Still benefits from Falcoria’s deduplication and import logic</li>
+<li>You can disable service scanning entirely if you only want to detect open ports.</li>
+<li>You cannot currently run only service scans on pre-specified ports without first performing port discovery.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>--file<span class="w"> </span>scan.xml<span class="w"> </span>--mode<span class="w"> </span>insert
-</code></pre></div>
+<p>This approach optimizes performance and minimizes noise while preserving accurate state information for import and merge operations.</p>
 <hr />
-<h2 id="2-report-handling">2. Report Handling<a class="headerlink" href="#2-report-handling" title="Permanent link">&para;</a></h2>
-<h3 id="enrich-partial-results">Enrich Partial Results<a class="headerlink" href="#enrich-partial-results" title="Permanent link">&para;</a></h3>
-<p>First import open ports only, then later import banners or services to update only changed fields.</p>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>--file<span class="w"> </span>service_scan.xml<span class="w"> </span>--mode<span class="w"> </span>update
-</code></pre></div>
-<p><strong>Import Mode:</strong> <code>update</code></p>
-<hr />
-<h3 id="replace-changed-hosts">Replace Changed Hosts<a class="headerlink" href="#replace-changed-hosts" title="Permanent link">&para;</a></h3>
-<p>If a rescan reveals different open ports, fully replace the corresponding host’s data.</p>
-<p><strong>Why This Matters:</strong></p>
+<h2 id="scan-configs-reference">Scan Configs Reference<a class="headerlink" href="#scan-configs-reference" title="Permanent link">&para;</a></h2>
+<p>Falcoria uses YAML-based configuration files to control scan behavior.</p>
 <ul>
-<li>During long engagements, the network state may change frequently</li>
-<li>Ensures the scan data stays fresh and relevant</li>
-<li>Eliminates outdated results without manual cleanup</li>
+<li>Use predefined configs from <a href="https://github.com/Falcoria/falcli/tree/main/scan_configs"><code>scan_configs/</code></a></li>
+<li>See full option list in <a href="https://github.com/Falcoria/falcli/blob/main/scan_configs/all_options.yaml"><code>all_options.yaml</code></a></li>
+<li>Short configs like <code>light.yaml</code> or <code>web.yaml</code> are available for quick targeting</li>
+<li>Configs can be shared, versioned, or chained across scan phases</li>
 </ul>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>--file<span class="w"> </span>latest_scan.xml<span class="w"> </span>--mode<span class="w"> </span>replace
-</code></pre></div>
-<p><strong>Import Mode:</strong> <code>replace</code></p>
 <hr />
-<h3 id="initial-import-and-deduplication">Initial Import and Deduplication<a class="headerlink" href="#initial-import-and-deduplication" title="Permanent link">&para;</a></h3>
-<p>Safely load scan results into a project. Whether importing manually or via workers, the backend ensures that no duplicate IP-port pairs are stored. This avoids redundancy when multiple team members scan the same targets.</p>
-<p><strong>Why This Matters:</strong></p>
+<h2 id="use-cases-covered">Use Cases Covered<a class="headerlink" href="#use-cases-covered" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Reduces storage overhead</li>
-<li>Ensures clean project history</li>
-<li>Prevents conflicts in collaborative workflows</li>
+<li>
+<p><a href="common-operations/">Common Operations</a><br />
+  Typical create/list/get/delete commands for working with projects, IPs, and ports.</p>
+</li>
+<li>
+<p><a href="import-external-reports/">Import External Reports</a><br />
+  Add Nmap XML results to your project scope — no workers needed.</p>
+</li>
+<li>
+<p><a href="rescan/">Rescan</a><br />
+  Trigger new scans on previously discovered IPs or ports.</p>
+</li>
+<li>
+<p><a href="update-enrichment/">Update Enrichment</a><br />
+  Enrich or reclassify services with newer metadata (e.g., updated banners).</p>
+</li>
+<li>
+<p><a href="port-sharding/">Port Sharding (Evasion)</a><br />
+  Use parallelized port scan ranges to bypass WAFs and reduce detection.</p>
+</li>
 </ul>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>fast-scan<span class="w"> </span>--hosts<span class="w"> </span>team1.txt<span class="w"> </span>--mode<span class="w"> </span>insert
-falcli<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>--file<span class="w"> </span>external_team_scan.xml<span class="w"> </span>--mode<span class="w"> </span>insert
-</code></pre></div>
-<p><strong>Import Mode:</strong> <code>insert</code> or <code>update</code></p>
-<hr />
-<p>These core use cases define the MVP-level capabilities of Falcoria. They ensure efficient scanning, parallel execution, clean data management, and reliable collaboration.</p>
 
 
 

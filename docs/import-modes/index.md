@@ -1,6 +1,7 @@
 # Import Modes in Falcoria
 
 Import modes are the **heart of Falcoria’s scan management system** — giving you full control over how scan data is ingested, updated, and preserved.  
+They apply equally to **automated scan results** (e.g. scans) and to **manual imports** (e.g. from Nmap XML reports).  
 They ensure consistency, eliminate duplicates, and support workflows like incremental enrichment or authoritative replacement.
 
 ---
