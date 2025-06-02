@@ -2,6 +2,9 @@
 
 This guide provides two streamlined ways to get started with Falcoria: a high-level automatic workflow using `fast-scan`, and a more manual, step-by-step process for full control.
 
+> ⚙️ This guide uses [`falcli`](https://github.com/Falcoria/falcli) — Falcoria's command-line interface.  
+> Make sure it’s installed and connected to a running backend before proceeding.
+
 ---
 
 ## Option 1: Fast Path with `fast-scan`
@@ -9,10 +12,10 @@ This guide provides two streamlined ways to get started with Falcoria: a high-le
 Use this when you want to scan quickly with minimal setup.
 
 ```bash
-falcli fast-scan --config scan_configs/default.yaml --hosts 192.168.1.1,192.168.1.2
+falcli fast-scan --config scan_configs/default.yaml --hosts example.com,scanme.nmap.org
 ```
 
-This command will:
+The command above will:
 
 * Create a new project with a random name
 * Send a scan request to Tasker
@@ -21,6 +24,8 @@ This command will:
 * Save report locally (XML by default)
 
 You can also pass `--delete` if you want to remove the project after report download.
+
+> Example config files can be found in the [`scan_configs`](https://github.com/Falcoria/falcli/tree/main/scan_configs) folder or created manually.
 
 ---
 
@@ -37,7 +42,7 @@ falcli project create --name internal-net
 ### 2. Start Scan
 
 ```bash
-falcli project scan start --config scan_configs/custom.yaml --hosts 192.168.1.1,192.168.1.2
+falcli project scan start --config scan_configs/custom.yaml --hosts example.com,scanme.nmap.org
 ```
 
 ### 3. Check Scan Status
@@ -59,7 +64,3 @@ falcli project ips download
 ```
 
 This manual workflow gives you full control over scope, mode, configuration, and report handling.
-
----
-
-You can switch between both approaches depending on your use case — speed and simplicity vs. precision and flexibility.

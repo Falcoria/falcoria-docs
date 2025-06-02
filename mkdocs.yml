@@ -1,4 +1,5 @@
 site_name: Falcoria Documentation
+
 theme:
   name: material
   language: en
@@ -8,10 +9,33 @@ theme:
     - navigation.instant
     - content.code.copy
 
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - codehilite
+  - toc:
+      permalink: true
+
 nav:
   - What is Falcoria: index.md
-  - Installation: installation.md
+  - Installation:
+      - Overview: installation.md
+      - CLI (falcli): installation/falcli.md
+      - ScanLedger: installation/scanledger.md
   - Quick Start: quick-start.md
-  - Use Cases: use-cases.md
-  - Import Modes: import-modes.md
+  - Use Cases:
+      - Overview: use-cases/index.md
+      - Common Operations: use-cases/common-operations.md
+      - Import External Reports: use-cases/import-external-reports.md
+      - Rescan: use-cases/rescan.md
+      - Update Enrichment: use-cases/update-enrichment.md
+      - Port Sharding (Evasion): use-cases/port-sharding.md
+  - Import Modes:
+      - Overview: import-modes/index.md
+      - Insert: import-modes/insert.md
+      - Replace: import-modes/replace.md
+      - Update: import-modes/update.md
+      - Append: import-modes/append.md
   - Architecture: architecture.md

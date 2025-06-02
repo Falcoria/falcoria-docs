@@ -1,8 +1,19 @@
 # Import Modes in Falcoria
 
-Falcoria supports four import modes to give you full control over how scan results are added and updated within a project. These modes help prevent duplication, ensure consistency, and support workflows like incremental enrichment or full rescan replacement.
+Import modes are the **heart of Falcoria’s scan management system** — giving you full control over how scan data is ingested, updated, and preserved.  
+They ensure consistency, eliminate duplicates, and support workflows like incremental enrichment or authoritative replacement.
 
 ---
+
+## Quick Access
+
+- [`insert` Mode](#insert-mode) – [Use Case](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-insert)
+- [`replace` Mode](#replace-mode) – [Use Case](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-replace)
+- [`append` Mode](#append-mode)
+- [`update` Mode](#update-mode)
+
+---
+
 
 ## Summary Table
 
@@ -46,7 +57,53 @@ IP               PORT_COUNT
 188.166.121.245  8         
 ```
 
+[**Try it yourself**](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-insert)
+
 ---
+
+
+## `replace` Mode
+
+Completely **overwrites** all existing data for an IP, including all ports. Even matching ports are replaced.
+
+**Best for:**
+
+* Retesting
+* Overwriting old scan results
+
+**Example:**
+
+```bash
+$ python3 falcli.py project ips import --file report_replace1.xml
+Imported IPs report into project '5a2e5a0d-a36f-456f-822d-4769c4e0fd4f'. Result: 1 IP.
+
+$ python3 falcli.py project ips get
+IP: 134.209.203.62
+Status   : up
+OS       : -
+Hostnames: -
+
+PORT  PROTO  STATE  SERVICE  BANNER                                                                                                 
+22    tcp    open   ssh      product: OpenSSH version: 8.9p1 Ubuntu 3ubuntu0.13 extrainfo: Ubuntu Linux; protocol 2.0 ostype: Linux
+
+$ python3 falcli.py project ips import --file report_replace2.xml --mode replace
+Imported IPs report into project '5a2e5a0d-a36f-456f-822d-4769c4e0fd4f'. Result: 1 IP.
+
+$ python3 falcli.py project ips get
+IP: 134.209.203.62
+Status   : up
+OS       : -
+Hostnames: -
+
+PORT  PROTO  STATE  SERVICE     BANNER
+22    tcp    open   ssh         -     
+5432  tcp    open   postgresql  -     
+```
+
+[**Try it yourself**](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-replace)
+
+---
+
 
 ## `append` Mode
 
@@ -90,46 +147,6 @@ PORT   PROTO  STATE  SERVICE       BANNER
 5432   tcp    open   postgresql    -                                                                          
 6379   tcp    open   redis         product: Redis key-value store                                             
 50500  tcp    open   http          product: Golang net/http server extrainfo: Go-IPFS json-rpc or InfluxDB API
-```
-
----
-
-## `replace` Mode
-
-Completely **overwrites** all existing data for an IP, including all ports. Even matching ports are replaced.
-
-**Best for:**
-
-* Retesting
-* Overwriting old scan results
-
-**Example:**
-
-```bash
-$ python3 falcli.py project ips import --file report_replace1.xml
-Imported IPs report into project '5a2e5a0d-a36f-456f-822d-4769c4e0fd4f'. Result: 1 IP.
-
-$ python3 falcli.py project ips get
-IP: 134.209.203.62
-Status   : up
-OS       : -
-Hostnames: -
-
-PORT  PROTO  STATE  SERVICE  BANNER                                                                                                 
-22    tcp    open   ssh      product: OpenSSH version: 8.9p1 Ubuntu 3ubuntu0.13 extrainfo: Ubuntu Linux; protocol 2.0 ostype: Linux
-
-$ python3 falcli.py project ips import --file report_replace2.xml --mode replace
-Imported IPs report into project '5a2e5a0d-a36f-456f-822d-4769c4e0fd4f'. Result: 1 IP.
-
-$ python3 falcli.py project ips get
-IP: 134.209.203.62
-Status   : up
-OS       : -
-Hostnames: -
-
-PORT  PROTO  STATE  SERVICE     BANNER
-22    tcp    open   ssh         -     
-5432  tcp    open   postgresql  -     
 ```
 
 ---
