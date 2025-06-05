@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../rescan/">
+        <link rel="prev" href="../port-sharding/">
       
       
-        <link rel="next" href="../port-sharding/">
+        <link rel="next" href="../deduplication-behavior/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Update Enrichment - Falcoria Documentation</title>
+        <title>Scan Configuration - Falcoria Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#update-enrichment" class="md-skip">
+        <a href="#configurable-scans-and-preset-profiles" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Update Enrichment
+              Scan Configuration
             
           </span>
         </div>
@@ -660,32 +660,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Update Enrichment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../update-enrichment/" class="md-nav__link">
         
   
   
@@ -696,53 +674,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#command-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behavior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Case
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -775,10 +706,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../scan-configuration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scan Configuration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -789,6 +742,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#launch-a-scan-in-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch a Scan in One Command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-predefined-scan-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Predefined Scan Configurations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-own-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Your Own Configuration File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team-usage-and-preset-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Team Usage and Preset Sharing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -896,27 +905,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#command-example" class="md-nav__link">
+  <a href="#launch-a-scan-in-one-command" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Example
+      Launch a Scan in One Command
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#behavior" class="md-nav__link">
+  <a href="#use-predefined-scan-configurations" class="md-nav__link">
     <span class="md-ellipsis">
-      Behavior
+      Use Predefined Scan Configurations
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
+  <a href="#create-your-own-configuration-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Case
+      Create Your Own Configuration File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#team-usage-and-preset-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Team Usage and Preset Sharing
     </span>
   </a>
   
@@ -938,26 +956,52 @@
 
 
 
-<h1 id="update-enrichment">Update Enrichment<a class="headerlink" href="#update-enrichment" title="Permanent link">&para;</a></h1>
-<p>Use this mode when you want to enrich existing scan results with new data, such as additional ports, updated banners, or service info. The <code>update</code> mode does not delete existing data — it only adds or refreshes what’s newly discovered.</p>
-<h3 id="command-example">Command Example<a class="headerlink" href="#command-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>scan_configs/update_enrichment.yaml<span class="w"> </span>--targets-file<span class="w"> </span>targets.txt
+<h1 id="configurable-scans-and-preset-profiles">Configurable Scans and Preset Profiles<a class="headerlink" href="#configurable-scans-and-preset-profiles" title="Permanent link">&para;</a></h1>
+<p>Falcoria supports both quick one-liner scans and fully configurable scan definitions. This makes it suitable for fast on-the-fly usage as well as highly controlled, team-wide scanning workflows.</p>
+<hr />
+<h2 id="launch-a-scan-in-one-command">Launch a Scan in One Command<a class="headerlink" href="#launch-a-scan-in-one-command" title="Permanent link">&para;</a></h2>
+<p>If you want to start scanning immediately, use the <code>fast-scan</code> command with a default configuration:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>fast-scan<span class="w"> </span>--config<span class="w"> </span>./scan_configs/default.yaml
 </code></pre></div>
-<h3 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h3>
+<p>This launches a scan with balanced parameters that cover typical infrastructure setups.</p>
+<hr />
+<h2 id="use-predefined-scan-configurations">Use Predefined Scan Configurations<a class="headerlink" href="#use-predefined-scan-configurations" title="Permanent link">&para;</a></h2>
+<p>Falcoria includes a set of ready-to-use configuration files that you can use as-is or modify:</p>
 <ul>
-<li>Keeps existing IPs and ports.</li>
-<li>Updates services, banners, and metadata if improved information is discovered.</li>
-<li>Adds new open ports that weren’t previously present.</li>
-<li>Does not remove or overwrite existing data unless newer values are found.</li>
+<li><code>default.yaml</code> – general-purpose scan profile</li>
+<li><code>web.yaml</code> – focuses on web-related ports</li>
+<li><code>only_open_ports.yaml</code> – hides closed/filtered ports in results</li>
+<li><code>port_sharding_1.yaml</code> / <code>port_sharding_2.yaml</code> – optimized for distributed scan workers</li>
+<li><code>rescan.yaml</code> – forces re-scan of previously scanned targets</li>
+<li><code>udp.yaml</code> – enables UDP scanning</li>
+<li><code>update_enrichment.yaml</code> – used for scan enrichment or patching</li>
 </ul>
-<h3 id="use-case">Use Case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h3>
-<p>You’ve already scanned an infrastructure and now want to:</p>
+<p>Browse the full list here:<br />
+<a href="https://github.com/Falcoria/falcli/tree/main/scan_configs">scan_configs</a></p>
+<hr />
+<h2 id="create-your-own-configuration-file">Create Your Own Configuration File<a class="headerlink" href="#create-your-own-configuration-file" title="Permanent link">&para;</a></h2>
+<p>You can also define your own scan parameters using a <code>.yaml</code> file. All supported parameters are demonstrated in:</p>
 <ul>
-<li>Improve service detection with more aggressive settings</li>
-<li>Refresh outdated banner info</li>
-<li>Update open port set with additional targets or new exposure</li>
+<li><code>scan_configs/all_options_example.yaml</code></li>
 </ul>
-<p>This is a safe mode to run multiple times without losing data.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">min_rate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;22,80,443,3306&quot;</span>
+<span class="nt">scan_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;tcp&quot;</span>
+<span class="nt">max_retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</code></pre></div>
+<p>Run with:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>fast-scan<span class="w"> </span>--config<span class="w"> </span>my_scan.yaml
+</code></pre></div>
+<p>This allows you to fine-tune each scan to your project needs or infrastructure quirks.</p>
+<hr />
+<h2 id="team-usage-and-preset-sharing">Team Usage and Preset Sharing<a class="headerlink" href="#team-usage-and-preset-sharing" title="Permanent link">&para;</a></h2>
+<p>Configuration files can be versioned and shared across teams to ensure consistent scanning policies. This improves:</p>
+<ul>
+<li>Repeatability across environments</li>
+<li>Auditability of scan logic</li>
+<li>Team alignment on port selection, rate limits, and strategy</li>
+</ul>
 
 
 

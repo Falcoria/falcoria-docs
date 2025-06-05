@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../rescan/">
+        <link rel="prev" href="../deduplication-behavior/">
       
       
-        <link rel="next" href="../port-sharding/">
+        <link rel="next" href="../../architecture/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Update Enrichment - Falcoria Documentation</title>
+        <title>Team Collaboration - Falcoria Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#update-enrichment" class="md-skip">
+        <a href="#real-time-access-and-collaboration-on-scan-results" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Update Enrichment
+              Team Collaboration
             
           </span>
         </div>
@@ -660,32 +660,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Update Enrichment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../update-enrichment/" class="md-nav__link">
         
   
   
@@ -696,53 +674,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#command-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behavior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Case
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -821,10 +752,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../team-collaboration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Team Collaboration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -835,6 +788,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shared-workflow-example-external-scan-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Workflow Example: External Scan Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared Workflow Example: External Scan Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-one-teammate-runs-an-external-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — One teammate runs an external scan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-import-results-into-a-shared-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Import results into a shared project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-other-users-access-results-immediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Other users access results immediately
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-or-access-data-programmatically-via-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Or access data programmatically via API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -896,27 +929,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#command-example" class="md-nav__link">
+  <a href="#shared-workflow-example-external-scan-results" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Example
+      Shared Workflow Example: External Scan Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shared Workflow Example: External Scan Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-one-teammate-runs-an-external-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — One teammate runs an external scan
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#behavior" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-2-import-results-into-a-shared-project" class="md-nav__link">
     <span class="md-ellipsis">
-      Behavior
+      Step 2 — Import results into a shared project
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-other-users-access-results-immediately" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Other users access results immediately
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-or-access-data-programmatically-via-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Or access data programmatically via API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Case
+      Summary
     </span>
   </a>
   
@@ -938,26 +1004,78 @@
 
 
 
-<h1 id="update-enrichment">Update Enrichment<a class="headerlink" href="#update-enrichment" title="Permanent link">&para;</a></h1>
-<p>Use this mode when you want to enrich existing scan results with new data, such as additional ports, updated banners, or service info. The <code>update</code> mode does not delete existing data — it only adds or refreshes what’s newly discovered.</p>
-<h3 id="command-example">Command Example<a class="headerlink" href="#command-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>scan_configs/update_enrichment.yaml<span class="w"> </span>--targets-file<span class="w"> </span>targets.txt
+<h1 id="real-time-access-and-collaboration-on-scan-results">Real-Time Access and Collaboration on Scan Results<a class="headerlink" href="#real-time-access-and-collaboration-on-scan-results" title="Permanent link">&para;</a></h1>
+<p>Falcoria enables real-time collaboration between multiple team members working on the same project. Once data is imported or a scan is launched, results become immediately available to all users connected to the shared backend — without needing to sync files, wait for exports, or coordinate tasks manually.</p>
+<hr />
+<h2 id="shared-workflow-example-external-scan-results">Shared Workflow Example: External Scan Results<a class="headerlink" href="#shared-workflow-example-external-scan-results" title="Permanent link">&para;</a></h2>
+<p>The following workflow demonstrates how one team member can import results from an external scan, and others can instantly explore, query, and export that data.</p>
+<h3 id="step-1-one-teammate-runs-an-external-scan">Step 1 — One teammate runs an external scan<a class="headerlink" href="#step-1-one-teammate-runs-an-external-scan" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span><span class="m">134</span>.209.203.62<span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span>-oX<span class="w"> </span>report.xml
 </code></pre></div>
-<h3 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h3>
+<p>Example scan output:
+<div class="highlight"><pre><span></span><code>PORT      STATE SERVICE
+22/tcp    open  ssh
+2222/tcp  open  EtherNetIP-1
+5432/tcp  open  postgresql
+50500/tcp open  unknown
+</code></pre></div></p>
+<p>Or start a scan with falcli. In this case you don't need to import results manually:
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--hosts<span class="w"> </span><span class="m">134</span>.209.203.62
+</code></pre></div></p>
+<h3 id="step-2-import-results-into-a-shared-project">Step 2 — Import results into a shared project<a class="headerlink" href="#step-2-import-results-into-a-shared-project" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>-f<span class="w"> </span>report.xml
+Imported<span class="w"> </span>IPs<span class="w"> </span>report<span class="w"> </span>into<span class="w"> </span>project<span class="w"> </span><span class="s1">&#39;4e0d5a24-791d-4abb-a1fd-212f738b48b8&#39;</span>.<span class="w"> </span>Result:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP.
+</code></pre></div>
+<h3 id="step-3-other-users-access-results-immediately">Step 3 — Other users access results immediately<a class="headerlink" href="#step-3-other-users-access-results-immediately" title="Permanent link">&para;</a></h3>
+<p>List all scanned IPs:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>list
+IP<span class="w">              </span>PORT_COUNT
+<span class="m">134</span>.209.203.62<span class="w">  </span><span class="m">4</span>
+</code></pre></div></p>
+<p>Get full details for the host:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>get
+IP:<span class="w"> </span><span class="m">134</span>.209.203.62
+Status<span class="w">   </span>:<span class="w"> </span>up
+OS<span class="w">       </span>:<span class="w"> </span>-
+Hostnames:<span class="w"> </span>-
+
+PORT<span class="w">   </span>PROTO<span class="w">  </span>STATE<span class="w">  </span>SERVICE<span class="w">       </span>BANNER
+<span class="m">22</span><span class="w">     </span>tcp<span class="w">    </span>open<span class="w">   </span>ssh<span class="w">           </span>-<span class="w">     </span>
+<span class="m">2222</span><span class="w">   </span>tcp<span class="w">    </span>open<span class="w">   </span>EtherNetIP-1<span class="w">  </span>-<span class="w">     </span>
+<span class="m">5432</span><span class="w">   </span>tcp<span class="w">    </span>open<span class="w">   </span>postgresql<span class="w">    </span>-<span class="w">     </span>
+<span class="m">50500</span><span class="w">  </span>tcp<span class="w">    </span>open<span class="w">   </span>-<span class="w">             </span>-<span class="w">     </span>
+</code></pre></div></p>
+<p>Download results as a report:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>download
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Downloaded<span class="w"> </span>IPs<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span><span class="s1">&#39;4e0d5a24-791d-4abb-a1fd-212f738b48b8&#39;</span>.
+</code></pre></div></p>
+<h3 id="step-4-or-access-data-programmatically-via-api">Step 4 — Or access data programmatically via API<a class="headerlink" href="#step-4-or-access-data-programmatically-via-api" title="Permanent link">&para;</a></h3>
+<p>Falcoria exposes a REST API to support integration into automation pipelines or external tools.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s1">&#39;https://161.35.155.132/projects/4e0d5a24-791d-4abb-a1fd-212f738b48b8/ips&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;YOUR_AUTH_TOKEN&gt;&#39;</span><span class="w"> </span>-k<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div>
+<p>Example output:
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;134.209.203.62&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;up&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ssh&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2222</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EtherNetIP-1&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5432</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postgresql&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;number&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50500</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;service&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Keeps existing IPs and ports.</li>
-<li>Updates services, banners, and metadata if improved information is discovered.</li>
-<li>Adds new open ports that weren’t previously present.</li>
-<li>Does not remove or overwrite existing data unless newer values are found.</li>
+<li>One team member imports or launches a scan</li>
+<li>Others can immediately query results via CLI or API</li>
+<li>All data is centralized and synchronized via ScanLedger</li>
 </ul>
-<h3 id="use-case">Use Case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h3>
-<p>You’ve already scanned an infrastructure and now want to:</p>
-<ul>
-<li>Improve service detection with more aggressive settings</li>
-<li>Refresh outdated banner info</li>
-<li>Update open port set with additional targets or new exposure</li>
-</ul>
-<p>This is a safe mode to run multiple times without losing data.</p>
+<p>This real-time access eliminates delays, file syncing, and duplicated effort — enabling fast, coordinated recon and analysis across any size team.</p>
 
 
 

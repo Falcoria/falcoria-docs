@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../rescan/">
+        <link rel="prev" href="../scan-configuration/">
       
       
-        <link rel="next" href="../port-sharding/">
+        <link rel="next" href="../team-collaboration/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Update Enrichment - Falcoria Documentation</title>
+        <title>Deduplication Behavior - Falcoria Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#update-enrichment" class="md-skip">
+        <a href="#deduplication-behavior" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Update Enrichment
+              Deduplication Behavior
             
           </span>
         </div>
@@ -660,32 +660,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Update Enrichment
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../update-enrichment/" class="md-nav__link">
         
   
   
@@ -696,53 +674,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#command-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Behavior
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use Case
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -798,10 +729,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../deduplication-behavior/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deduplication Behavior
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -812,6 +765,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deduplication-during-scan-report-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deduplication During Scan Report Imports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-deduplication-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Deduplication Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deduplication-during-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deduplication During Scanning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deduplication During Scanning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-deduplication-of-user-provided-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deduplication of User-Provided Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deduplication-against-queued-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Deduplication Against Queued Targets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-deduplication-against-previously-scanned-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deduplication Against Previously Scanned Hosts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -896,27 +938,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#command-example" class="md-nav__link">
+  <a href="#deduplication-during-scan-report-imports" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Example
+      Deduplication During Scan Report Imports
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#behavior" class="md-nav__link">
+  <a href="#why-deduplication-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      Behavior
+      Why Deduplication Matters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-case" class="md-nav__link">
+  <a href="#deduplication-during-scanning" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Case
+      Deduplication During Scanning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deduplication During Scanning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-deduplication-of-user-provided-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Deduplication of User-Provided Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deduplication-against-queued-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Deduplication Against Queued Targets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-deduplication-against-previously-scanned-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Deduplication Against Previously Scanned Hosts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
     </span>
   </a>
   
@@ -938,26 +1022,113 @@
 
 
 
-<h1 id="update-enrichment">Update Enrichment<a class="headerlink" href="#update-enrichment" title="Permanent link">&para;</a></h1>
-<p>Use this mode when you want to enrich existing scan results with new data, such as additional ports, updated banners, or service info. The <code>update</code> mode does not delete existing data — it only adds or refreshes what’s newly discovered.</p>
-<h3 id="command-example">Command Example<a class="headerlink" href="#command-example" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>scan_configs/update_enrichment.yaml<span class="w"> </span>--targets-file<span class="w"> </span>targets.txt
-</code></pre></div>
-<h3 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h3>
+<h1 id="deduplication-behavior">Deduplication Behavior<a class="headerlink" href="#deduplication-behavior" title="Permanent link">&para;</a></h1>
+<p>Falcoria applies deduplication at multiple stages of the scanning workflow. This ensures efficient resource usage, consistent scan results, and seamless support for resuming interrupted scans. This document describes how deduplication works both during the import of external scan reports and during the scan phase itself.</p>
+<hr />
+<h2 id="deduplication-during-scan-report-imports">Deduplication During Scan Report Imports<a class="headerlink" href="#deduplication-during-scan-report-imports" title="Permanent link">&para;</a></h2>
+<p>When importing external Nmap reports, Falcoria uses import modes to control how incoming data is merged with existing results. These modes prevent duplication of previously scanned ports, IPs, or entries that match known states.</p>
+<p>The deduplication logic depends entirely on the selected import mode. For example:</p>
 <ul>
-<li>Keeps existing IPs and ports.</li>
-<li>Updates services, banners, and metadata if improved information is discovered.</li>
-<li>Adds new open ports that weren’t previously present.</li>
-<li>Does not remove or overwrite existing data unless newer values are found.</li>
+<li><code>insert</code> will skip any existing entries</li>
+<li><code>replace</code> will remove and overwrite previous data</li>
+<li><code>update</code> only modifies ports that already exist</li>
 </ul>
-<h3 id="use-case">Use Case<a class="headerlink" href="#use-case" title="Permanent link">&para;</a></h3>
-<p>You’ve already scanned an infrastructure and now want to:</p>
+<p>To understand these behaviors in depth, see the following resources:</p>
 <ul>
-<li>Improve service detection with more aggressive settings</li>
-<li>Refresh outdated banner info</li>
-<li>Update open port set with additional targets or new exposure</li>
+<li><a href="../import-external-reports/">Import External Reports Use Case</a></li>
+<li><a href="../../import-modes/">Import Modes Overview</a></li>
 </ul>
-<p>This is a safe mode to run multiple times without losing data.</p>
+<hr />
+<h2 id="why-deduplication-matters">Why Deduplication Matters<a class="headerlink" href="#why-deduplication-matters" title="Permanent link">&para;</a></h2>
+<p>Falcoria’s deduplication mechanisms are critical for:</p>
+<ul>
+<li>Reducing scan duration by avoiding repeated work</li>
+<li>Preventing duplicate entries in the project database</li>
+<li>Minimizing network and system load</li>
+<li>Enabling scan resumption without reconfiguration or manual filtering</li>
+</ul>
+<p>Once a host is scanned or queued, Falcoria will skip it on repeated execution of the same scan command. This allows the system to resume scans from where they stopped and prevents duplicate tasks from being created.</p>
+<hr />
+<h2 id="deduplication-during-scanning">Deduplication During Scanning<a class="headerlink" href="#deduplication-during-scanning" title="Permanent link">&para;</a></h2>
+<p>Falcoria applies three layers of deduplication during the scan phase:</p>
+<h3 id="1-deduplication-of-user-provided-hosts">1. Deduplication of User-Provided Hosts<a class="headerlink" href="#1-deduplication-of-user-provided-hosts" title="Permanent link">&para;</a></h3>
+<p>If the user supplies a target file that contains duplicate entries, only unique hosts will be accepted. The deduplication occurs at the <a href="../../architecture/">Tasker</a> level before queueing begins.</p>
+<p><strong>Example: Hosts file with duplicates</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>hosts_with_duplicates.txt
+<span class="m">159</span>.223.15.22
+<span class="m">159</span>.223.15.22
+<span class="m">188</span>.166.121.245
+</code></pre></div></p>
+<p><strong>Scan execution after input deduplication</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--targets-file<span class="w"> </span>hosts_with_duplicates.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>targets<span class="w"> </span>sent<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span>4e0d5a24-791d-4abb-a1fd-212f738b48b8.
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Sent<span class="w"> </span>to<span class="w"> </span>scan:
+<span class="w">  </span>-<span class="w"> </span><span class="m">159</span>.223.15.22
+<span class="w">  </span>-<span class="w"> </span><span class="m">188</span>.166.121.245
+</code></pre></div></p>
+<hr />
+<h3 id="2-deduplication-against-queued-targets">2. Deduplication Against Queued Targets<a class="headerlink" href="#2-deduplication-against-queued-targets" title="Permanent link">&para;</a></h3>
+<p>If a host is already queued for scanning and the same target is submitted again, Falcoria will reject it without duplication. This prevents redundant load and preserves system efficiency.</p>
+<p><strong>Initial scan submission</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>targets<span class="w"> </span>sent<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span>4e0d5a24-791d-4abb-a1fd-212f738b48b8.
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Sent<span class="w"> </span>to<span class="w"> </span>scan:
+<span class="w">  </span>-<span class="w"> </span><span class="m">188</span>.166.121.245
+<span class="w">  </span>-<span class="w"> </span><span class="m">128</span>.199.62.51
+<span class="w">  </span>-<span class="w"> </span><span class="m">159</span>.223.15.22
+<span class="w">  </span>-<span class="w"> </span><span class="m">134</span>.209.203.62
+</code></pre></div></p>
+<p><strong>Verifying that targets are already in the scan queue</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>scan<span class="w"> </span>status
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>status<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span>4e0d5a24-791d-4abb-a1fd-212f738b48b8:<span class="w"> </span><span class="m">4</span>
+</code></pre></div></p>
+<p><strong>Re-submitting the same targets</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>targets<span class="w"> </span>sent<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span>4e0d5a24-791d-4abb-a1fd-212f738b48b8.
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>targets<span class="w"> </span>were<span class="w"> </span>accepted<span class="w"> </span><span class="k">for</span><span class="w"> </span>scanning.
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Rejected<span class="w"> </span>targets:
+<span class="w">  </span>-<span class="w"> </span><span class="m">188</span>.166.121.245
+<span class="w">  </span>-<span class="w"> </span><span class="m">128</span>.199.62.51
+<span class="w">  </span>-<span class="w"> </span><span class="m">159</span>.223.15.22
+<span class="w">  </span>-<span class="w"> </span><span class="m">134</span>.209.203.62
+</code></pre></div></p>
+<hr />
+<h3 id="3-deduplication-against-previously-scanned-hosts">3. Deduplication Against Previously Scanned Hosts<a class="headerlink" href="#3-deduplication-against-previously-scanned-hosts" title="Permanent link">&para;</a></h3>
+<p>Falcoria checks the project’s scan history in ScanLedger. If a host has already been scanned and recorded in the database, it will not be accepted for scanning again using the same command and project context.</p>
+<p><strong>Database contents</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>list
+IP<span class="w">               </span>PORT_COUNT
+<span class="m">128</span>.199.62.51<span class="w">    </span><span class="m">6</span><span class="w">         </span>
+<span class="m">134</span>.209.203.62<span class="w">   </span><span class="m">6</span><span class="w">         </span>
+<span class="m">159</span>.223.15.22<span class="w">    </span><span class="m">6</span><span class="w">         </span>
+<span class="m">188</span>.166.121.245<span class="w">  </span><span class="m">8</span><span class="w">         </span>
+</code></pre></div></p>
+<p><strong>Attempting to rescan the same IPs</strong>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>hosts.txt
+<span class="m">134</span>.209.203.62
+<span class="m">159</span>.223.15.22
+<span class="m">188</span>.166.121.245
+<span class="m">128</span>.199.62.51
+
+$<span class="w"> </span>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>targets<span class="w"> </span>sent<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span>4e0d5a24-791d-4abb-a1fd-212f738b48b8.
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>No<span class="w"> </span>targets<span class="w"> </span>were<span class="w"> </span>accepted<span class="w"> </span><span class="k">for</span><span class="w"> </span>scanning.
+<span class="o">[</span>!<span class="o">]</span><span class="w"> </span>Rejected<span class="w"> </span>targets:
+<span class="w">  </span>-<span class="w"> </span><span class="m">188</span>.166.121.245
+<span class="w">  </span>-<span class="w"> </span><span class="m">128</span>.199.62.51
+<span class="w">  </span>-<span class="w"> </span><span class="m">159</span>.223.15.22
+<span class="w">  </span>-<span class="w"> </span><span class="m">134</span>.209.203.62
+</code></pre></div></p>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Falcoria enforces deduplication at the following stages:</p>
+<ul>
+<li>When importing external reports</li>
+<li>When parsing user input</li>
+<li>When filtering against the current queue</li>
+<li>When validating against the project’s historical records</li>
+</ul>
+<p>These mechanisms work together to prevent waste, accelerate scans, and allow users to safely repeat scan commands without unintended repetition. This makes Falcoria suitable for large-scale, iterative scanning across complex infrastructures.</p>
 
 
 
