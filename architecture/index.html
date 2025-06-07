@@ -1004,16 +1004,7 @@
 </ul>
 <hr />
 <h2 id="system-diagram">System Diagram<a class="headerlink" href="#system-diagram" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>+--------+       +---------------+        +------------+        +-----------+
-| falcli | ────► |  Tasker (API) | ─────► | RabbitMQ   | ─────► |  Worker   |
-+--------+       +---------------+        +------------+        +-----------+
-      ▲                                                                |
-      │                                                                |
-      │                                                                ▼
-      └───────────────────────────────────────────────────►+-------------------+
-                                                           | ScanLedger (API)  |
-                                                           +-------------------+
-</code></pre></div>
+<p><img src="images/architecture.png" alt="Falcoria Architecture" width="850"></p>
 <hr />
 <h2 id="scan-workflow">Scan Workflow<a class="headerlink" href="#scan-workflow" title="Permanent link">&para;</a></h2>
 <ol>
