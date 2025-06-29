@@ -662,69 +662,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-check-scan-status" class="md-nav__link">
+  <a href="#3-scan-status" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Check Scan Status
+      3. Scan Status
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-inspect-scan-results" class="md-nav__link">
+  <a href="#4-stop-scan" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Inspect Scan Results
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Inspect Scan Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-ips-with-open-ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      List IPs with open ports:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-detailed-results-nmap-like-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      View detailed results (Nmap-like output):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-per-ip-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Per-IP Operations
+      4. Stop Scan
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-download-results" class="md-nav__link">
+  <a href="#5-get-scan-results" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Download Results
+      5. Get Scan Results
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-delete-all-data" class="md-nav__link">
+  <a href="#6-delete-data" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Delete All Data
+      6. Delete Data
     </span>
   </a>
   
@@ -974,69 +941,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-check-scan-status" class="md-nav__link">
+  <a href="#3-scan-status" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Check Scan Status
+      3. Scan Status
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-inspect-scan-results" class="md-nav__link">
+  <a href="#4-stop-scan" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Inspect Scan Results
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Inspect Scan Results">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list-ips-with-open-ports" class="md-nav__link">
-    <span class="md-ellipsis">
-      List IPs with open ports:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-detailed-results-nmap-like-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      View detailed results (Nmap-like output):
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-per-ip-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Per-IP Operations
+      4. Stop Scan
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-download-results" class="md-nav__link">
+  <a href="#5-get-scan-results" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Download Results
+      5. Get Scan Results
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-delete-all-data" class="md-nav__link">
+  <a href="#6-delete-data" class="md-nav__link">
     <span class="md-ellipsis">
-      7. Delete All Data
+      6. Delete Data
     </span>
   </a>
   
@@ -1059,90 +993,144 @@
 
 
 <h1 id="common-workflow">Common Workflow<a class="headerlink" href="#common-workflow" title="Permanent link">&para;</a></h1>
-<p>This page covers the common workflow in Falcoria — from creating a project and performing scans to importing results and cleaning up data. It reflects typical steps in a penetration testing or infrastructure assessment flow.</p>
-<p>This guide walks through the typical CLI-driven lifecycle: project setup, scanning, result inspection, and cleanup. It is based on real-world usage and helps you quickly adopt Falcoria for internal assessments or red team engagements.</p>
-<p>Falcoria CLI supports a descriptive <code>--help</code> mechanism. You can inspect available commands and parameters with:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>--help
-falcli.py<span class="w"> </span>&lt;subcommand&gt;<span class="w"> </span>--help
-</code></pre></div>
+<p>This section provides the typical workflow for using Falcoria — from project creation to scanning, status checks, results retrieval, and cleanup.</p>
 <hr />
 <h2 id="1-create-a-project">1. Create a Project<a class="headerlink" href="#1-create-a-project" title="Permanent link">&para;</a></h2>
-<p>All scanned data in Falcoria is organized into <strong>projects</strong>. Each project has a unique UUID. Internally, Falcoria works with UUIDs, not names.</p>
+<p>All scanned data and related information in Falcoria are grouped under <strong>projects</strong>. This allows clear separation of different assessments.</p>
 <p>To create a project:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span>pentest_example
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span>pentest_project
 </code></pre></div>
-<p>Once created, the project will be stored in local <strong>memory</strong> (you’ll be prompted to save it — and it’s recommended, so you don’t have to enter the UUID manually later).</p>
-<p>Memory is a local file that remembers saved project IDs and the last used project. This mechanism helps you avoid typing the UUID every time. 
-To list saved projects in memory and see which one is currently active:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>memory<span class="w"> </span>list
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Project<span class="w"> </span><span class="s1">&#39;pentest_project&#39;</span><span class="w"> </span>created<span class="w"> </span>successfully<span class="w"> </span><span class="o">(</span>26e73c7f-c1e3-4131-8ee5-99a01681af9f<span class="o">)</span>.
+<span class="w">  </span>project_name<span class="w">  </span>:<span class="w"> </span>pentest_project
+<span class="w">  </span>id<span class="w">            </span>:<span class="w"> </span>26e73c7f-c1e3-4131-8ee5-99a01681af9f
+<span class="w">  </span>users<span class="w">         </span>:<span class="w"> </span>admin
+First<span class="w"> </span>project<span class="w"> </span>saved.
 </code></pre></div>
-<p>To switch the default project used by all future commands:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>memory<span class="w"> </span>set-default<span class="w"> </span>&lt;project_uuid&gt;
+<p>To set the active project:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>set-active<span class="w"> </span>&lt;uuid&gt;
 </code></pre></div>
-<blockquote>
-<p>Projects themselves live on the server via <strong>ScanLedger</strong>, while memory is managed locally on your machine.</p>
-</blockquote>
-<p>To list all projects stored on the server (not just in local memory):</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>list
+<p>List all projects stored on the server:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>list
 </code></pre></div>
 <hr />
 <h2 id="2-start-a-scan">2. Start a Scan<a class="headerlink" href="#2-start-a-scan" title="Permanent link">&para;</a></h2>
-<p>To initiate a scan for the current project:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>scan_configs/default.yaml<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+<p>To launch a scan for the active project:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
 </code></pre></div>
-<ul>
-<li><code>--config</code> is optional; if not set, <code>default.yaml</code> is used automatically.</li>
-<li>You can specify targets explicitly via <code>--targets-file</code>.</li>
-</ul>
-<p>For available options:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--help
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>initiated<span class="w"> </span><span class="k">for</span><span class="w"> </span>project:<span class="w"> </span><span class="s1">&#39;pentest_project&#39;</span><span class="w"> </span><span class="o">(</span>26e73c7f-c1e3-4131-8ee5-99a01681af9f<span class="o">)</span>.
+
+Scan<span class="w"> </span>Settings
+<span class="w">  </span>Import<span class="w"> </span>mode<span class="w">        </span>:<span class="w"> </span>insert
+<span class="w">  </span>Nmap<span class="w"> </span><span class="o">(</span>open<span class="w"> </span>ports<span class="o">)</span><span class="w">  </span>:<span class="w"> </span>-n<span class="w"> </span>--max-retries<span class="w"> </span><span class="m">1</span><span class="w"> </span>--min-rate<span class="w"> </span><span class="m">300</span><span class="w"> </span>-Pn<span class="w"> </span>-p<span class="w"> </span><span class="m">1</span>-65535
+<span class="w">  </span>Nmap<span class="w"> </span><span class="o">(</span>services<span class="o">)</span><span class="w">    </span>:<span class="w"> </span>-sV<span class="w"> </span>-Pn
+<span class="w">  </span>Scan<span class="w"> </span>config<span class="w">        </span>:<span class="w"> </span>app/data/scan_configs/default.yaml
+
+Scan<span class="w"> </span>Summary
+<span class="w">  </span>Targets<span class="w"> </span>provided<span class="w">         </span>:<span class="w"> </span><span class="m">6</span>
+<span class="w">  </span>Duplicates<span class="w"> </span>removed<span class="w">       </span>:<span class="w"> </span><span class="m">1</span>
+<span class="w">  </span>Skipped<span class="w"> </span><span class="o">(</span>already<span class="w"> </span>known<span class="o">)</span><span class="w">  </span>:<span class="w"> </span><span class="m">0</span>
+<span class="w">  </span>Rejected<span class="w">                 </span>:<span class="w"> </span><span class="m">0</span>
+<span class="w">  </span>Accepted<span class="w"> </span>and<span class="w"> </span>sent<span class="w">        </span>:<span class="w"> </span><span class="m">5</span>
 </code></pre></div>
-<p>By specifying a config file with the <code>--config</code> parameter, you define how the scan will run — including Nmap options, service detection settings, and the import mode for results.</p>
-<p>You can run multiple scans with different configs for different parts of the target list — all tasks will be queued and processed under the same project. This allows phased scanning, where each scan focuses on a specific protocol, range, or depth.</p>
-<p>Scan configurations are YAML files. You can create your own, reuse existing ones, or share them across the team.</p>
+<p>To use a different scan configuration:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>./app/data/scan_configs/web.yaml<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+</code></pre></div>
+<p>By default, Falcoria skips targets that were already scanned within the project. Only new, unknown hosts are accepted.</p>
+<p>To re-scan all targets regardless of previous results, use <strong>replace mode</strong>. See details <a href="../../import-modes/replace/">here</a>.</p>
+<p>All available scan options can be reviewed in:</p>
+<div class="highlight"><pre><span></span><code>./app/data/scan_configs/all_options_example.yaml
+</code></pre></div>
+<p>Before launching a scan, check available workers:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>workers<span class="w"> </span>ips
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Fetched<span class="w"> </span>external<span class="w"> </span>IP<span class="w"> </span>addresses<span class="w"> </span>of<span class="w"> </span>active<span class="w"> </span>workers.
+
+HOSTNAME<span class="w">      </span>IP<span class="w">               </span>LAST_UPDATED<span class="w">         </span>LAST_UPDATED_AGO
+d2b5c09fe876<span class="w">  </span><span class="m">134</span>.209.200.222<span class="w">  </span><span class="m">2025</span>-06-26<span class="w"> </span><span class="m">15</span>:44:02<span class="w">  </span><span class="m">25</span><span class="w"> </span>min<span class="w"> </span>ago
+c21da8b747db<span class="w">  </span><span class="m">146</span>.190.27.214<span class="w">   </span><span class="m">2025</span>-06-26<span class="w"> </span><span class="m">15</span>:44:02<span class="w">  </span><span class="m">25</span><span class="w"> </span>min<span class="w"> </span>ago
+e323a82d28d3<span class="w">  </span><span class="m">159</span>.223.225.154<span class="w">  </span><span class="m">2025</span>-06-26<span class="w"> </span><span class="m">15</span>:44:02<span class="w">  </span><span class="m">25</span><span class="w"> </span>min<span class="w"> </span>ago
+a5ef4e44ca7b<span class="w">  </span><span class="m">64</span>.225.64.155<span class="w">    </span><span class="m">2025</span>-06-26<span class="w"> </span><span class="m">15</span>:44:02<span class="w">  </span><span class="m">25</span><span class="w"> </span>min<span class="w"> </span>ago
+
+<span class="m">4</span><span class="w"> </span>workers<span class="w"> </span>online.
+</code></pre></div>
+<p>Each worker processes one host at a time.</p>
 <hr />
-<h2 id="3-check-scan-status">3. Check Scan Status<a class="headerlink" href="#3-check-scan-status" title="Permanent link">&para;</a></h2>
-<p>While the scan is running, check the real-time status interactively:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>scan<span class="w"> </span>status<span class="w"> </span>-i
+<h2 id="3-scan-status">3. Scan Status<a class="headerlink" href="#3-scan-status" title="Permanent link">&para;</a></h2>
+<p>To check current scan status:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>scan<span class="w"> </span>status
 </code></pre></div>
-<p>Remove <code>-i</code> to get number of tasks in queue.</p>
-<p>To stop the scan (removes all tasks in the queue for this project only):</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>scan<span class="w"> </span>stop
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>status<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span>26e73c7f-c1e3-4131-8ee5-99a01681af9f<span class="w"> </span>fetched<span class="w"> </span>successfully.
+
+Scan<span class="w"> </span>Status<span class="w"> </span>Summary
+<span class="w">  </span>Tasks<span class="w"> </span>total<span class="w">    </span>:<span class="w"> </span><span class="m">5</span>
+<span class="w">  </span>Tasks<span class="w"> </span>running<span class="w">  </span>:<span class="w"> </span><span class="m">4</span>
+<span class="w">  </span>Tasks<span class="w"> </span>queued<span class="w">   </span>:<span class="w"> </span><span class="m">1</span>
+
+Running<span class="w"> </span>Targets:
+IP<span class="w">               </span>HOSTNAMES<span class="w">  </span>WORKER<span class="w">        </span>STARTED_AT<span class="w"> </span><span class="o">(</span>UTC<span class="o">)</span><span class="w">     </span>ELAPSED
+<span class="m">142</span>.93.156.194<span class="w">              </span>a5ef4e44ca7b<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+<span class="m">147</span>.182.157.118<span class="w">             </span>d2b5c09fe876<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+<span class="m">143</span>.110.223.7<span class="w">               </span>e323a82d28d3<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+<span class="m">165</span>.22.231.248<span class="w">              </span>c21da8b747db<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+</code></pre></div>
+<p>For interactive status with auto-refresh:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>scan<span class="w"> </span>status<span class="w"> </span>-i
+</code></pre></div>
+<p>Example interactive output:</p>
+<div class="highlight"><pre><span></span><code>Scan<span class="w"> </span>status<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span><span class="s1">&#39;pentest_project&#39;</span><span class="w"> </span><span class="o">(</span>26e73c7f-c1e3-4131-8ee5-99a01681af9f<span class="o">)</span><span class="w"> </span>fetched<span class="w"> </span>successfully.
+
+Scan<span class="w"> </span>Status<span class="w"> </span>Summary
+<span class="w">  </span>Tasks<span class="w"> </span>total<span class="w">    </span>:<span class="w"> </span><span class="m">5</span>
+<span class="w">  </span>Tasks<span class="w"> </span>running<span class="w">  </span>:<span class="w"> </span><span class="m">4</span>
+<span class="w">  </span>Tasks<span class="w"> </span>queued<span class="w">   </span>:<span class="w"> </span><span class="m">1</span>
+
+Running<span class="w"> </span>Targets:
+IP<span class="w">               </span>HOSTNAMES<span class="w">  </span>WORKER<span class="w">        </span>STARTED_AT<span class="w"> </span><span class="o">(</span>UTC<span class="o">)</span><span class="w">     </span>ELAPSED
+<span class="m">142</span>.93.156.194<span class="w">              </span>a5ef4e44ca7b<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+<span class="m">147</span>.182.157.118<span class="w">             </span>d2b5c09fe876<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+<span class="m">143</span>.110.223.7<span class="w">               </span>e323a82d28d3<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+<span class="m">165</span>.22.231.248<span class="w">              </span>c21da8b747db<span class="w">  </span><span class="m">2025</span>-06-29<span class="w"> </span><span class="m">17</span>:24:28<span class="w">  </span><span class="m">0</span>:00:10
+
+Remaining:<span class="w"> </span><span class="m">5</span>/5<span class="w"> </span><span class="p">|</span><span class="w"> </span>Elapsed:<span class="w"> </span>5s
 </code></pre></div>
 <hr />
-<h2 id="4-inspect-scan-results">4. Inspect Scan Results<a class="headerlink" href="#4-inspect-scan-results" title="Permanent link">&para;</a></h2>
-<h3 id="list-ips-with-open-ports">List IPs with open ports:<a class="headerlink" href="#list-ips-with-open-ports" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>list
+<h2 id="4-stop-scan">4. Stop Scan<a class="headerlink" href="#4-stop-scan" title="Permanent link">&para;</a></h2>
+<p>To stop an active scan and terminate all Nmap processes:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>scan<span class="w"> </span>stop
 </code></pre></div>
-<h3 id="view-detailed-results-nmap-like-output">View detailed results (Nmap-like output):<a class="headerlink" href="#view-detailed-results-nmap-like-output" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>get
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Scan<span class="w"> </span>stopped<span class="w"> </span>successfully<span class="w"> </span><span class="k">for</span><span class="w"> </span>project:<span class="w"> </span><span class="s1">&#39;pentest_project&#39;</span><span class="w"> </span><span class="o">(</span>26e73c7f-c1e3-4131-8ee5-99a01681af9f<span class="o">)</span>.
+Revoked<span class="w"> </span><span class="m">5</span><span class="w"> </span>tasks.
 </code></pre></div>
-<p>By default, only IPs with at least one open port are shown. To also retrieve hosts without open ports:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>get<span class="w"> </span>--no-has-ports
+<p>If some hosts were partially scanned, re-running the scan will skip already scanned hosts automatically.</p>
+<hr />
+<h2 id="5-get-scan-results">5. Get Scan Results<a class="headerlink" href="#5-get-scan-results" title="Permanent link">&para;</a></h2>
+<p>List results:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>get
+</code></pre></div>
+<p>Download results:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>download
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>Active<span class="w"> </span>Project<span class="o">]</span>:<span class="w"> </span><span class="s1">&#39;pentest_project&#39;</span><span class="w"> </span><span class="o">(</span>26e73c7f-c1e3-4131-8ee5-99a01681af9f<span class="o">)</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Downloaded<span class="w"> </span>IPs<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span>project<span class="w"> </span><span class="s1">&#39;26e73c7f-c1e3-4131-8ee5-99a01681af9f&#39;</span>.
+Saved<span class="w"> </span>to:<span class="w"> </span>app/data/reports/26e73c7f-c1e3-4131-8ee5-99a01681af9f_ips.xml
 </code></pre></div>
 <hr />
-<h2 id="5-per-ip-operations">5. Per-IP Operations<a class="headerlink" href="#5-per-ip-operations" title="Permanent link">&para;</a></h2>
-<p>The same <code>get</code> and <code>delete</code> logic applies to a single IP:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>get<span class="w"> </span>&lt;ip_address&gt;
-falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>delete<span class="w"> </span>&lt;ip_address&gt;
-</code></pre></div>
-<p>If you omit <code>&lt;ip_address&gt;</code>, the command applies to <strong>all IPs</strong> in the current project.</p>
-<hr />
-<h2 id="6-download-results">6. Download Results<a class="headerlink" href="#6-download-results" title="Permanent link">&para;</a></h2>
-<p>To save the current project scan results to an XML file:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>download
-</code></pre></div>
-<p>By default, the output will be saved to the <code>./scan_reports</code> directory.</p>
-<hr />
-<h2 id="7-delete-all-data">7. Delete All Data<a class="headerlink" href="#7-delete-all-data" title="Permanent link">&para;</a></h2>
-<p>To delete <strong>all IPs</strong> from the project:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>delete
+<h2 id="6-delete-data">6. Delete Data<a class="headerlink" href="#6-delete-data" title="Permanent link">&para;</a></h2>
+<p>To delete all scanned IPs from the project:</p>
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>delete
 </code></pre></div>
 <p>To delete the entire project:</p>
-<div class="highlight"><pre><span></span><code>falcli.py<span class="w"> </span>project<span class="w"> </span>delete<span class="w"> </span>&lt;project_uuid&gt;
+<div class="highlight"><pre><span></span><code>./falcli.py<span class="w"> </span>project<span class="w"> </span>delete<span class="w"> </span>&lt;uuid&gt;
 </code></pre></div>
+<p>This operation removes project data completely from the server.</p>
 <hr />
-<p>These operations represent the core workflow in Falcoria: create a project → launch a scan → check results → export or clean up.</p>
+<p>This represents the essential workflow in Falcoria — project setup, scanning, monitoring, retrieving results, and cleaning up.</p>
 
 
 
