@@ -1,3 +1,5 @@
+site_name: Falcoria Documentation
+
 theme:
   name: material
   features:
