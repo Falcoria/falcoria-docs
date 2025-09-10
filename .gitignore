@@ -15,3 +15,5 @@ __pycache__/
 
 # Ignore VSCode settings and editor files
 .vscode/
+
+structure.txt
