@@ -2,21 +2,34 @@ site_name: Falcoria Documentation
 
 theme:
   name: material
+  language: en
   features:
     - navigation.expand
     - navigation.sections
-    - navigation.indexes   # обязательно!
+    - navigation.indexes
     - navigation.top
     - content.code.copy
 
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - codehilite
+  - toc:
+      permalink: true
+
 nav:
   - Overview: index.md
+
   - Getting Started:
+      - getting-started/index.md
       - Quick Start: quick-start.md
       - Installation:
           - installation/index.md
           - CLI (falcli): installation/falcli.md
           - ScanLedger: installation/scanledger.md
+
   - Concepts:
       - concepts/index.md
       - Architecture: architecture.md
@@ -26,8 +39,9 @@ nav:
           - Replace: import-modes/replace.md
           - Update: import-modes/update.md
           - Append: import-modes/append.md
+
   - Workflows:
-      - use-cases/index.md
+      - workflows/index.md
       - Common Workflow: use-cases/common-workflow.md
       - Rescan: use-cases/rescan.md
       - Team Collaboration: use-cases/team-collaboration.md

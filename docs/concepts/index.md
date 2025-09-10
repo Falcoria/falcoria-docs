@@ -1,8 +1,8 @@
 # Concepts
 
-This section explains the core ideas behind Falcoria:
+This section explains core ideas:
 
-- **Architecture** — how the system is structured and how components interact.  
-- **Import Modes** — different ways to insert, update, and extend scan data.  
+- Overall architecture  
+- Import modes and their purpose  
 
-Use this section as a reference to understand how Falcoria organizes and processes scan results.
+These concepts define how Falcoria manages and organizes scan data.
