@@ -2,14 +2,7 @@
 site_name: Falcoria Documentation
 
 theme:
-  name: material
-  language: en
-  features:
-    - navigation.expand
-    - navigation.sections
-    - navigation.instant
-    - navigation.top
-    - content.code.copy
+    name: readthedocs
 
 markdown_extensions:
   - admonition
