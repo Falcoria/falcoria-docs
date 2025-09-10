@@ -6,3 +6,10 @@ This section explains core ideas:
 - Import modes and their purpose  
 
 These concepts define how Falcoria manages and organizes scan data.
+
+```{toctree}
+:maxdepth: 1
+
+../architecture.md
+../import-modes/index.md
+```

@@ -27,6 +27,20 @@ By default, Falcoria performs **open port detection first**, and then automatica
 
 This approach optimizes performance and minimizes noise while preserving accurate state information for import and merge operations.
 
+```{toctree}
+:maxdepth: 1
+
+common-workflow.md
+import-external-reports.md
+rescan.md
+update-enrichment.md
+port-sharding.md
+scan-configuration.md
+deduplication-behavior.md
+team-collaboration.md
+distributed-scan.md
+```
+
 ---
 
 ## Scan Configs Reference

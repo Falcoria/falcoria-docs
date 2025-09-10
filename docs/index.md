@@ -31,7 +31,7 @@ Falcoria is built for:
 ## What Falcoria Provides
 
 **Speeds up infrastructure scans by splitting tasks across distributed workers.**  
-Scans complete in minutes or hours — not days — with no false positives or missing data.   
+Scans complete in minutes or hours — not days — with no false positives or missing data.
 [Learn how distributed scanning works ›](use-cases/distributed-scan.md)
 
 **Automates scan data management —** merging reports, removing duplicates, and keeping results centrally organized and searchable. No more manual cleanup, scattered files, or repeat scans just to find what you’ve already discovered.  
@@ -56,9 +56,15 @@ Want to see how Falcoria works in practice? Start here:
 
 ---
 
-## Watch Falcoria in Action
+```{toctree}
+:maxdepth: 2
+:caption: User Guide
 
-<video width="800" controls>
-  <source src="videos/falcoria_common_workflow.mp4" type="video/mp4">
-  Your browser does not support the video tag. [Download Video](videos/falcoria_common_workflow.mp4)
-</video>
+README.md
+quick-start.md
+installation/index.md
+concepts/index.md
+import-modes/index.md
+use-cases/index.md
+architecture.md
+```

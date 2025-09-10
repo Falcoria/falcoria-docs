@@ -39,6 +39,15 @@ Each import mode exists to support a specific type of workflow. Here’s how to 
 - **Append** → _“This is more data for the same host — don’t touch what’s already known.”_  
   Designed for phased scanning or port sharding across teams or tools.
 
+  ```{toctree}
+  :maxdepth: 1
+
+  insert.md
+  replace.md
+  append.md
+  update.md
+  ```
+
 - **Update** → _“Let’s improve the quality of the scan details, not the structure.”_  
   Keeps the structure intact but adds more detail where available.
 ---
