@@ -23,25 +23,24 @@ nav:
   - Overview: index.md
 
   - Getting Started:
-      - getting-started/index.md
-      - Quick Start: quick-start.md
+      - Overview: quick-start.md
       - Installation:
-          - installation/index.md
+          - Overview: installation/index.md
           - CLI (falcli): installation/falcli.md
           - ScanLedger: installation/scanledger.md
 
   - Concepts:
-      - concepts/index.md
+      - Overview: concepts/index.md
       - Architecture: architecture.md
       - Import Modes:
-          - import-modes/index.md
+          - Overview: import-modes/index.md
           - Insert: import-modes/insert.md
           - Replace: import-modes/replace.md
           - Update: import-modes/update.md
           - Append: import-modes/append.md
 
   - Workflows:
-      - workflows/index.md
+      - Overview: use-cases/index.md
       - Common Workflow: use-cases/common-workflow.md
       - Rescan: use-cases/rescan.md
       - Team Collaboration: use-cases/team-collaboration.md
