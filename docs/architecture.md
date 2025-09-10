@@ -1,3 +1,4 @@
+
 # Architecture Overview
 
 **Falcoria** is a modular scanning system built for automation and scale. It coordinates multiple machines to scan large environments faster — while keeping results accurate, organized, and easy to access.
@@ -28,17 +29,7 @@
 
 ## System Diagram
 
-```text
-+--------+       +---------------+        +------------+        +-----------+
-| falcli | ────► |  Tasker (API) | ─────► | RabbitMQ   | ─────► |  Worker   |
-+--------+       +---------------+        +------------+        +-----------+
-      ▲                                                                |
-      │                                                                |
-      │                                                                ▼
-      └───────────────────────────────────────────────────►+-------------------+
-                                                           | ScanLedger (API)  |
-                                                           +-------------------+
-```
+<img src="../images/architecture.png" alt="Falcoria Architecture" width="850">
 
 ---
 

@@ -1,7 +1,6 @@
 # Falcoria Use Cases
 
-Falcoria supports structured workflows for scanning, importing, filtering, and managing scan results.  
-This section documents common usage patterns and provides real-world CLI sequences for each.
+Falcoria supports structured workflows for scanning, importing, filtering, and managing scan results. This section documents common usage patterns and provides real-world CLI sequences for each.
 
 Each use case reflects actual red team and recon workflows — from fast scans to controlled project management.
 
@@ -43,7 +42,7 @@ Falcoria uses YAML-based configuration files to control scan behavior.
 
 ## Use Cases Covered
 
-- [Common Operations](common-operations.md)  
+- [Common Workflow](common-workflow.md)  
   Typical create/list/get/delete commands for working with projects, IPs, and ports.
 
 - [Import External Reports](import-external-reports.md)  

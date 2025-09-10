@@ -124,7 +124,7 @@ Create a project via curl:
 
 ```bash
 curl -X POST https://localhost:443/projects \
-  -H "Authorization: Bearer <YOUR_ADMIN_TOKEN>" \
+  -H "Authorization: Bearer <YOUR_AUTH_TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{"project_name": "example-project", "comment": "Initial test"}' \
   --insecure

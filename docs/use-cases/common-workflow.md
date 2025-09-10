@@ -1,157 +1,223 @@
 # Common Workflow
 
-This page covers the common workflow in Falcoria — from creating a project and performing scans to importing results and cleaning up data. It reflects typical steps in a penetration testing or infrastructure assessment flow.
-
-This guide walks through the typical CLI-driven lifecycle: project setup, scanning, result inspection, and cleanup. It is based on real-world usage and helps you quickly adopt Falcoria for internal assessments or red team engagements.
-
-Falcoria CLI supports a descriptive `--help` mechanism. You can inspect available commands and parameters with:
-
-```bash
-falcli.py --help
-falcli.py <subcommand> --help
-```
+This section provides the typical workflow for using Falcoria — from project creation to scanning, status checks, results retrieval, and cleanup.
 
 ---
 
 ## 1. Create a Project
 
-All scanned data in Falcoria is organized into **projects**. Each project has a unique UUID. Internally, Falcoria works with UUIDs, not names.
+All scanned data and related information in Falcoria are grouped under **projects**. This allows clear separation of different assessments.
 
 To create a project:
 
 ```bash
-falcli.py project create pentest_example
+./falcli.py project create pentest_project
 ```
 
-Once created, the project will be stored in local **memory** (you’ll be prompted to save it — and it’s recommended, so you don’t have to enter the UUID manually later).
-
-Memory is a local file that remembers saved project IDs and the last used project. This mechanism helps you avoid typing the UUID every time. 
-To list saved projects in memory and see which one is currently active:
+Example output:
 
 ```bash
-falcli.py memory list
+[+] Project 'pentest_project' created successfully (26e73c7f-c1e3-4131-8ee5-99a01681af9f).
+  project_name  : pentest_project
+  id            : 26e73c7f-c1e3-4131-8ee5-99a01681af9f
+  users         : admin
+First project saved.
 ```
 
-To switch the default project used by all future commands:
+To set the active project:
 
 ```bash
-falcli.py memory set-default <project_uuid>
+./falcli.py project set-active <uuid>
 ```
 
-> Projects themselves live on the server via **ScanLedger**, while memory is managed locally on your machine.
-
-To list all projects stored on the server (not just in local memory):
+List all projects stored on the server:
 
 ```bash
-falcli.py project list
+./falcli.py project list
 ```
 
 ---
 
 ## 2. Start a Scan
 
-To initiate a scan for the current project:
+To launch a scan for the active project:
 
 ```bash
-falcli.py scan start --config scan_configs/default.yaml --targets-file hosts.txt
+./falcli.py scan start --targets-file hosts.txt
 ```
 
-* `--config` is optional; if not set, `default.yaml` is used automatically.
-* You can specify targets explicitly via `--targets-file`.
-
-For available options:
+Example output:
 
 ```bash
-falcli.py scan start --help
+[+] Scan initiated for project: 'pentest_project' (26e73c7f-c1e3-4131-8ee5-99a01681af9f).
+
+Scan Settings
+  Import mode        : insert
+  Nmap (open ports)  : -n --max-retries 1 --min-rate 300 -Pn -p 1-65535
+  Nmap (services)    : -sV -Pn
+  Scan config        : app/data/scan_configs/default.yaml
+
+Scan Summary
+  Targets provided         : 6
+  Duplicates removed       : 1
+  Skipped (already known)  : 0
+  Rejected                 : 0
+  Accepted and sent        : 5
 ```
 
-By specifying a config file with the `--config` parameter, you define how the scan will run — including Nmap options, service detection settings, and the import mode for results.
+To use a different scan configuration:
 
-You can run multiple scans with different configs for different parts of the target list — all tasks will be queued and processed under the same project. This allows phased scanning, where each scan focuses on a specific protocol, range, or depth.
+```bash
+./falcli.py scan start --config ./app/data/scan_configs/web.yaml --targets-file hosts.txt
+```
 
-Scan configurations are YAML files. You can create your own, reuse existing ones, or share them across the team.
+By default, Falcoria skips targets that were already scanned within the project. Only new, unknown hosts are accepted.
+
+To re-scan all targets regardless of previous results, use **replace mode**. See details [here](../import-modes/replace.md).
+
+All available scan options can be reviewed in:
+
+```bash
+./app/data/scan_configs/all_options_example.yaml
+```
+
+Before launching a scan, check available workers:
+
+```bash
+./falcli.py workers ips
+```
+
+Example output:
+
+```bash
+[+] Fetched external IP addresses of active workers.
+
+HOSTNAME      IP               LAST_UPDATED         LAST_UPDATED_AGO
+d2b5c09fe876  134.209.200.222  2025-06-26 15:44:02  25 min ago
+c21da8b747db  146.190.27.214   2025-06-26 15:44:02  25 min ago
+e323a82d28d3  159.223.225.154  2025-06-26 15:44:02  25 min ago
+a5ef4e44ca7b  64.225.64.155    2025-06-26 15:44:02  25 min ago
+
+4 workers online.
+```
+
+Each worker processes one host at a time.
 
 ---
 
-## 3. Check Scan Status
+## 3. Scan Status
 
-While the scan is running, check the real-time status interactively:
+To check current scan status:
 
 ```bash
-falcli.py scan status -i
+./falcli.py scan status
 ```
 
-Remove `-i` to get number of tasks in queue.
-
-To stop the scan (removes all tasks in the queue for this project only):
+Example output:
 
 ```bash
-falcli.py scan stop
+[+] Scan status for project 26e73c7f-c1e3-4131-8ee5-99a01681af9f fetched successfully.
+
+Scan Status Summary
+  Tasks total    : 5
+  Tasks running  : 4
+  Tasks queued   : 1
+
+Running Targets:
+IP               HOSTNAMES  WORKER        STARTED_AT (UTC)     ELAPSED
+142.93.156.194              a5ef4e44ca7b  2025-06-29 17:24:28  0:00:10
+147.182.157.118             d2b5c09fe876  2025-06-29 17:24:28  0:00:10
+143.110.223.7               e323a82d28d3  2025-06-29 17:24:28  0:00:10
+165.22.231.248              c21da8b747db  2025-06-29 17:24:28  0:00:10
+```
+
+For interactive status with auto-refresh:
+
+```bash
+./falcli.py scan status -i
+```
+
+Example interactive output:
+
+```bash
+Scan status for project 'pentest_project' (26e73c7f-c1e3-4131-8ee5-99a01681af9f) fetched successfully.
+
+Scan Status Summary
+  Tasks total    : 5
+  Tasks running  : 4
+  Tasks queued   : 1
+
+Running Targets:
+IP               HOSTNAMES  WORKER        STARTED_AT (UTC)     ELAPSED
+142.93.156.194              a5ef4e44ca7b  2025-06-29 17:24:28  0:00:10
+147.182.157.118             d2b5c09fe876  2025-06-29 17:24:28  0:00:10
+143.110.223.7               e323a82d28d3  2025-06-29 17:24:28  0:00:10
+165.22.231.248              c21da8b747db  2025-06-29 17:24:28  0:00:10
+
+Remaining: 5/5 | Elapsed: 5s
 ```
 
 ---
 
-## 4. Inspect Scan Results
+## 4. Stop Scan
 
-### List IPs with open ports:
+To stop an active scan and terminate all Nmap processes:
 
 ```bash
-falcli.py project ips list
+./falcli.py scan stop
 ```
 
-### View detailed results (Nmap-like output):
+Example output:
 
 ```bash
-falcli.py project ips get
+[+] Scan stopped successfully for project: 'pentest_project' (26e73c7f-c1e3-4131-8ee5-99a01681af9f).
+Revoked 5 tasks.
 ```
 
-By default, only IPs with at least one open port are shown. To also retrieve hosts without open ports:
+If some hosts were partially scanned, re-running the scan will skip already scanned hosts automatically.
+
+---
+
+## 5. Get Scan Results
+
+List results:
 
 ```bash
-falcli.py project ips get --no-has-ports
+./falcli.py project ips get
+```
+
+Download results:
+
+```bash
+./falcli.py project ips download
+```
+
+Example output:
+
+```bash
+[Active Project]: 'pentest_project' (26e73c7f-c1e3-4131-8ee5-99a01681af9f)
+[+] Downloaded IPs report for project '26e73c7f-c1e3-4131-8ee5-99a01681af9f'.
+Saved to: app/data/reports/26e73c7f-c1e3-4131-8ee5-99a01681af9f_ips.xml
 ```
 
 ---
 
-## 5. Per-IP Operations
+## 6. Delete Data
 
-The same `get` and `delete` logic applies to a single IP:
-
-```bash
-falcli.py project ips get <ip_address>
-falcli.py project ips delete <ip_address>
-```
-
-If you omit `<ip_address>`, the command applies to **all IPs** in the current project.
-
----
-
-## 6. Download Results
-
-To save the current project scan results to an XML file:
+To delete all scanned IPs from the project:
 
 ```bash
-falcli.py project ips download
-```
-
-By default, the output will be saved to the `./scan_reports` directory.
-
----
-
-## 7. Delete All Data
-
-To delete **all IPs** from the project:
-
-```bash
-falcli.py project ips delete
+./falcli.py project ips delete
 ```
 
 To delete the entire project:
 
 ```bash
-falcli.py project delete <project_uuid>
+./falcli.py project delete <uuid>
 ```
+
+This operation removes project data completely from the server.
 
 ---
 
-These operations represent the core workflow in Falcoria: create a project → launch a scan → check results → export or clean up.
+This represents the essential workflow in Falcoria — project setup, scanning, monitoring, retrieving results, and cleaning up.

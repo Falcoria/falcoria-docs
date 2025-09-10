@@ -25,17 +25,20 @@ nav:
       - CLI (falcli): installation/falcli.md
       - ScanLedger: installation/scanledger.md
   - Quick Start: quick-start.md
-  - Use Cases:
-      - Overview: use-cases/index.md
-      - Common Operations: use-cases/common-operations.md
-      - Import External Reports: use-cases/import-external-reports.md
-      - Rescan: use-cases/rescan.md
-      - Update Enrichment: use-cases/update-enrichment.md
-      - Port Sharding (Evasion): use-cases/port-sharding.md
   - Import Modes:
       - Overview: import-modes/index.md
       - Insert: import-modes/insert.md
       - Replace: import-modes/replace.md
       - Update: import-modes/update.md
       - Append: import-modes/append.md
+  - Use Cases:
+      - Overview: use-cases/index.md
+      - Common Workflow: use-cases/common-workflow.md
+      - Import External Reports: use-cases/import-external-reports.md
+      - Rescan: use-cases/rescan.md
+      - Update Enrichment: use-cases/update-enrichment.md
+      - Port Sharding (Evasion): use-cases/port-sharding.md
+      - Scan Configuration: use-cases/scan-configuration.md
+      - Deduplication Behavior: use-cases/deduplication-behavior.md
+      - Team Collaboration: use-cases/team-collaboration.md
   - Architecture: architecture.md

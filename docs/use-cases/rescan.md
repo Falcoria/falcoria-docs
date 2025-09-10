@@ -18,17 +18,17 @@ open_ports_opts:
   max_retries: 3
   min_rate: 1000
   ports:
-    - "1-65000"
+    - "1-65535"
 
 service_opts:
-  aggressive_scan: true
-  default_scripts: true
-  os_detection: true
+  aggressive_scan: false
+  default_scripts: false
+  os_detection: false
   traceroute: false
 
 timeout: 1800
 mode: replace
-include_services: true
+include_services: true  # identify services for open ports
 ```
 
 ---
