@@ -32,6 +32,11 @@ nav:
       - Worker: installation/worker.md
       - CLI (falcli): installation/falcli.md
 
+  - Workflow:
+      - workflow/index.md
+      - Typical Workflow: workflow/typical-workflow.md
+      - Import Reports: workflow/import-reports.md
+
   - Concepts:
       - concepts/index.md
       - Deduplication: concepts/deduplication.md
@@ -44,4 +49,3 @@ nav:
           - Update: concepts/import-modes/update.md
           - Append: concepts/import-modes/append.md
 
-  - Workflow: workflow.md
