@@ -34,13 +34,14 @@ nav:
 
   - Concepts:
       - concepts/index.md
-      - Deduplication: use-cases/deduplication-behavior.md
+      - Deduplication: concepts/deduplication.md
+      - History Tracking: concepts/track-history.md
+      - Distribution: concepts/distribution.md
       - Import Modes:
-          - import-modes/index.md
-          - Insert: import-modes/insert.md
-          - Replace: import-modes/replace.md
-          - Update: import-modes/update.md
-          - Append: import-modes/append.md
+          - concepts/import-modes/index.md
+          - Insert: concepts/import-modes/insert.md
+          - Replace: concepts/import-modes/replace.md
+          - Update: concepts/import-modes/update.md
+          - Append: concepts/import-modes/append.md
 
-  - Workflow:
-      - workflow/index.md
+  - Workflow: workflow.md
