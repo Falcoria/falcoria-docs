@@ -1,6 +1,6 @@
 
 # Distributed Scanning
-
+# Distributed Scanning
 ---
 
 ## Why Distributed Scanning Matters

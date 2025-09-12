@@ -1,47 +1,40 @@
 # What is Falcoria
 
-**Falcoria** is a distributed scanning and coordination platform built for penetration testers and red teams. It automates host discovery, port scanning, and result consolidation across multiple systems — giving you real-time visibility into your perimeter and removing the need for fragmented tools or outdated results.
+**Falcoria** is a collaborative platform for storing and managing port scanning data, providing a single shared view of hosts, ports, and services for the entire team.
+It maintains a structured dataset of discovered hosts, ports, and services, accessible to all team members.
 
 ---
 
 ## Why Falcoria
 
-Falcoria is not just a scanner — it's a real-time perimeter awareness system designed to help you stay in control of your external attack surface.
+During assessments teams face challenges:
 
-### Key Benefits
+- scope targets (hostnames, IPs, CIDRs) change during the engagement
+- ports open or close, services update banners or versions
+- results are split across separate reports — top ports, HTTP-only, subsets of hosts — and need to be merged
+- the same host may be scanned multiple times under IP, CIDR, or hostname
+- difficult to track changes between scans and maintain history
+- scan speed limitations — scanners hit bandwidth or rate limits, so teams adjust accuracy for speed
 
-✅ **Lightning-fast distributed scanning** — Split tasks across multiple workers to drastically reduce scan time.  
+Without a shared system, gaps in handling these cases lead to wasted time and uncovered hosts or ports.
 
-✅ **Intelligent updates and clean data handling** — Filters duplicates, tracks meaningful changes, and keeps your results organized. Four import modes give you complete control over how data is added, updated, or replaced.  
+### Key Features
 
-✅ **Centralized visibility and perimeter control** — Scan results and configurations stay in one place. Full CLI management to launch scans, track status, and review results. Built for teams that need perimeter control, not guesswork.
+✅ **Deduplication** — IPs, hostnames, and ports are not scanned unintentionally more than once. If two hostnames resolve to the same IP, it is scanned only once.
 
----
+✅ **Single source of truth** — Each IP, hostname, and port exists as a unique entry in one dataset, available to the team.
+
+✅ **Flexible updates** — Any entry can be updated or extended without affecting others. For example, you can start with HTTP ports, then add all remaining ports, or rescan the top-1000 — only selected entries change.
+
+✅ **Change tracking** — New hosts, port state changes, and service banner updates are recorded in history.
+
+✅ **Distributed scans** — During the scanning phase, hosts are divided between workers, and each worker scans one host at a time. This reduces bandwidth bottlenecks, avoids rate limits, and results arrive host by host.
 
 ## Who It's For
 
-Falcoria is built for:
-
-- Penetration testers managing complex or dynamic scopes  
-- Red teams running distributed reconnaissance  
-- Security engineers automating scan workflows across environments  
-
----
-
-## What Falcoria Provides
-
-**Speeds up infrastructure scans by splitting tasks across distributed workers.**  
-Scans complete in minutes or hours — not days — with no false positives or missing data.
-[Learn how distributed scanning works ›](use-cases/distributed-scan.md)
-
-**Automates scan data management —** merging reports, removing duplicates, and keeping results centrally organized and searchable. No more manual cleanup, scattered files, or repeat scans just to find what you’ve already discovered.  
-[Learn how deduplication works ›](use-cases/deduplication-behavior.md)
-
-**Delivers real-time access to scan results for every team member —** with native support for JSON, XML, and API integrations. No waiting for reports, no manual exports, no compatibility issues between tools or teammates.  
-[See how teams access and collaborate on results ›](use-cases/team-collaboration.md)
-
-**Scales with your needs —** start with a one-liner, or dive deep using config files and CLI options. Share scan presets across teams for consistency, or fine-tune settings per project for precise control.  
-[See how to configure and share scan presets ›](use-cases/scan-configuration.md)
+- Penetration testers working with changing scopes
+- Red team operators running large-scale reconnaissance
+- Security engineers maintaining an up-to-date view of exposed services
 
 ---
 
@@ -50,21 +43,8 @@ Scans complete in minutes or hours — not days — with no false positives or m
 Want to see how Falcoria works in practice? Start here:  
 [Common Workflow — Step-by-Step Example](use-cases/common-workflow.md)
 
-- [Installation Guide](installation.md)
-- [Import Modes](import-modes/index.md)
-- [Architecture Overview](architecture.md)
+- [Installation Guide](installation.md)  
+- [Import Modes](import-modes/index.md)  
+- [Architecture Overview](architecture.md)  
 
 ---
-
-```{toctree}
-:maxdepth: 2
-:caption: User Guide
-
-README.md
-quick-start.md
-installation/index.md
-concepts/index.md
-import-modes/index.md
-use-cases/index.md
-architecture.md
-```

@@ -1,7 +1,8 @@
-
 # Architecture Overview
 
 **Falcoria** is a modular scanning system built for automation and scale. It coordinates multiple machines to scan large environments faster — while keeping results accurate, organized, and easy to access.
+
+<img src="../images/architecture.png" alt="Falcoria Architecture" width="850">
 
 ---
 
@@ -24,12 +25,6 @@
 
 - **RabbitMQ**  
   Message broker that distributes scan tasks from Tasker to Worker nodes.
-
----
-
-## System Diagram
-
-<img src="../images/architecture.png" alt="Falcoria Architecture" width="850">
 
 ---
 
