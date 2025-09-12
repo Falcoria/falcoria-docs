@@ -1,8 +1,15 @@
 # Concepts
 
-This section explains core ideas:
+This section explains the key mechanisms that define how Falcoria works.  
+They are not optional features, but the foundation that makes it different from traditional scanning tools.
 
-- Overall architecture  
-- Import modes and their purpose  
+---
 
-These concepts define how Falcoria manages and organizes scan data.
+## What Concepts Cover
+
+- [**Deduplication**](deduplication.md): Prevents duplicate scans and tasks, saving time and resources.  
+- [**Distribution**](distribution.md): Enables fast, parallel scanning by splitting work across multiple workers.  
+- [**History Tracking**](track-history.md): Records changes between scans, so teams can focus on what matters.  
+- [**Import Modes**](import-modes/index.md): Controls how new data is merged, updated, or replaced in the system.  
+
+Together, these concepts address the main challenges of large and changing scopes.

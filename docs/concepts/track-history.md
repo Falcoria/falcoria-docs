@@ -1,26 +1,22 @@
-# Track History
+# History Tracking
 
-Falcoria supports update enrichment to keep scan results current and accurate. The update mode allows you to enrich existing scan data with new ports, updated banners, or improved service information, without deleting previous results.
+Falcoria keeps track of changes between scans.  
+This is useful when working with large scopes, where manually spotting differences is nearly impossible.
 
 ---
 
-## Update Enrichment
+## What Is Recorded
 
-Use this mode when you want to enrich existing scan results with new data, such as additional ports, updated banners, or service info. The `update` mode does not delete existing data — it only adds or refreshes what’s newly discovered.
+For each port, history is written only when existing data changes:
 
-### Behavior
+- **State** — e.g., from `open` to `closed`.  
+- **Service** — detected service on the port.  
+- **Banner** — application banner or version string.  
 
-- Keeps existing IPs and ports.
-- Updates services, banners, and metadata if improved information is discovered.
-- Adds new open ports that weren’t previously present.
-- Does not remove or overwrite existing data unless newer values are found.
+---
 
-### Use Case
+## Why This Matters
 
-You’ve already scanned an infrastructure and now want to:
-
-- Improve service detection with more aggressive settings
-- Refresh outdated banner info
-- Update open port set with additional targets or new exposure
-
-This is a safe mode to run multiple times without losing data.
+- On large scopes with hundreds of IPs and many ports, rescans can produce huge result sets.  
+- History highlights only what changed, so teams know exactly where to focus attention.  
+- This makes follow‑up checks faster and ensures important changes are not missed.

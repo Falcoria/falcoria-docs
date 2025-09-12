@@ -7,7 +7,7 @@ It maintains a structured dataset of discovered hosts, ports, and services, acce
 
 ## Why Falcoria
 
-During assessments teams face challenges:
+Falcoria addresses the common problems that appear in every large-scope assessment:
 
 - scope targets (hostnames, IPs, CIDRs) change during the engagement
 - ports open or close, services update banners or versions

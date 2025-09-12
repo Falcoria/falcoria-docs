@@ -1,45 +1,33 @@
 # Distribution
 
-Distributed scanning in Falcoria enables large-scale perimeter scans by splitting tasks across multiple workers. This approach increases effective bandwidth, reduces scan time, and consolidates results efficiently.
+Distributed scanning in Falcoria is designed to increase scan speed on large scopes by splitting tasks across multiple workers.  
+The key limitation in large-scale scanning is **network bandwidth**. Distribution bypasses this limitation by scaling horizontally.
 
 ---
 
-## Why Distributed Scanning Matters
+## Why Distribution Matters
 
-Traditional perimeter scans are limited by:
-
-- The number of machines the team can use, and the manual effort needed to merge results.
-- Network bandwidth and latency limits — or losing accuracy when trying to scan too fast.
-
-Distributed scanning helps overcome these limits by increasing effective network bandwidth while keeping full scan accuracy.
+- A single machine is limited by bandwidth and latency.  
+- Faster scans often reduce accuracy when done on one system.  
+- Distribution allows multiple workers to scan in parallel, keeping accuracy while reducing time.  
+- More workers = faster scans.  
 
 ---
 
-## When to Use Distributed Scanning
+## How It Works
 
-Use distributed scanning when:
+1. The project scope is split into individual tasks (one host, one IP).  
+2. Tasks are placed into a queue.  
+3. Workers pick tasks from the queue and run scans in parallel.  
+4. Results are collected in **ScanLedger**.  
+5. The CLI retrieves consolidated results from ScanLedger.  
 
-- You are scanning a large perimeter (hundreds or thousands of IPs).
-- You want to reduce total scan time by a factor of 10 or more — from days to hours or minutes.
-- You want to collect all scan results in one place, fully consolidated.
-- You want to run scans from machines closer to specific targets to reduce latency and improve efficiency.
-
----
-
-## Behavior Summary
-
-The process of a distributed scan in Falcoria looks like this:
-
-- The project scope is split into individual scan tasks.
-- Each scan task represents one Nmap scan of one IP with specific scan parameters.
-- Scan tasks are distributed to available scanner workers.
-- Each worker performs its assigned scans and pushes results to ScanLedger.
-- The CLI retrieves consolidated results from ScanLedger when requested.
+[IMAGE PLACEHOLDER: Insert diagram here showing scope split into tasks, queue, and workers consuming tasks]
 
 ---
 
 ## Notes
 
-- Distributed scanning is safe — each scan task runs exactly as it would locally on a single machine.
-- Scan accuracy is preserved — results are identical to standard Nmap output.
-- Speed gains depend on the number of workers and the size of the target perimeter.
+- Distributed scanning keeps results identical to local scans — only speed changes.  
+- It can be combined with [Deduplication](deduplication.md) to avoid rescanning targets.  
+- With import modes, distribution can also help bypass rate limits by splitting large port ranges across workers when needed.  

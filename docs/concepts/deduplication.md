@@ -1,60 +1,55 @@
 # Deduplication Behavior
 
-Falcoria applies deduplication at multiple stages of the scanning workflow. This ensures efficient resource usage, consistent scan results, and seamless support for resuming interrupted scans. This document describes how deduplication works both during the import of external scan reports and during the scan phase itself.
+Falcoria applies deduplication at several stages of the workflow.  
+This prevents duplicate work, reduces scan time, avoids creating unnecessary tasks, and helps lower the probability of hitting rate limits.
+
+**Deduplication:**  
+
+- [String duplicates in input files](#string-duplicates-in-input-files)  
+- [Unification of subnets and hostnames](#unification-of-subnets-and-hostnames)  
+- [Skipping already stored targets (ScanLedger)](#skipping-already-stored-targets-scanledger)  
+- [Skipping duplicate tasks in the queue](#skipping-duplicate-tasks-in-the-queue)
 
 ---
 
-## Deduplication During Scan Report Imports
+## String duplicates in input files
 
-When importing external Nmap reports, Falcoria uses import modes to control how incoming data is merged with existing results. These modes prevent duplication of previously scanned ports, IPs, or entries that match known states.
+When a user provides a list of targets, duplicate string entries are removed.  
+For example, if the same hostname or IP address appears multiple times, only one copy is kept.  
 
-The deduplication logic depends entirely on the selected import mode. For example:
-
-- `insert` will skip any existing entries
-- `replace` will remove and overwrite previous data
-- `update` only modifies ports that already exist
-
-To understand these behaviors in depth, see the following resources:
-
-- [Import External Reports Use Case](../use-cases/import-external-reports.md)
-- [Import Modes Overview](../import-modes/index.md)
+**Image placeholder:** show a list with duplicate entries → deduplicated list with unique targets.  
 
 ---
 
-## Why Deduplication Matters
+## Unification of subnets and hostnames
 
-Falcoria’s deduplication mechanisms are critical for:
+Falcoria normalizes mixed input before creating scan tasks:  
 
-- Reducing scan duration by avoiding repeated work
-- Preventing duplicate entries in the project database
-- Minimizing network and system load
-- Enabling scan resumption without reconfiguration or manual filtering
+- Subnets (CIDR) are expanded into full lists of IP addresses.  
+- Hostnames are resolved to IP addresses.  
+- The final dataset contains only unique IPs and the hostnames associated with them.  
 
-Once a host is scanned or queued, Falcoria will skip it on repeated execution of the same scan command. This allows the system to resume scans from where they stopped and prevents duplicate tasks from being created.
+This ensures the same address is never scanned twice. It also shortens scan time and lowers the chance of triggering blocking mechanisms.  
+
+**Image placeholder:** show subnet expansion and hostname resolution → resulting unique IP/hostname map.  
 
 ---
 
-## Deduplication During Scanning
+## Skipping already stored targets (ScanLedger)
 
-Falcoria applies three layers of deduplication during the scan phase:
+If a target has already been scanned and exists in **ScanLedger**, it will not be scanned again.  
+This applies both to new scans and to report imports.  
 
-### 1. Deduplication of User-Provided Hosts
+By default, this behavior is active in **Insert mode**.  
+For details about other modes, see [Import Modes](../import-modes/index.md).  
 
-If the user supplies a target file that contains duplicate entries, only unique hosts will be accepted. The deduplication occurs at the [Tasker](../architecture.md) level before queueing begins.
+**Image placeholder:** show ScanLedger with already stored IPs → new incoming data skipped.  
 
-**Example: Hosts file with duplicates**
-```bash
-$ cat hosts_with_duplicates.txt
-159.223.15.22
-159.223.15.22
-188.166.121.245
-```
+---
 
-**Scan execution after input deduplication**
-```bash
-$ ./falcli.py scan start --targets-file hosts_with_duplicates.txt
-[+] Scan targets sent for project 4e0d5a24-791d-4abb-a1fd-212f738b48b8.
-[+] Sent to scan:
-  - 159.223.15.22
-  - 188.166.121.245
-```
+## Skipping duplicate tasks in the queue
+
+If an identical target is already queued for scanning, a new task will not be created.  
+This prevents multiple team members or processes from scanning the same target at the same time.  
+
+**Image placeholder:** show queue with existing tasks → duplicate request rejected.  
