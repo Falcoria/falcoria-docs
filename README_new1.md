@@ -16,13 +16,13 @@ During assessments teams face challenges:
 - difficult to track changes between scans and maintain history
 - scan speed limitations — scanners hit bandwidth or rate limits, so teams adjust accuracy for speed
 
-These issues lead to repeated work, inconsistent data, and missed hosts or ports.
+Without a shared system, gaps in handling these cases lead to wasted time and uncovered hosts or ports.
 
 ### Key Features
 
 ✅ **Deduplication** — IPs, hostnames, and ports are not scanned unintentionally more than once. If two hostnames resolve to the same IP, it is scanned only once.
 
-✅ **Single source of truth** — Each IP, hostname, and port exists as a unique entry in one dataset, available to the whole team.
+✅ **Single source of truth** — Each IP, hostname, and port exists as a unique entry in one dataset, available to the team.
 
 ✅ **Flexible updates** — Any entry can be updated or extended without affecting others. For example, you can start with HTTP ports, then add all remaining ports, or rescan the top-1000 — only selected entries change.
 

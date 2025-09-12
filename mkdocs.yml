@@ -20,33 +20,27 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - Overview: index.md
+  - Overview:
+      - index.md
+      - Architecture: architecture.md
+      - Quick Start: quick-start.md
 
-  - Getting Started:
-      - Overview: quick-start.md
-      - Installation:
-          - Overview: installation/index.md
-          - CLI (falcli): installation/falcli.md
-          - ScanLedger: installation/scanledger.md
+  - Installation:
+      - installation/index.md
+      - ScanLedger: installation/scanledger.md
+      - Tasker: installation/tasker.md
+      - Worker: installation/worker.md
+      - CLI (falcli): installation/falcli.md
 
   - Concepts:
-      - Overview: concepts/index.md
-      - Architecture: architecture.md
+      - concepts/index.md
+      - Deduplication: use-cases/deduplication-behavior.md
       - Import Modes:
-          - Overview: import-modes/index.md
+          - import-modes/index.md
           - Insert: import-modes/insert.md
           - Replace: import-modes/replace.md
           - Update: import-modes/update.md
           - Append: import-modes/append.md
 
-  - Workflows:
-      - Overview: use-cases/index.md
-      - Common Workflow: use-cases/common-workflow.md
-      - Rescan: use-cases/rescan.md
-      - Team Collaboration: use-cases/team-collaboration.md
-      - Port Sharding: use-cases/port-sharding.md
-      - Scan Configuration: use-cases/scan-configuration.md
-      - Deduplication: use-cases/deduplication-behavior.md
-      - Import External Reports: use-cases/import-external-reports.md
-      - Update Enrichment: use-cases/update-enrichment.md
-      - Distributed Scan: use-cases/distributed-scan.md
+  - Workflow:
+      - workflow/index.md
