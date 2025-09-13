@@ -3,19 +3,19 @@ site_name: Falcoria Documentation
 theme:
   name: material
   language: en
-    palette:
-        - scheme: default
-            primary: indigo
-            accent: indigo
-            toggle:
-                icon: material/weather-night
-                name: Switch to dark mode
-        - scheme: slate
-            primary: indigo
-            accent: indigo
-            toggle:
-                icon: material/weather-sunny
-                name: Switch to light mode
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.expand
     - navigation.sections
@@ -61,4 +61,3 @@ nav:
           - Replace: concepts/import-modes/replace.md
           - Update: concepts/import-modes/update.md
           - Append: concepts/import-modes/append.md
-
