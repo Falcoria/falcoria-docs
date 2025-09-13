@@ -31,16 +31,8 @@ Without a shared system, gaps in handling these cases lead to wasted time and un
 
 ✅ **Distributed scans** — During the scanning phase, hosts are divided between workers, and each worker scans one host at a time. This reduces bandwidth bottlenecks, avoids rate limits, and results arrive host by host.
 
----
-
-![Small Illustration](images/small.png)
-*Small workflow illustration.*
-
-![Small Illustration 1](images/small1.png)
-*Additional small workflow illustration.*
-
-![Small Illustration 3](images/small3.png)
-*Third small workflow illustration.*
+![Workflow with Service](images/small_w_service.png)
+*Workflow illustration with service integration.*
 
 ## Who It's For
 
