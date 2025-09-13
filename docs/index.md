@@ -38,6 +38,8 @@ Without a shared system, gaps in handling these cases lead to wasted time and un
 
 *Falcoria scanning phases: visual summary of the process from target discovery to distributed scan completion.*
 
+![Blue-Grey Illustration](images/blue-grey.png)
+*Blue-grey workflow illustration.*
 ![Scan Phase: Initial Targets](images/sp_grey0.png)
 *Initial targets identified for scanning.*
 
