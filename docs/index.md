@@ -33,9 +33,22 @@ Without a shared system, gaps in handling these cases lead to wasted time and un
 
 ---
 
+
 ![Scanning Phases](images/scanning-phases.png)
 
 *Falcoria scanning phases: visual summary of the process from target discovery to distributed scan completion.*
+
+![Scan Phase: Initial Targets](images/sp_grey0.png)
+*Initial targets identified for scanning.*
+
+![Scan Phase: Light Scan 1](images/sp_light0.png)
+*First light scan performed on selected targets.*
+
+![Scan Phase: Light Scan 2](images/sp_light1.png)
+*Second light scan expands coverage or refines results.*
+
+![Scan Phase: Full Scan](images/sp_light2.png)
+*Full scan phase for comprehensive results and enrichment.*
 
 ## Who It's For
 
