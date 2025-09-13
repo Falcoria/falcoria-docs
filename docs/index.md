@@ -47,8 +47,12 @@ Without a shared system, gaps in handling these cases lead to wasted time and un
 ![Scan Phase: Light Scan 2](images/sp_light1.png)
 *Second light scan expands coverage or refines results.*
 
+
 ![Scan Phase: Full Scan](images/sp_light2.png)
 *Full scan phase for comprehensive results and enrichment.*
+
+![Falcoria AI Integration](images/gpt1.png)
+*Example of Falcoria integrating AI for scan enrichment or analysis.*
 
 ## Who It's For
 
