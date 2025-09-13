@@ -39,6 +39,9 @@ Without a shared system, gaps in handling these cases lead to wasted time and un
 ![Small Illustration 1](images/small1.png)
 *Additional small workflow illustration.*
 
+![Small Illustration 3](images/small3.png)
+*Third small workflow illustration.*
+
 ## Who It's For
 
 - Penetration testers working with changing scopes
