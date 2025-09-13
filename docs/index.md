@@ -18,6 +18,7 @@ Falcoria addresses the common problems that appear in every large-scope assessme
 
 Without a shared system, gaps in handling these cases lead to wasted time and uncovered hosts or ports.
 
+
 ### Key Features
 
 ✅ **Deduplication** — IPs, hostnames, and ports are not scanned unintentionally more than once. If two hostnames resolve to the same IP, it is scanned only once.
@@ -29,6 +30,12 @@ Without a shared system, gaps in handling these cases lead to wasted time and un
 ✅ **Change tracking** — New hosts, port state changes, and service banner updates are recorded in history.
 
 ✅ **Distributed scans** — During the scanning phase, hosts are divided between workers, and each worker scans one host at a time. This reduces bandwidth bottlenecks, avoids rate limits, and results arrive host by host.
+
+---
+
+![Scanning Phases](images/scanning-phases.png)
+
+*Falcoria scanning phases: visual summary of the process from target discovery to distributed scan completion.*
 
 ## Who It's For
 
