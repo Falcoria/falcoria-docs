@@ -1,57 +1,35 @@
-# Architecture Overview
+# Architecture
 
-**Falcoria** is a modular scanning system built for automation and scale. It coordinates multiple machines to scan large environments faster — while keeping results accurate, organized, and easy to access.
+Falcoria is built as a set of components that work together to manage and update port scanning data.
 
-<img src="../images/architecture.png" alt="Falcoria Architecture" width="850">
-
----
-
-## Core Components
-
-- **CLI (`falcli`)**  
-  Command-line interface for launching scans, importing data, and retrieving results via API.
-
-- **Tasker (API)**  
-  Orchestrates scan requests. It validates input, deduplicates targets, associates scans with projects, and queues tasks for execution.
-
-- **Worker**  
-  Executes scan tasks using Nmap. Designed for parallel execution and horizontal scaling.
-
-- **ScanLedger (API)**  
-  Backend API for storing and retrieving scan results. Also supports importing external scan data and accessing metadata.
-
-- **Redis**  
-  Tracks scan state during execution and enforces deduplication during task creation.
-
-- **RabbitMQ**  
-  Message broker that distributes scan tasks from Tasker to Worker nodes.
+![System Diagram](images/architecture.png)
 
 ---
 
-## Scan Workflow
+## Components by Layer
 
-1. The user runs `falcli` with a list of targets and optional scan configuration.
-2. `falcli` sends the request to Tasker via API.
-3. Tasker validates the request, links it to a project, applies deduplication, and prepares scan tasks.
-4. Tasks are pushed to RabbitMQ.
-5. Workers receive tasks and execute scans using Nmap.
-6. Scan results are sent to ScanLedger.
-7. Results can be retrieved via `falcli`.
+### Storage — ScanLedger
+
+The central database. Stores projects, IPs, hosts, ports, and results.  
+Implements deduplication and history tracking when new data is added or updated.
+
+### Coordination — Tasker
+
+The service that creates scan tasks and places them into queues.  
+Handles distribution logic so multiple workers can process tasks in parallel.
+
+### Execution — Workers
+
+Workers perform scans. Each worker picks tasks from the queue, runs the scan, and sends results back to ScanLedger.
+
+### Access — CLI (falcli)
+
+The interface for users. Provides commands to create projects, run scans, import results, and view data.
 
 ---
 
-## Scalability
+## Notes
 
-- Workers can be added or removed dynamically.
-- Each Worker supports parallel execution.
-- The architecture has no fixed upper limit on Worker count.
-
----
-
-## Extensibility
-
-Falcoria is built for modularity and scan chaining. Planned or supported extensions include:
-
-- Tool chaining (e.g., Nmap → Nuclei)
-- Conditional workflows and multi-stage task logic
-- Reusable scan templates with structured logic
+- All results are consolidated in ScanLedger.  
+- Distribution is achieved through Tasker and Workers.  
+- Deduplication and history tracking are applied automatically during updates.  

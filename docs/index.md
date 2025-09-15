@@ -46,8 +46,8 @@ Without a shared system, teams waste time, duplicate effort, and still miss host
 Want to see how Falcoria works in practice? Start here:  
 [Common Workflow — Step-by-Step Example](workflow/typical-workflow.md)
 
-- [Installation Guide](installation)  
-- [Import Modes](import-modes)
+- [Installation Guide](installation.md)  
+- [Import Modes](concepts/import-modes.md)
 - [Architecture Overview](architecture.md)  
 
 ---
