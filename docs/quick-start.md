@@ -33,7 +33,7 @@ falcli project scan status
 ### 4. Get Scanned IPs
 
 ```bash
-falcli project ips list
+falcli project ips get
 ```
 
 ### 5. Download Report
