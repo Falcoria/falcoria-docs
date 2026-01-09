@@ -1,52 +1,38 @@
-# `replace` Mode
+# Replace Mode
 
-The `replace` mode is a **destructive import mode** — it fully **removes and replaces** existing data for matching IPs.  
-If an IP already exists in the project, it will be **wiped clean** (including all ports and metadata) and replaced with the data from the new report.
-
-Use this mode when you want to overwrite outdated or incorrect scan results with fresh, authoritative data.
+The **Replace** mode imports new results and overwrites existing ports for matching IPs.  
+Ports not included in the new scan remain unchanged.
 
 ---
 
-## ✅ When to Use `replace`
+## Behavior
 
-Use this mode when:
+- If an IP does not exist in the project → it will be added with its ports.  
+- If an IP exists → ports from the new report replace existing ones for that IP.  
+- Ports not present in the new report are removed only if they were explicitly included and marked as closed.  
 
-- You're resyncing results from a more complete or trusted scan
-- You need to clean up bad or partial scan data
-- You’re running a re-scan and want to discard old port states
-- You’re enforcing source-of-truth data from a central scan server
-
----
-
-## 🧠 Behavior Summary
-
-- If an IP does **not** exist in the project → it will be added normally
-- If an IP **already exists** → its entire record will be deleted and replaced
-- Port and metadata fields are wiped and re-imported in full
+**Image placeholder:** canvas showing dataset before and after → updated ports overwrite old ones.
 
 ---
 
-## ⚠️ Warning
+## When to Use
 
-`replace` is **not reversible**. Once imported, previous data is lost unless you have a backup.  
-Use with care, especially in collaborative environments.
+Use Replace when you want to refresh data for specific IPs and overwrite outdated port states, for example:  
+
+- Rescanning an IP with a different port range.  
+- Correcting results after a failed or partial scan.  
+- Ensuring only the latest scan data is kept for those IPs.  
 
 ---
 
-## 💡 Example
+## Example
 
 ```bash
-python3 falcli.py project ips import --file report_replace1.xml --mode replace
-```
-
-Output:
-
-```text
-Imported IPs report into project 'example-project-id'. Result: 1 IP.
+falcli project ips import --file report_replace1.xml --mode replace
 ```
 
 ---
 
-## 🔗 Try It Yourself
+## Reference
 
-- [Step-by-Step Example on GitHub](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-replace)
+- [Practical Example on GitHub](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-replace)

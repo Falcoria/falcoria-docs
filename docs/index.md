@@ -1,53 +1,111 @@
 # What is Falcoria
 
-**Falcoria** is a collaborative platform for managing port scanning data as a single structured dataset.  
-It gives teams one place to track hosts, ports, and services, keeping results consistent and up to date across scans, while the distributed scanner speeds up data collection and updates.
+Falcoria is a system for team-based network scanning for large and dynamic scopes.
+Each scan run updates a shared map of hosts, ports, and services.
 
 ---
 
-## Why Falcoria
+Falcoria centralizes network scanning work across a team.
+It solves two core problems: the speed of data collection and the consistency in how scan data is stored and shared.
 
-Falcoria addresses the common problems that appear in every large-scope assessment:
+This is achieved through two core parts:
 
-- targets change during the engagement (IPs, hostnames, subnets)
-- ports open or close, services update banners or versions
-- results are scattered across separate reports — top ports, HTTP-only, subsets of hosts — and need to be merged
-- the same asset may be scanned multiple times under IP, CIDR, or hostname
-- hard to track changes between scans and maintain history
-- scans run slowly due to rate limits or bandwidth bottlenecks, so teams adjust accuracy for speed
+- **Scan execution** — responsible for collecting scan data for large and dynamic scopes  
+- **Data aggregation** — responsible for merging fragmented scan runs into one consistent network state  
 
-Without a shared system, teams waste time, duplicate effort, and still miss hosts or ports.
+---
 
-### Key Features
+## Scan Execution
 
-✅ **Deduplication** — No unintentional duplicate scans. If two hostnames resolve to the same IP, it is scanned only once.
+This module handles scan execution for large and dynamic scopes, addressing two core constraints: execution speed and network load.
 
-✅ **Single source of truth** — Each IP, hostname, and port exists as a unique entry in one dataset, available to the team.
+---
 
-✅ **Flexible updates** — Any entry can be updated or extended without affecting others. For example, you can start with HTTP ports, then add all remaining ports, or rescan the top-1000 — only selected entries change.
+### Core mechanisms
 
-✅ **Change tracking** — New hosts, port state changes, and service banner updates are recorded in history.
+- **Distributed scanning**  
+  Tasks are executed across multiple workers, reducing total scan time proportionally to the number of active workers.
 
-✅ **Distributed scans** — Hosts are divided between workers, each scanning one host at a time. This reduces bandwidth bottlenecks, avoids rate limits, and results arrive host by host.
+- **Target deduplication**  
+  Four built-in deduplication mechanisms prevent duplicate targets and redundant network requests before execution starts.
 
-![Workflow with Service](images/small_w_service.png)
-*Workflow illustration with service integration.*
+- **Optimized scan configurations**  
+  Pre-tuned scanning profiles, selected through 5000+ empirical tests, provide a reliable baseline for speed and accuracy.
+
+---
+
+### Results
+
+- **Speed**: Scan execution completes **10×–100× faster** compared to single-node scanning.
+- **Lower network impact**: Fewer redundant requests reduce overall network traffic, minimizing disruption to the target network.
+- **Reduced blocking risk**: Lower request volume and reduced scan noise decrease the likelihood of triggering rate limits or security controls.
+
+Detailed performance data and test methodology are documented separately.
+
+→ **Benchmarks**
+
+---
+
+## Data Aggregation
+
+This module addresses the problem of fragmented scan data and loss of context in team-based workflows.  
+Scan results incrementally update a shared network state.
+
+---
+
+### Core mechanisms
+
+- **State-based data model**  
+  Scan data is stored as a single shared network state composed of unique records.  
+  Duplicate entries across reports (hosts, ports, services) are merged automatically, keeping one current view of the network available to the entire team.
+
+- **Order-independent updates**  
+  Scan results can be applied in any order.  
+  Four import modes define how new scan data is merged into the existing state.  
+  For example, extending a scan from 80 ports to 1,000 adds only newly discovered ports.
+
+- **Change tracking**  
+  Changes to ports and services are recorded whenever new data is applied.  
+  The history logs what changed and when, including updates to port state, service, and service banner data.
+
+- **API and export access**  
+  Aggregated scan data is available via an API and standardized export formats, including Nmap XML and JSON.  
+  This allows teams to retrieve a unified network view and integrate it into existing tools, automation, and reporting pipelines.
+
+- **CLI-based data exploration**  
+  Scan data can be explored using a dedicated CLI, providing structured output and controlled navigation through large result sets.
+
+---
+
+### Results
+
+- **Single shared dataset**  
+  Scan results are kept in one place, removing the need to manually merge reports or exchange files between team members.
+
+- **Continuity over time**  
+  Data remains usable across repeated scans and scope changes, supporting both long-running engagements and rapidly changing environments.
+
+- **Focused change tracking**  
+  Users can quickly see what changed since the last scan and focus only on new or modified ports and services instead of rechecking the entire dataset.
+
+- **Shared team context**  
+  Everyone on the team works with the same up-to-date network view, eliminating confusion about which results are current.
 
 ## Who It's For
 
-- Penetration testers working with changing scopes
-- Red team operators running large-scale reconnaissance
-- Security engineers maintaining an up-to-date view of exposed services
+- Penetration testers working with large or frequently changing scopes
+- Red team operators performing repeated network discovery
+- Security engineers maintaining a current view of exposed hosts, ports, and services
 
 ---
 
 ## Get Started
 
-Want to see how Falcoria works in practice? Start here:  
-[Common Workflow — Step-by-Step Example](workflow/typical-workflow.md)
+To understand how Falcoria is used in practice, start here:  
+[Common Workflow — Step-by-Step Example](workflow/typical-workflow)
 
-- [Installation Guide](installation.md)  
-- [Import Modes](concepts/import-modes.md)
-- [Architecture Overview](architecture.md)  
+- [Installation Guide](installation)  
+- [Import Modes](concepts/import-modes)
+- [Architecture Overview](architecture)  
 
 ---

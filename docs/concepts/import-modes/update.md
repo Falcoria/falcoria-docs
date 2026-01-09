@@ -1,54 +1,40 @@
-# `update` Mode
+# Update Mode
 
-The `update` mode allows you to **enrich or refine** existing scan data without overwriting the entire IP record.  
-It performs a **smart field-level merge** — updating only the values that are explicitly present in the new report.
-
-This is perfect for progressive scanning, banner grabbing, or incrementally improving service detection.
+The **Update** mode adds new IPs and ports, and updates existing ones when their state, banner, or service changes.  
+Existing data is never removed.
 
 ---
 
-## ✅ When to Use `update`
+## Behavior
 
-Use this mode when:
+- If an IP does not exist in the project → it will be added with its ports.  
+- If an IP exists →  
+  - new ports are added,  
+  - existing ports are updated if state, banner, or service differs,  
+  - no ports are deleted.  
 
-- You're enriching data with additional scan phases (e.g. version detection)
-- You're merging passive and active results for the same IPs
-- You're updating banners, services, or OS details from more specialized tools
-- You want to preserve existing port data while refining metadata
-
----
-
-## 🧠 Behavior Summary
-
-- If an IP does **not** exist in the project → it will be added
-- If an IP **exists** → its ports stay intact; only fields explicitly present in the import are updated
-- Fields that are missing in the import report will not erase or overwrite existing data
+**Image placeholder:** canvas showing dataset before and after → existing ports keep their place, only fields updated.
 
 ---
 
-## 🧠 Smart Merge Logic
+## When to Use
 
-Unlike `replace`, which wipes everything, `update` is non-destructive and selective.  
-It’s ideal for long-term scan enrichment, especially when combining different tools or scan passes.
+Use Update when you want to refine or enrich results without losing data, for example:  
+
+- Adding results from a scan with version or banner detection.  
+- Combining results from different tools for the same targets.  
+- Keeping track of changes while preserving all existing data.  
 
 ---
 
-## 💡 Example
+## Example
 
 ```bash
-python3 falcli.py project ips import --file report_update1.xml --mode update
+falcli project ips import --file report_update1.xml --mode update
 ```
-
-Output:
-
-```text
-Imported IPs report into project 'example-project-id'. Result: 1 IP.
-```
-
-Existing port data will remain, but service names or banners may be updated.
 
 ---
 
-## 🔗 Try It Yourself
+## Reference
 
-- [Step-by-Step Example on GitHub](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-update)
+- [Practical Example on GitHub](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-update)
