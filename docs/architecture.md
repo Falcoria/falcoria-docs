@@ -1,35 +1,91 @@
 # Architecture
 
-Falcoria is built as a set of components that work together to manage and update port scanning data.
+Falcoria separates **scan execution** from **data aggregation**.
 
-![System Diagram](images/architecture.png)
+Scan execution and data aggregation are implemented as independent API services.
+All interaction with core components is performed through their APIs.
+Internal state and storage are not accessed directly.
 
----
-
-## Components by Layer
-
-### Storage — ScanLedger
-
-The central database. Stores projects, IPs, hosts, ports, and results.  
-Implements deduplication and history tracking when new data is added or updated.
-
-### Coordination — Tasker
-
-The service that creates scan tasks and places them into queues.  
-Handles distribution logic so multiple workers can process tasks in parallel.
-
-### Execution — Workers
-
-Workers perform scans. Each worker picks tasks from the queue, runs the scan, and sends results back to ScanLedger.
-
-### Access — CLI (falcli)
-
-The interface for users. Provides commands to create projects, run scans, import results, and view data.
+<!-- Architecture diagram -->
+![Architecture overview](images/architecture.png)
 
 ---
 
-## Notes
+## Core Domains
 
-- All results are consolidated in ScanLedger.  
-- Distribution is achieved through Tasker and Workers.  
-- Deduplication and history tracking are applied automatically during updates.  
+### ScanExecution
+
+ScanExecution is responsible for running scans.
+
+It consists of:
+
+- **Tasker**
+- **Queue**
+- **Workers**
+
+Tasker schedules scan execution.
+It accepts scan requests, splits them into execution tasks, and publishes them to the queue.
+
+Each task targets a single host or IP with a defined port set.
+
+Workers consume tasks from the queue and execute scans independently.
+Workers do not share state.
+
+ScanExecution scales horizontally by adding workers.
+
+---
+
+### DataAggregation
+
+DataAggregation is responsible for aggregating scan results and maintaining shared scan state.
+
+It consists of:
+
+- **ScanLedger**
+
+ScanLedger collects results produced by workers and merges them into a single network view.
+It encapsulates its internal storage and exposes aggregated data through its API.
+
+ScanLedger is the single source of truth for:
+
+- hosts
+- IP addresses
+- ports
+- services
+- scan state and history
+
+---
+
+## Data Flow
+
+### Scan execution
+
+1. A scan is started via **falcli**.
+2. The request is sent to **Tasker**.
+3. Tasker creates execution tasks.
+4. Tasks are published to the queue.
+5. Workers execute tasks.
+6. Results are submitted to **ScanLedger**.
+
+### Result access
+
+- **falcli** retrieves aggregated scan data from **ScanLedger**.
+
+---
+
+## Execution Model
+
+- Execution is task-based.
+- Tasks are independent.
+- Scanning is performed against IP addresses.
+
+If a hostname is provided, it is resolved before execution.
+Scanning always targets IP addresses, while hostnames are preserved as metadata and associated during aggregation.
+
+---
+
+## Key Properties
+
+- Scan execution and data aggregation are decoupled.
+- Execution scales without changing data semantics.
+- Aggregation is centralized and deterministic.

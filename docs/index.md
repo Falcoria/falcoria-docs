@@ -5,7 +5,7 @@ Each scan run updates a shared map of hosts, ports, and services used by the ent
 
 ---
 
-Falcoria centralizes network scanning work across a team.
+Falcoria centralizes network scanning work and treats scans as state updates rather than standalone outputs.
 It solves two core problems: the speed of data collection and the consistency in how scan data is stored and shared.
 
 This is achieved through two core parts:
