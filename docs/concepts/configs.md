@@ -2,7 +2,7 @@
 
 In Falcoria, a config defines how a scan is executed.
 
-A config is a YAML file that describes scan behavior, including:
+A config is a YAML file that describes scan behavior, such as:
 
 - which ports are scanned,
 - which protocols or services are included,
@@ -10,16 +10,16 @@ A config is a YAML file that describes scan behavior, including:
 
 Targets and scan behavior are defined separately:
 
-- the targets define *what* is scanned,
-- the config defines *how* it is scanned.
+- targets define *what* is scanned,
+- configs define *how* it is scanned.
 
 ---
 
 ## Built-in Scan Profiles
 
-Falcoria provides a set of predefined configs for common scan tasks.
+Falcoria provides predefined configs for common scan tasks.
 
-Typical examples include:
+Examples include:
 
 - HTTP-only scans,
 - full port range scans,
@@ -27,13 +27,13 @@ Typical examples include:
 - scans that detect only open ports,
 - scans that include service and banner detection.
 
-These configs allow scans to be started without manual parameter tuning.
+These configs allow scans to be started without manual parameter selection.
 
 ---
 
 ## Sharing and Reuse
 
-Configs are designed to be reusable.
+Configs are reusable and portable.
 
 A config can be:
 
@@ -41,29 +41,27 @@ A config can be:
 - shared between team members,
 - stored as part of a project setup.
 
-This allows teams to standardize scan behavior and avoid reconfiguring tools for each scan.
+This helps teams keep scan behavior consistent and reduces repeated configuration work.
 
 ---
 
 ## Embedded Experience
 
-Configs in Falcoria are not just presets.
+Configs are based on tested scan setups and practical usage.
 
-They are based on tested scan setups and practical experience gathered from repeated scan comparisons and real-world usage.
-The selected parameters reflect trade-offs between speed, coverage, and reliability.
-
-Using a config applies these tested settings directly, without requiring users to fine-tune scanner options.
+They reflect known trade-offs between speed, coverage, and reliability.
+Using a config applies these settings directly, without manual tuning.
 
 ---
 
 ## Practical Usage
 
-Configs make it easy to run scans in stages.
+Configs support staged scanning.
 
-A common workflow includes:
+A typical workflow includes:
 
-- starting with a lightweight scan (for example, HTTP ports),
-- expanding to broader scans (full port range),
-- refreshing specific parts of the scope when needed.
+- starting with a lightweight scan,
+- expanding to broader scans,
+- refreshing selected parts of the scope.
 
 Targets remain the same, while configs control scan depth and behavior.
