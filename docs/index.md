@@ -1,7 +1,7 @@
 # What is Falcoria
 
 Falcoria is a system for team-based network scanning for large and dynamic scopes.
-Each scan run updates a shared map of hosts, ports, and services.
+Each scan run updates a shared map of hosts, ports, and services used by the entire team.
 
 ---
 
@@ -23,13 +23,13 @@ This module handles scan execution for large and dynamic scopes, addressing two 
 
 ### Core mechanisms
 
-- **Distributed scanning**  
+- **[Distributed scanning](concepts/distribution)**  
   Tasks are executed across multiple workers, reducing total scan time proportionally to the number of active workers.
 
-- **Target deduplication**  
+- **[Target deduplication](concepts/deduplication)**  
   Four built-in deduplication mechanisms prevent duplicate targets and redundant network requests before execution starts.
 
-- **Optimized scan configurations**  
+- **[Optimized scan configurations](concepts/configs)**  
   Pre-tuned scanning profiles, selected through 5000+ empirical tests, provide a reliable baseline for speed and accuracy.
 
 ---
@@ -37,7 +37,7 @@ This module handles scan execution for large and dynamic scopes, addressing two 
 ### Results
 
 - **Speed**: Scan execution completes **10×–100× faster** compared to single-node scanning.
-- **Lower network impact**: Fewer redundant requests reduce overall network traffic, minimizing disruption to the target network.
+- **Lower network impact**: Eliminating redundant requests reduces overall traffic and makes large scans less disruptive for the target network.
 - **Reduced blocking risk**: Lower request volume and reduced scan noise decrease the likelihood of triggering rate limits or security controls.
 
 Detailed performance data and test methodology are documented separately.
@@ -49,7 +49,7 @@ Detailed performance data and test methodology are documented separately.
 ## Data Aggregation
 
 This module addresses the problem of fragmented scan data and loss of context in team-based workflows.  
-Scan results incrementally update a shared network state.
+Scan results are applied incrementally to a shared network state.
 
 ---
 
@@ -59,12 +59,12 @@ Scan results incrementally update a shared network state.
   Scan data is stored as a single shared network state composed of unique records.  
   Duplicate entries across reports (hosts, ports, services) are merged automatically, keeping one current view of the network available to the entire team.
 
-- **Order-independent updates**  
+- **[Order-independent updates](concepts/import-modes)**  
   Scan results can be applied in any order.  
   Four import modes define how new scan data is merged into the existing state.  
   For example, extending a scan from 80 ports to 1,000 adds only newly discovered ports.
 
-- **Change tracking**  
+- **[Change tracking](concepts/track-history)**  
   Changes to ports and services are recorded whenever new data is applied.  
   The history logs what changed and when, including updates to port state, service, and service banner data.
 
@@ -80,7 +80,8 @@ Scan results incrementally update a shared network state.
 ### Results
 
 - **Single shared dataset**  
-  Scan results are kept in one place, removing the need to manually merge reports or exchange files between team members.
+  Scan results are kept in one place, removing the need to manually merge reports or exchange files.  
+  The current state can still be exported as Nmap XML or accessed via API for use in existing tools.
 
 - **Continuity over time**  
   Data remains usable across repeated scans and scope changes, supporting both long-running engagements and rapidly changing environments.
