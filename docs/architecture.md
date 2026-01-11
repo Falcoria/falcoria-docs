@@ -9,7 +9,9 @@ They are implemented as separate API services.
 Scan execution and data aggregation communicate only through API calls.
 
 <div align="center">
-  <img src="images/architecture.png" alt="Architecture overview">
+
+![Architecture overview](images/architecture.png)
+
 </div>
 
 ---
