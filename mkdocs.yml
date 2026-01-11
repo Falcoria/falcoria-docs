@@ -1,4 +1,5 @@
 site_name: Falcoria Documentation
+docs_dir: docs
 
 theme:
   name: material
@@ -31,6 +32,10 @@ markdown_extensions:
   - codehilite
   - toc:
       permalink: true
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Overview:
