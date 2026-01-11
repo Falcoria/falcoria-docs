@@ -11,7 +11,7 @@ Import modes define how new scan results are merged with existing data in ScanLe
 
 ---
 
-## Port-level Modes
+## Port Update Modes
 
 All other modes add new IPs and all new ports they provide.  
 The difference is only in how they handle ports that already exist for the same IP.
