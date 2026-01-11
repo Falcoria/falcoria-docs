@@ -8,10 +8,9 @@ Falcoria is built around two main components:
 They are implemented as separate API services.
 Scan execution and data aggregation communicate only through API calls.
 
+<!-- Architecture diagram -->
 <div align="center">
-
-![Architecture overview](images/architecture.png)
-
+  <img src="images/architecture.png" alt="Architecture overview" style="width: 800px; max-width: 100%;">
 </div>
 
 ---
