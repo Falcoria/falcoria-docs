@@ -10,7 +10,7 @@ This separation allows scan execution and data handling to evolve and scale inde
 
 <!-- Architecture diagram -->
 <div align="center">
-  <img src="images/architecture.png" alt="Architecture overview" width="700">
+  <img src="images/architecture.png" alt="Architecture overview" width="800">
 </div>
 
 ---
