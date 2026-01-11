@@ -5,11 +5,15 @@ Falcoria is built around two main components:
 - **Scan Execution**
 - **Data Aggregation**
 
-They are implemented as independent API services and communicate only through well-defined interfaces.  
-This separation allows scan execution and data handling to evolve and scale independently.
+They are implemented as separate API services.
+Scan execution and data aggregation communicate only through API calls.
 
-<!-- Architecture diagram -->
+<div align="center">
+
 ![Architecture overview](images/architecture.png)
+
+</div>
+
 
 ---
 
