@@ -1,46 +1,49 @@
 # What is Falcoria
 
-Falcoria is a system for team-based network scanning for large and dynamic scopes.
+Falcoria is a system for team-based network scanning for large and dynamic scopes.  
 Each scan run updates a shared map of hosts, ports, and services used by the entire team.
 
 ---
 
-Falcoria centralizes network scanning work and treats scans as state updates rather than standalone outputs.
-It solves two core problems: the speed of data collection and the consistency in how scan data is stored and shared.
+Falcoria centralizes network scanning work and keeps scan results in one shared place.  
+Each new scan updates existing data instead of creating isolated output files.
 
-This is achieved through two core parts:
+It addresses two practical problems:
 
-- **Scan execution** — responsible for collecting scan data for large and dynamic scopes  
-- **Data aggregation** — responsible for merging fragmented scan runs into one consistent network state  
+- scan execution speed,
+- consistency and sharing of scan results across the team.
+
+This is handled by two main parts:
+
+- **Scan execution** — runs scans and collects data  
+- **Data aggregation** — merges scan results into a single shared view
 
 ---
 
 ## Scan Execution
 
-This module handles scan execution for large and dynamic scopes, addressing two core constraints: execution speed and network load.
+Scan execution runs scans and collects scan data.
+It is designed to be fast, reliable, and to avoid unnecessary network load.
 
 ---
 
-### Core mechanisms
+### Scan Execution mechanisms
 
-- **[Distributed scanning](concepts/distribution)**  
-  Tasks are executed across multiple workers, reducing total scan time proportionally to the number of active workers.
+- **Distributed scanning**  
+  Scan tasks can be executed across multiple workers.
+  This allows scans to finish earlier by spreading work across different machines.  
+  → [Learn more about distribution](concepts/distribution)
 
-- **[Target deduplication](concepts/deduplication)**  
-  Four built-in deduplication mechanisms prevent duplicate targets and redundant network requests before execution starts.
+- **Target deduplication**  
+  Duplicate targets are removed before scanning starts.  
+  The same IP address, hostname, or subnet is not scanned more than once unintentionally.  
+  This reduces unnecessary network load and lowers the risk of triggering rate limits.  
+  → [Learn more about deduplication](concepts/deduplication)
 
-- **[Optimized scan configurations](concepts/configs)**  
-  Pre-tuned scanning profiles, selected through 5000+ empirical tests, provide a reliable baseline for speed and accuracy.
-
----
-
-### Results
-
-- **Speed**: Scan execution completes **10×–100× faster** compared to single-node scanning.
-- **Lower network impact**: Eliminating redundant requests reduces overall traffic and makes large scans less disruptive for the target network.
-- **Reduced blocking risk**: Lower request volume and reduced scan noise decrease the likelihood of triggering rate limits or security controls.
-
-Detailed performance data and test methodology are documented separately.
+- **Optimized scan configurations**  
+  Predefined scan configurations are used to run scans with consistent and tested settings.  
+  These configs provide a balance between speed and coverage.  
+  → [Learn more about scan configs](concepts/configs)
 
 → **Benchmarks**
 
@@ -48,25 +51,32 @@ Detailed performance data and test methodology are documented separately.
 
 ## Data Aggregation
 
-This module addresses the problem of fragmented scan data and loss of context in team-based workflows.  
-Scan results are applied incrementally to a shared network state.
+Data aggregation is responsible for combining scan results into one shared view of the network.  
+Each new scan updates the existing dataset rather than producing a separate report.
+
+This ensures that the team always works with a single, up-to-date set of hosts, ports, and services,
+even when scans are repeated, extended, or run by different people.
 
 ---
 
-### Core mechanisms
+### Data Aggregation mechanisms
 
 - **State-based data model**  
-  Scan data is stored as a single shared network state composed of unique records.  
-  Duplicate entries across reports (hosts, ports, services) are merged automatically, keeping one current view of the network available to the entire team.
+  All scan data is stored as a single set of unique records.
+  Entries are updated automatically, so the entire team works with the same current view.
 
-- **[Order-independent updates](concepts/import-modes)**  
-  Scan results can be applied in any order.  
-  Four import modes define how new scan data is merged into the existing state.  
-  For example, extending a scan from 80 ports to 1,000 adds only newly discovered ports.
+- **Incremental updates**  
+  Scan results are applied incrementally to the shared dataset.
+  New data extends or updates existing records without affecting unrelated entries.
+  For example, scanning additional ports on known hosts adds only the new ports,
+  while previously collected data remains unchanged.  
+  → [Learn more about Import Modes](concepts/import-modes)
 
-- **[Change tracking](concepts/track-history)**  
-  Changes to ports and services are recorded whenever new data is applied.  
-  The history logs what changed and when, including updates to port state, service, and service banner data.
+- **Focused change log**
+  Tracks only actual changes in port state, service, or banner.
+  Each entry shows the previous and new value for a single change.
+  Full scan output and unchanged ports are excluded.  
+  → [Learn more about Track History](concepts/track-history)
 
 - **API and export access**  
   Aggregated scan data is available via an API and standardized export formats, including Nmap XML and JSON.  
@@ -74,23 +84,6 @@ Scan results are applied incrementally to a shared network state.
 
 - **CLI-based data exploration**  
   Scan data can be explored using a dedicated CLI, providing structured output and controlled navigation through large result sets.
-
----
-
-### Results
-
-- **Single shared dataset**  
-  Scan results are kept in one place, removing the need to manually merge reports or exchange files.  
-  The current state can still be exported as Nmap XML or accessed via API for use in existing tools.
-
-- **Continuity over time**  
-  Data remains usable across repeated scans and scope changes, supporting both long-running engagements and rapidly changing environments.
-
-- **Focused change tracking**  
-  Users can quickly see what changed since the last scan and focus only on new or modified ports and services instead of rechecking the entire dataset.
-
-- **Shared team context**  
-  Everyone on the team works with the same up-to-date network view, eliminating confusion about which results are current.
 
 ## Who It's For
 
