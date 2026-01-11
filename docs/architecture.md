@@ -9,9 +9,7 @@ They are implemented as independent API services and communicate only through we
 This separation allows scan execution and data handling to evolve and scale independently.
 
 <!-- Architecture diagram -->
-<div align="center">
-  <img src="images/architecture.png" alt="Architecture overview" width="800">
-</div>
+![Architecture overview](images/architecture.png)
 
 ---
 
@@ -29,9 +27,8 @@ Scan Execution consists of three parts:
 - **Queue**
 - **Workers**
 
-**Tasker** accepts scan requests (via API or `falcli`), performs target preparation, and applies **target deduplication** before execution.  
+**Tasker** accepts scan requests (via API or `falcli`), performs target preparation, and applies [target deduplication](concepts/deduplication) before execution.  
 Duplicate IPs, hostnames, and subnets are removed at this stage.  
-→ See: [Deduplication](concepts/deduplication)
 
 Each execution task targets:
 
@@ -46,9 +43,7 @@ Prepared tasks are published to the **Queue**.
 **Workers** consume tasks from the queue and execute scans.  
 Each worker runs on its own machine or network environment and uses its own network path to the target.
 
-This is critical for **Distribution**:  
-workers must have independent network paths for parallel execution to be effective.  
-→ See: [Distribution](concepts/distribution)
+This is critical for [Distribution](concepts/distribution): workers must have independent network paths for parallel execution to be effective.  
 
 Scan Execution scales by adding workers.
 
