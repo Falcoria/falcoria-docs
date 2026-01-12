@@ -32,9 +32,3 @@ Use Update when you want to refine or enrich results without losing data, for ex
 ```bash
 falcli project ips import --file report_update1.xml --mode update
 ```
-
----
-
-## Reference
-
-- [Practical Example on GitHub](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-update)

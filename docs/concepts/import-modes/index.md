@@ -22,7 +22,7 @@ The difference is only in how they handle ports that already exist for the same 
 
 ---
 
-## Examples
+## Available Import Modes
 
 - [`insert` Mode](insert.md) – [Example](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-insert)  
 - [`replace` Mode](replace.md) – [Example](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-replace)  

@@ -16,13 +16,15 @@ It addresses two practical problems:
 This is handled by two main parts:
 
 - **Scan execution** — runs scans and collects data  
-- **Data aggregation** — merges scan results into a single shared view
+- **Data aggregation** — merges scan results into a single shared view  
+
+![Falcoria Core Components](images/main_falcoria.png){ width="620" align=center }
 
 ---
 
 ## Scan Execution
 
-Scan execution runs scans and collects scan data.
+Scan execution runs scans and produces scan data.
 It is designed to be fast, reliable, and to avoid unnecessary network load.
 
 ---
@@ -45,7 +47,7 @@ It is designed to be fast, reliable, and to avoid unnecessary network load.
   These configs provide a balance between speed and coverage.  
   → [Learn more about scan configs](concepts/configs)
 
-→ **Benchmarks**
+→ [**Benchmarks**](benchmarks)
 
 ---
 

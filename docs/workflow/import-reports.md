@@ -17,6 +17,4 @@ This is useful when you want to reuse data from external tools or work in offlin
 
 - **Partial scans:** if you scan part of the scope separately and want to merge the results.  
 - **Offline projects:** when you don’t run scans through Falcoria but need a central database for results.  
-- **External tools:** when results are produced outside and should be consolidated in one place.  
-
-[IMAGE PLACEHOLDER: Diagram showing external report → import → stored in Falcoria]
+- **External tools:** when results are produced outside and should be consolidated in one place.
