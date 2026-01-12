@@ -2,6 +2,8 @@
 
 In Falcoria, history tracking records changes to port state, service, and banner data as scan results update the shared network state.
 
+![History Tracking](../images/history.png){ width="700" align=center }
+
 ---
 
 ## What Is Recorded

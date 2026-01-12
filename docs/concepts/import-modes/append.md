@@ -32,7 +32,3 @@ falcli project ips import --file report_append1.xml --mode append
 ```
 
 ---
-
-## Reference
-
-- [Practical Example on GitHub](https://github.com/Falcoria/falcoria-use-cases/tree/main/import-mode-append)

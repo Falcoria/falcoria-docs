@@ -14,10 +14,10 @@ This prevents redundant work, reduces scan time, avoids unnecessary tasks, and l
 
 ## String duplicates in input files
 
+![Deduplication of string duplicates](../images/deduplication_1.png){ align=center }
+
 When a user provides a list of targets, duplicate string entries are removed.  
 If the same hostname or IP address appears multiple times, only one entry is kept.
-
-**Image placeholder:** show a list with duplicate entries → deduplicated list with unique targets.  
 
 ---
 

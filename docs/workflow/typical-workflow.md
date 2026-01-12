@@ -4,13 +4,11 @@ This section demonstrates a step-by-step workflow in Falcoria, from creating a p
 
 ## Create a project
 
-Before running scans, a project must be created. The project acts as a single dataset ("canvas") where results accumulate and where the team collaborates.
+Before running scans, a project must be created. The project acts as a persistent dataset that is updated over time by scans.
 
 ```bash
 falcli project create test_project
 ```
-
-![Canvas initialization: empty project where results will be stored](../images/workflow-canvas-init.png)
 
 ## 1. Initial scan (HTTP ports only)
 
@@ -19,8 +17,6 @@ Upload the initial list of targets and run a scan limited to HTTP ports.
 ```bash
 falcli scan start --config http-only.yaml --targets-file hosts.txt
 ```
-
-![Initial scan: targets resolved/deduplicated, first HTTP results added to the canvas](../images/workflow-initial-scan.png)
 
 ## 2. Adding new targets
 
@@ -38,11 +34,9 @@ If the target file is updated with additional hosts, Falcoria detects the differ
 falcli scan start --config http-only.yaml --targets-file hosts.txt
 ```
 
-![New targets: only new entries from the updated list are added to the canvas](../images/workflow-new-targets.png)
-
 ## 3. Full port scan (Append)
 
-Expand the scan to the full port range. The **Append** mode extends the project canvas:
+Expand the scan to the full port range. The **Append** mode extends the project dataset:
 
 - Existing results remain untouched
 - New scan data is added next to them
@@ -51,10 +45,6 @@ Expand the scan to the full port range. The **Append** mode extends the project 
 ```bash
 falcli scan start --config full-range.yaml --mode append --targets-file hosts.txt
 ```
-
-![Append scan: new ports appear next to existing results, previous data remains unchanged](../images/workflow-append.png)
-
-→ See [Scan Management](../concepts/scan-management.md) for details on checking status, stopping, or resuming scans.
 
 ## 4. Rescan with Replace
 
@@ -74,12 +64,10 @@ To get history of changes:
 falcli project ips history
 ```
 
-![Replace scan: only selected ports are updated, changes highlighted on the canvas](../images/workflow-replace.png)
-
 ## 5. Report download
 
 At any time, results can be exported from the project.
-Even after multiple updates, the canvas always represents a consistent, complete dataset.
+Even after multiple updates, the dataset is always consistent.
 
 ```bash
 falcli project ips download
@@ -87,4 +75,4 @@ falcli project ips download
 
 ---
 
-👉 **Key takeaway**: In Falcoria, data from previous scans stays intact. Only the chosen targets or port ranges are updated, while the project is always available as a single, unified report.
+**Key takeaway**: In Falcoria, data from previous scans stays intact. Only the chosen targets or port ranges are updated, while the project is always available as a single, unified report.

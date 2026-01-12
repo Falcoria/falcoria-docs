@@ -9,9 +9,8 @@ They are implemented as separate API services.
 Scan execution and data aggregation communicate only through API calls.
 
 <!-- Architecture diagram -->
-<div align="center">
-  <img src="images/architecture.png" alt="Architecture overview" style="width: 800px; max-width: 100%;">
-</div>
+![Architecture overview](images/arch_falcoria_15.png){ width="700" align=center }
+
 
 ---
 
@@ -29,7 +28,7 @@ Scan Execution consists of three parts:
 - **Queue**
 - **Workers**
 
-**Tasker** accepts scan requests (via API or `falcli`), performs target preparation, and applies [target deduplication](concepts/deduplication) before execution.  
+**Tasker** accepts scan requests (via API or `falcli`), performs target preparation, and applies [target deduplication](../concepts/deduplication) before execution.  
 Duplicate IPs, hostnames, and subnets are removed at this stage.  
 
 Each execution task targets:
@@ -45,7 +44,7 @@ Prepared tasks are published to the **Queue**.
 **Workers** consume tasks from the queue and execute scans.  
 Each worker runs on its own machine or network environment and uses its own network path to the target.
 
-This is critical for [Distribution](concepts/distribution): workers must have independent network paths for parallel execution to be effective.  
+This is critical for [Distribution](../concepts/distribution): workers must have independent network paths for parallel execution to be effective.  
 
 Scan Execution scales by adding workers.
 
@@ -75,8 +74,8 @@ is handled inside ScanLedger.
 
 → See:
 
-- [Import Modes](concepts/import-modes)
-- [History Tracking](concepts/track-history)
+- [Import Modes](../concepts/import-modes)
+- [History Tracking](../concepts/track-history)
 
 ScanLedger is the single source of truth for hosts, IPs, ports, services, and their change history.
 
