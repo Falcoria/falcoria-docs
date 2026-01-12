@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../worker/">
-      
-      
-        <link rel="next" href="../../workflow/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>CLI (falcli) - Falcoria Documentation</title>
+        <title>Typical Workflow - Falcoria Documentation</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#falcli" class="md-skip">
+        <a href="#typical-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CLI (falcli)
+              Typical Workflow
             
           </span>
         </div>
@@ -346,8 +342,6 @@
       
   
   
-    
-  
   
   
     
@@ -374,15 +368,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../installation/" class="md-nav__link ">
               
   
   
@@ -401,7 +397,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Installation
@@ -417,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scanledger/" class="md-nav__link">
+      <a href="../../installation/scanledger/" class="md-nav__link">
         
   
   
@@ -440,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tasker/" class="md-nav__link">
+      <a href="../../installation/tasker/" class="md-nav__link">
         
   
   
@@ -463,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker/" class="md-nav__link">
+      <a href="../../installation/worker/" class="md-nav__link">
         
   
   
@@ -483,19 +479,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../installation/falcli/" class="md-nav__link">
         
   
   
@@ -506,7 +493,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -965,6 +951,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-initial-scan-http-ports-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Initial scan (HTTP ports only)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adding-new-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Adding new targets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-full-port-scan-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Full port scan (Append)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-rescan-with-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Rescan with Replace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-report-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Report download
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -979,12 +1027,38 @@
 
 
 
-<h1 id="falcli">falcli<a class="headerlink" href="#falcli" title="Permanent link">&para;</a></h1>
-<p><strong>falcli</strong> is the CLI client used to interact with ScanLedger and manage scans in Falcoria. It provides command-line tools for launching scans, retrieving results, and managing scan configurations.</p>
-<p><a href="https://github.com/Falcoria/falcli">GitHub repository</a></p>
-<blockquote>
-<p>For installation and usage instructions, see the <a href="https://github.com/Falcoria/falcli">GitHub repository</a>.</p>
-</blockquote>
+<h1 id="typical-workflow">Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h1>
+<p>This section demonstrates a step-by-step workflow in Falcoria, from creating a project to exporting results. Each phase includes example commands using <code>falcli</code>. Illustrations are included to show how data flows into the project canvas.</p>
+<h2 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">&para;</a></h2>
+<p>Before running scans, a project must be created. The project acts as a single dataset ("canvas") where results accumulate and where the team collaborates.</p>
+<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span>test_project
+</code></pre></div>
+<p><img alt="Canvas initialization: empty project where results will be stored" src="../images/workflow-canvas-init.png" /></p>
+<h2 id="1-initial-scan-http-ports-only">1. Initial scan (HTTP ports only)<a class="headerlink" href="#1-initial-scan-http-ports-only" title="Permanent link">&para;</a></h2>
+<p>Upload the initial list of targets and run a scan limited to HTTP ports.</p>
+<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>http-only.yaml<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+</code></pre></div>
+<p><img alt="Initial scan: targets resolved/deduplicated, first HTTP results added to the canvas" src="../images/workflow-initial-scan.png" /></p>
+<h2 id="2-adding-new-targets">2. Adding new targets<a class="headerlink" href="#2-adding-new-targets" title="Permanent link">&para;</a></h2>
+<p>If the target file is updated with additional hosts, Falcoria will skip already scanned or queued targets and process only the new ones.</p>
+<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>http-only.yaml<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+</code></pre></div>
+<p><img alt="New targets: only new entries from the updated list are added to the canvas" src="../images/workflow-new-targets.png" /></p>
+<h2 id="3-full-port-scan-append">3. Full port scan (Append)<a class="headerlink" href="#3-full-port-scan-append" title="Permanent link">&para;</a></h2>
+<p>Expand the scan to the full port range. The <strong>Append</strong> mode extends the project canvas: existing results stay untouched, new scan data is appended alongside them.</p>
+<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>full-range.yaml<span class="w"> </span>--mode<span class="w"> </span>append<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+</code></pre></div>
+<p><img alt="Append scan: new ports appear next to existing results, previous data remains unchanged" src="../images/workflow-append.png" /></p>
+<p>→ See <a href="../concepts/scan-management.md">Scan Management</a> for details on checking status, stopping, or resuming scans.</p>
+<h2 id="4-rescan-with-replace">4. Rescan with Replace<a class="headerlink" href="#4-rescan-with-replace" title="Permanent link">&para;</a></h2>
+<p>Run a rescan on a specific range of ports (e.g., top-1000). The <strong>Replace</strong> mode refreshes a chosen part of the canvas: ports in the selected range are updated, with changes highlighted and stored in history.</p>
+<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>scan<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>top-1000.yaml<span class="w"> </span>--mode<span class="w"> </span>replace<span class="w"> </span>--targets-file<span class="w"> </span>hosts.txt
+</code></pre></div>
+<p><img alt="Replace scan: only selected ports are updated, changes highlighted on the canvas" src="../images/workflow-replace.png" /></p>
+<h2 id="5-report-download">5. Report download<a class="headerlink" href="#5-report-download" title="Permanent link">&para;</a></h2>
+<p>At any time, results can be exported from the project.</p>
+<div class="highlight"><pre><span></span><code>falcli<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>download
+</code></pre></div>
 
 
 

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../worker/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../workflow/">
+        <link rel="next" href="../track-history/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>CLI (falcli) - Falcoria Documentation</title>
+        <title>Deduplication - Falcoria Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#falcli" class="md-skip">
+        <a href="#deduplication-behavior" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CLI (falcli)
+              Deduplication
             
           </span>
         </div>
@@ -346,8 +346,6 @@
       
   
   
-    
-  
   
   
     
@@ -374,15 +372,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../installation/" class="md-nav__link ">
               
   
   
@@ -401,7 +401,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Installation
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scanledger/" class="md-nav__link">
+      <a href="../../installation/scanledger/" class="md-nav__link">
         
   
   
@@ -440,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tasker/" class="md-nav__link">
+      <a href="../../installation/tasker/" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker/" class="md-nav__link">
+      <a href="../../installation/worker/" class="md-nav__link">
         
   
   
@@ -483,19 +483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../installation/falcli/" class="md-nav__link">
         
   
   
@@ -506,7 +497,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -640,6 +630,8 @@
       
   
   
+    
+  
   
   
     
@@ -666,17 +658,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -695,7 +685,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -708,10 +698,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../concepts/deduplication/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deduplication
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -722,6 +734,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string-duplicates-in-input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      String duplicates in input files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unification-of-subnets-and-hostnames" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unification of subnets and hostnames
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-already-stored-targets-scanledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skipping already stored targets (ScanLedger)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-duplicate-tasks-in-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skipping duplicate tasks in the queue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -734,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/track-history/" class="md-nav__link">
+      <a href="../track-history/" class="md-nav__link">
         
   
   
@@ -757,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/distribution/" class="md-nav__link">
+      <a href="../distribution/" class="md-nav__link">
         
   
   
@@ -810,7 +878,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/import-modes/" class="md-nav__link ">
+            <a href="../import-modes/" class="md-nav__link ">
               
   
   
@@ -845,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/insert/" class="md-nav__link">
+      <a href="../import-modes/insert/" class="md-nav__link">
         
   
   
@@ -868,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/replace/" class="md-nav__link">
+      <a href="../import-modes/replace/" class="md-nav__link">
         
   
   
@@ -891,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/update/" class="md-nav__link">
+      <a href="../import-modes/update/" class="md-nav__link">
         
   
   
@@ -914,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/append/" class="md-nav__link">
+      <a href="../import-modes/append/" class="md-nav__link">
         
   
   
@@ -965,6 +1033,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string-duplicates-in-input-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      String duplicates in input files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unification-of-subnets-and-hostnames" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unification of subnets and hostnames
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-already-stored-targets-scanledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skipping already stored targets (ScanLedger)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skipping-duplicate-tasks-in-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skipping duplicate tasks in the queue
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -979,12 +1091,47 @@
 
 
 
-<h1 id="falcli">falcli<a class="headerlink" href="#falcli" title="Permanent link">&para;</a></h1>
-<p><strong>falcli</strong> is the CLI client used to interact with ScanLedger and manage scans in Falcoria. It provides command-line tools for launching scans, retrieving results, and managing scan configurations.</p>
-<p><a href="https://github.com/Falcoria/falcli">GitHub repository</a></p>
-<blockquote>
-<p>For installation and usage instructions, see the <a href="https://github.com/Falcoria/falcli">GitHub repository</a>.</p>
-</blockquote>
+<h1 id="deduplication-behavior">Deduplication Behavior<a class="headerlink" href="#deduplication-behavior" title="Permanent link">&para;</a></h1>
+<p>Falcoria applies deduplication at several stages of the workflow.<br />
+This prevents redundant work, reduces scan time, avoids unnecessary tasks, and lowers the likelihood of hitting rate limits.</p>
+<p><strong>Deduplication:</strong>  </p>
+<ul>
+<li><a href="#string-duplicates-in-input-files">String duplicates in input files</a>  </li>
+<li><a href="#unification-of-subnets-and-hostnames">Unification of subnets and hostnames</a>  </li>
+<li><a href="#skipping-already-stored-targets-scanledger">Skipping already stored targets (ScanLedger)</a>  </li>
+<li><a href="#skipping-duplicate-tasks-in-the-queue">Skipping duplicate tasks in the queue</a></li>
+</ul>
+<hr />
+<h2 id="string-duplicates-in-input-files">String duplicates in input files<a class="headerlink" href="#string-duplicates-in-input-files" title="Permanent link">&para;</a></h2>
+<p><img align="center" alt="Deduplication of string duplicates" src="../../images/deduplication_1.png" /></p>
+<p>When a user provides a list of targets, duplicate string entries are removed.<br />
+If the same hostname or IP address appears multiple times, only one entry is kept.</p>
+<hr />
+<h2 id="unification-of-subnets-and-hostnames">Unification of subnets and hostnames<a class="headerlink" href="#unification-of-subnets-and-hostnames" title="Permanent link">&para;</a></h2>
+<p>Falcoria normalizes mixed input before creating scan tasks:  </p>
+<ul>
+<li>Subnets (CIDR) are expanded into full lists of IP addresses.  </li>
+<li>Hostnames are resolved to IP addresses.  </li>
+<li>The final dataset contains only unique IPs and the hostnames associated with them.  </li>
+</ul>
+<p>This ensures each address is scanned only once. It also shortens scan time and lowers the chance of triggering blocking mechanisms.  </p>
+<p><strong>Image placeholder:</strong> show subnet expansion and hostname resolution → resulting unique IP/hostname map.  </p>
+<hr />
+<h2 id="skipping-already-stored-targets-scanledger">Skipping already stored targets (ScanLedger)<a class="headerlink" href="#skipping-already-stored-targets-scanledger" title="Permanent link">&para;</a></h2>
+<p>If a target already exists in <strong>ScanLedger</strong>, it is not scanned again.</p>
+<p>This applies to:</p>
+<ul>
+<li>new scan launches,</li>
+<li>imported scan results.</li>
+</ul>
+<p>By default, this behavior is active in <strong>Insert mode</strong>.<br />
+For details about other modes, see <a href="../import-modes/index.md">Import Modes</a>.  </p>
+<p><strong>Image placeholder:</strong> show ScanLedger with already stored IPs → new incoming data skipped.  </p>
+<hr />
+<h2 id="skipping-duplicate-tasks-in-the-queue">Skipping duplicate tasks in the queue<a class="headerlink" href="#skipping-duplicate-tasks-in-the-queue" title="Permanent link">&para;</a></h2>
+<p>If an identical scan task is already queued, a new task is not created.
+This prevents multiple users or processes from scanning the same target at the same time.</p>
+<p><strong>Image placeholder:</strong> show queue with existing tasks → duplicate request rejected.  </p>
 
 
 

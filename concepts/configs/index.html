@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../worker/">
-      
-      
-        <link rel="next" href="../../workflow/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>CLI (falcli) - Falcoria Documentation</title>
+        <title>Configs - Falcoria Documentation</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#falcli" class="md-skip">
+        <a href="#configs" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CLI (falcli)
+              Configs
             
           </span>
         </div>
@@ -346,8 +342,6 @@
       
   
   
-    
-  
   
   
     
@@ -374,15 +368,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../installation/" class="md-nav__link ">
               
   
   
@@ -401,7 +397,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Installation
@@ -417,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scanledger/" class="md-nav__link">
+      <a href="../../installation/scanledger/" class="md-nav__link">
         
   
   
@@ -440,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tasker/" class="md-nav__link">
+      <a href="../../installation/tasker/" class="md-nav__link">
         
   
   
@@ -463,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker/" class="md-nav__link">
+      <a href="../../installation/worker/" class="md-nav__link">
         
   
   
@@ -483,19 +479,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../installation/falcli/" class="md-nav__link">
         
   
   
@@ -506,7 +493,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -676,7 +662,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -711,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/deduplication/" class="md-nav__link">
+      <a href="../deduplication/" class="md-nav__link">
         
   
   
@@ -734,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/track-history/" class="md-nav__link">
+      <a href="../track-history/" class="md-nav__link">
         
   
   
@@ -757,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/distribution/" class="md-nav__link">
+      <a href="../distribution/" class="md-nav__link">
         
   
   
@@ -810,7 +796,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/import-modes/" class="md-nav__link ">
+            <a href="../import-modes/" class="md-nav__link ">
               
   
   
@@ -845,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/insert/" class="md-nav__link">
+      <a href="../import-modes/insert/" class="md-nav__link">
         
   
   
@@ -868,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/replace/" class="md-nav__link">
+      <a href="../import-modes/replace/" class="md-nav__link">
         
   
   
@@ -891,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/update/" class="md-nav__link">
+      <a href="../import-modes/update/" class="md-nav__link">
         
   
   
@@ -914,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/append/" class="md-nav__link">
+      <a href="../import-modes/append/" class="md-nav__link">
         
   
   
@@ -965,6 +951,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-scan-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Scan Profiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-and-reuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing and Reuse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedded-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embedded Experience
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Usage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -979,12 +1009,56 @@
 
 
 
-<h1 id="falcli">falcli<a class="headerlink" href="#falcli" title="Permanent link">&para;</a></h1>
-<p><strong>falcli</strong> is the CLI client used to interact with ScanLedger and manage scans in Falcoria. It provides command-line tools for launching scans, retrieving results, and managing scan configurations.</p>
-<p><a href="https://github.com/Falcoria/falcli">GitHub repository</a></p>
-<blockquote>
-<p>For installation and usage instructions, see the <a href="https://github.com/Falcoria/falcli">GitHub repository</a>.</p>
-</blockquote>
+<h1 id="configs">Configs<a class="headerlink" href="#configs" title="Permanent link">&para;</a></h1>
+<p>In Falcoria, a config defines how a scan is executed.</p>
+<p>A config is a YAML file that describes scan behavior, such as:</p>
+<ul>
+<li>which ports are scanned,</li>
+<li>which protocols or services are included,</li>
+<li>how scan results are processed.</li>
+</ul>
+<p>Targets and scan behavior are defined separately:</p>
+<ul>
+<li>targets define <em>what</em> is scanned,</li>
+<li>configs define <em>how</em> it is scanned.</li>
+</ul>
+<hr />
+<h2 id="built-in-scan-profiles">Built-in Scan Profiles<a class="headerlink" href="#built-in-scan-profiles" title="Permanent link">&para;</a></h2>
+<p>Falcoria provides predefined configs for common scan tasks.</p>
+<p>Examples include:</p>
+<ul>
+<li>HTTP-only scans,</li>
+<li>full port range scans,</li>
+<li>UDP scans,</li>
+<li>scans that detect only open ports,</li>
+<li>scans that include service and banner detection.</li>
+</ul>
+<p>These configs allow scans to be started without manual parameter selection.</p>
+<hr />
+<h2 id="sharing-and-reuse">Sharing and Reuse<a class="headerlink" href="#sharing-and-reuse" title="Permanent link">&para;</a></h2>
+<p>Configs are reusable and portable.</p>
+<p>A config can be:</p>
+<ul>
+<li>reused across multiple projects,</li>
+<li>shared between team members,</li>
+<li>stored as part of a project setup.</li>
+</ul>
+<p>This helps teams keep scan behavior consistent and reduces repeated configuration work.</p>
+<hr />
+<h2 id="embedded-experience">Embedded Experience<a class="headerlink" href="#embedded-experience" title="Permanent link">&para;</a></h2>
+<p>Configs are based on tested scan setups and practical usage.</p>
+<p>They reflect known trade-offs between speed, coverage, and reliability.
+Using a config applies these settings directly, without manual tuning.</p>
+<hr />
+<h2 id="practical-usage">Practical Usage<a class="headerlink" href="#practical-usage" title="Permanent link">&para;</a></h2>
+<p>Configs support staged scanning.</p>
+<p>A typical workflow includes:</p>
+<ul>
+<li>starting with a lightweight scan,</li>
+<li>expanding to broader scans,</li>
+<li>refreshing selected parts of the scope.</li>
+</ul>
+<p>Targets remain the same, while configs control scan depth and behavior.</p>
 
 
 

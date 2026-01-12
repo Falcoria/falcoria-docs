@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../falcli/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../quick-start/">
+        <link rel="next" href="../tasker/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -25,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -43,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -53,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -62,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scanledger-installation-guide" class="md-skip">
+        <a href="#scanledger" class="md-skip">
           Skip to content
         </a>
       
@@ -104,6 +116,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -193,18 +231,113 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    What is Falcoria
+    Architecture
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -218,6 +351,20 @@
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -234,8 +381,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -244,8 +392,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
@@ -255,18 +409,76 @@
           <ul class="md-nav__list" data-md-scrollfix>
             
               
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    ScanLedger
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../tasker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Overview
+    Tasker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Worker
     
   </span>
   
@@ -300,144 +512,118 @@
 
               
             
-              
-                
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
           
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../workflow/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
-    ScanLedger
+    Workflow
     
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/typical-workflow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    ScanLedger
+    Typical Workflow
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Reports
     
+  </span>
   
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-virtual-environment-development-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Virtual Environment (Development Setup)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-docker-using-public-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Docker (Using Public Image)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-docker-local-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Docker (Local Build)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-docker-compose-recommended-for-self-hosting" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Docker Compose (Recommended for Self-Hosting)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#config-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Config Reference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -456,29 +642,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../quick-start/" class="md-nav__link">
+    
+    
+      
         
-  
-  
-  <span class="md-ellipsis">
-    Quick Start
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
+          
+        
       
+        
       
-  
-  
-  
-  
-    
+        
+      
+        
+      
+        
+      
     
     
     
@@ -497,25 +675,34 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
-    Import Modes
+    Concepts
     
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Import Modes
+            Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -524,12 +711,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../import-modes/" class="md-nav__link">
+      <a href="../../concepts/deduplication/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Overview
+    Deduplication
     
   </span>
   
@@ -547,7 +734,118 @@
   
   
     <li class="md-nav__item">
-      <a href="../../import-modes/insert/" class="md-nav__link">
+      <a href="../../concepts/track-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    History Tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/import-modes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Import Modes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Import Modes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/import-modes/insert/" class="md-nav__link">
         
   
   
@@ -570,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../import-modes/replace/" class="md-nav__link">
+      <a href="../../concepts/import-modes/replace/" class="md-nav__link">
         
   
   
@@ -593,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../import-modes/update/" class="md-nav__link">
+      <a href="../../concepts/import-modes/update/" class="md-nav__link">
         
   
   
@@ -616,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../import-modes/append/" class="md-nav__link">
+      <a href="../../concepts/import-modes/append/" class="md-nav__link">
         
   
   
@@ -638,284 +936,11 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Use Cases
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Use Cases
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/common-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Common Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/import-external-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Import External Reports
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/rescan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Rescan
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/update-enrichment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Update Enrichment
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/port-sharding/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Port Sharding (Evasion)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/scan-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Scan Configuration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/deduplication-behavior/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deduplication Behavior
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../use-cases/team-collaboration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Team Collaboration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Architecture
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -940,92 +965,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Methods
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-virtual-environment-development-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Virtual Environment (Development Setup)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-docker-using-public-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Docker (Using Public Image)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-docker-local-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Docker (Local Build)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-docker-compose-recommended-for-self-hosting" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Docker Compose (Recommended for Self-Hosting)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#config-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Config Reference
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1040,139 +979,12 @@
 
 
 
-<h1 id="scanledger-installation-guide">ScanLedger – Installation Guide<a class="headerlink" href="#scanledger-installation-guide" title="Permanent link">&para;</a></h1>
-<p>ScanLedger is the backend API and data store powering Falcoria's scan ingestion and querying engine.</p>
-<p>You can install it using one of the following methods:</p>
-<ul>
-<li><a href="#1-virtual-environment-development-setup">Virtual Environment (Development Setup)</a></li>
-<li><a href="#2-docker-using-public-image">Docker (Using Public Image)</a></li>
-<li><a href="#3-docker-local-build">Docker (Local Build)</a></li>
-<li><a href="#4-docker-compose-recommended-for-self-hosting">Docker Compose (Recommended for Self-Hosting)</a></li>
-</ul>
-<hr />
-<h2 id="installation-methods">Installation Methods<a class="headerlink" href="#installation-methods" title="Permanent link">&para;</a></h2>
-<h3 id="1-virtual-environment-development-setup">1. Virtual Environment (Development Setup)<a class="headerlink" href="#1-virtual-environment-development-setup" title="Permanent link">&para;</a></h3>
-<p>Use this method for development or debugging:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Falcoria/scanledger.git
-<span class="nb">cd</span><span class="w"> </span>scanledger
-
-python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>venv/bin/activate
-
-pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-
-cp<span class="w"> </span>.env.example<span class="w"> </span>.env
-nano<span class="w"> </span>.env<span class="w">  </span><span class="c1"># Configure DB and tokens</span>
-
-uvicorn<span class="w"> </span>app.main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
-</code></pre></div>
-<p>API will be available at <code>https://localhost:8000/docs</code>.</p>
-<hr />
-<h3 id="2-docker-using-public-image">2. Docker (Using Public Image)<a class="headerlink" href="#2-docker-using-public-image" title="Permanent link">&para;</a></h3>
-<p>Generate TLS certificates (optional for HTTPS):</p>
-<div class="highlight"><pre><span></span><code>./generate-tls-bundle.sh
-</code></pre></div>
-<p>Run the container:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>scanledger<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-p<span class="w"> </span><span class="m">443</span>:443<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_USER</span><span class="o">=</span>postgres<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>changeme<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_DB</span><span class="o">=</span>falcoriadb<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_HOST</span><span class="o">=</span>localhost<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">ENVIRONMENT</span><span class="o">=</span>development<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span>changeme<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">TASKER_TOKEN</span><span class="o">=</span>changeme<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/unit/bundle.pem:/docker-entrypoint.d/bundle.pem:ro<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>ghcr.io/falcoria/scanledger:latest
-</code></pre></div>
-<hr />
-<h3 id="3-docker-local-build">3. Docker (Local Build)<a class="headerlink" href="#3-docker-local-build" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Falcoria/scanledger.git
-<span class="nb">cd</span><span class="w"> </span>scanledger
-
-./generate-tls-bundle.sh
-
-docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>scanledger<span class="w"> </span>.
-
-docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>scanledger<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-p<span class="w"> </span><span class="m">443</span>:443<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_USER</span><span class="o">=</span>postgres<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>changeme<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_DB</span><span class="o">=</span>falcoriadb<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">POSTGRES_HOST</span><span class="o">=</span>localhost<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">ENVIRONMENT</span><span class="o">=</span>development<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">ADMIN_TOKEN</span><span class="o">=</span>changeme<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">TASKER_TOKEN</span><span class="o">=</span>changeme<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/unit/bundle.pem:/docker-entrypoint.d/bundle.pem:ro<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>scanledger
-</code></pre></div>
-<hr />
-<h3 id="4-docker-compose-recommended-for-self-hosting">4. Docker Compose (Recommended for Self-Hosting)<a class="headerlink" href="#4-docker-compose-recommended-for-self-hosting" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Falcoria/scanledger.git
-<span class="nb">cd</span><span class="w"> </span>scanledger
-cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">  </span><span class="c1"># Edit the variables below</span>
-
-docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
-</code></pre></div>
-<p>Access: <a href="https://localhost:443">https://localhost:443</a></p>
-<hr />
-<h2 id="config-reference">Config Reference<a class="headerlink" href="#config-reference" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>POSTGRES_USER</code></td>
-<td>Postgres login name</td>
-</tr>
-<tr>
-<td><code>POSTGRES_PASSWORD</code></td>
-<td>Postgres password</td>
-</tr>
-<tr>
-<td><code>POSTGRES_DB</code></td>
-<td>Name of the database used by ScanLedger</td>
-</tr>
-<tr>
-<td><code>POSTGRES_HOST</code></td>
-<td>Network host/IP of your Postgres instance</td>
-</tr>
-<tr>
-<td><code>ENVIRONMENT</code></td>
-<td>App mode (e.g. <code>development</code>, affects error verbosity)</td>
-</tr>
-<tr>
-<td><code>ADMIN_TOKEN</code></td>
-<td>Token used to create the default admin user (used for authorization in API calls)</td>
-</tr>
-<tr>
-<td><code>TASKER_TOKEN</code></td>
-<td>Token used by the Tasker module (not critical in self-hosted setups)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="api-example">API Example<a class="headerlink" href="#api-example" title="Permanent link">&para;</a></h2>
-<p>Create a project via curl:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://localhost:443/projects<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;YOUR_AUTH_TOKEN&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;project_name&quot;: &quot;example-project&quot;, &quot;comment&quot;: &quot;Initial test&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--insecure
-</code></pre></div>
-<p>Or using <code>falcli</code>:</p>
-<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>falcli.py<span class="w"> </span>project<span class="w"> </span>create<span class="w"> </span>example-project
-</code></pre></div>
-<hr />
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>MIT License – See <code>LICENSE.md</code> for full terms.</p>
+<h1 id="scanledger">scanledger<a class="headerlink" href="#scanledger" title="Permanent link">&para;</a></h1>
+<p><strong>Scanledger</strong> is the central storage for scan results and deduplication logic in Falcoria. It manages the database of discovered hosts, ports, and services, and ensures data consistency across scans.</p>
+<p><a href="https://github.com/Falcoria/scanledger">GitHub repository</a></p>
+<blockquote>
+<p>For installation and usage instructions, see the <a href="https://github.com/Falcoria/scanledger">GitHub repository</a>.</p>
+</blockquote>
 
 
 
@@ -1192,6 +1004,12 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1221,7 +1039,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "navigation.instant", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>

@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../use-cases/team-collaboration/">
+        <link rel="prev" href="..">
       
+      
+        <link rel="next" href="../quick-start/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -23,6 +25,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -41,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -51,7 +58,14 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -60,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-overview" class="md-skip">
+        <a href="#architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -102,6 +116,32 @@
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -189,78 +229,40 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    What is Falcoria
     
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
   
   
   
-  
-    
-    
     
     
       
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Installation
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Installation
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        
   
   
   <span class="md-ellipsis">
@@ -269,515 +271,26 @@
   </span>
   
 
-      </a>
-    </li>
-  
-
-              
+            </a>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/falcli/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CLI (falcli)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/scanledger/" class="md-nav__link">
+          </div>
         
-  
-  
-  <span class="md-ellipsis">
-    ScanLedger
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quick-start/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Quick Start
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Import Modes
-    
-  </span>
-  
-
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Import Modes
+            Overview
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../import-modes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../import-modes/insert/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Insert
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../import-modes/replace/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Replace
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../import-modes/update/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Update
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../import-modes/append/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Append
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Use Cases
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Use Cases
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/common-workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Common Workflow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/import-external-reports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Import External Reports
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/rescan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Rescan
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/update-enrichment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Update Enrichment
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/port-sharding/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Port Sharding (Evasion)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/scan-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Scan Configuration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/deduplication-behavior/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deduplication Behavior
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../use-cases/team-collaboration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Team Collaboration
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
   
   
     
@@ -839,39 +352,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan Execution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Aggregation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-diagram" class="md-nav__link">
+  <a href="#scan-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      System Diagram
+      Scan Flow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scan-workflow" class="md-nav__link">
+  <a href="#key-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Scan Workflow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scalability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scalability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extensibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extensibility
+      Key Properties
     </span>
   </a>
   
@@ -880,6 +399,630 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../installation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/scanledger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ScanLedger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/tasker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tasker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/worker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Worker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/falcli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI (falcli)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../workflow/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Workflow
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflow/typical-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typical Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflow/import-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Reports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Concepts
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/deduplication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deduplication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/track-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    History Tracking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/distribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Distribution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../concepts/import-modes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Import Modes
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Import Modes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/import-modes/insert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insert
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/import-modes/replace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Replace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/import-modes/update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/import-modes/append/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Append
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -918,39 +1061,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan Execution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Aggregation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-diagram" class="md-nav__link">
+  <a href="#scan-flow" class="md-nav__link">
     <span class="md-ellipsis">
-      System Diagram
+      Scan Flow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#scan-workflow" class="md-nav__link">
+  <a href="#key-properties" class="md-nav__link">
     <span class="md-ellipsis">
-      Scan Workflow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scalability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scalability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#extensibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Extensibility
+      Key Properties
     </span>
   </a>
   
@@ -972,64 +1121,85 @@
 
 
 
-<h1 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
-<p><strong>Falcoria</strong> is a modular scanning system built for automation and scale. It coordinates multiple machines to scan large environments faster — while keeping results accurate, organized, and easy to access.</p>
+<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
+<p>Falcoria is built around two main components:</p>
+<ul>
+<li><strong>Scan Execution</strong></li>
+<li><strong>Data Aggregation</strong></li>
+</ul>
+<p>They are implemented as separate API services.
+Scan execution and data aggregation communicate only through API calls.</p>
+<!-- Architecture diagram -->
+<p><img align="center" alt="Architecture overview" src="../images/arch_falcoria_15.png" width="700" /></p>
 <hr />
 <h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
+<h3 id="scan-execution">Scan Execution<a class="headerlink" href="#scan-execution" title="Permanent link">&para;</a></h3>
+<p>Scan Execution is responsible for running scans.</p>
+<p>Its role is to prepare scan tasks, execute them, and deliver raw results for aggregation.</p>
+<p>Scan Execution consists of three parts:</p>
 <ul>
-<li>
-<p><strong>CLI (<code>falcli</code>)</strong><br />
-  Command-line interface for launching scans, importing data, and retrieving results via API.</p>
-</li>
-<li>
-<p><strong>Tasker (API)</strong><br />
-  Orchestrates scan requests. It validates input, deduplicates targets, associates scans with projects, and queues tasks for execution.</p>
-</li>
-<li>
-<p><strong>Worker</strong><br />
-  Executes scan tasks using Nmap. Designed for parallel execution and horizontal scaling.</p>
-</li>
-<li>
-<p><strong>ScanLedger (API)</strong><br />
-  Backend API for storing and retrieving scan results. Also supports importing external scan data and accessing metadata.</p>
-</li>
-<li>
-<p><strong>Redis</strong><br />
-  Tracks scan state during execution and enforces deduplication during task creation.</p>
-</li>
-<li>
-<p><strong>RabbitMQ</strong><br />
-  Message broker that distributes scan tasks from Tasker to Worker nodes.</p>
-</li>
+<li><strong>Tasker</strong></li>
+<li><strong>Queue</strong></li>
+<li><strong>Workers</strong></li>
 </ul>
+<p><strong>Tasker</strong> accepts scan requests (via API or <code>falcli</code>), performs target preparation, and applies <a href="../concepts/deduplication">target deduplication</a> before execution.<br />
+Duplicate IPs, hostnames, and subnets are removed at this stage.  </p>
+<p>Each execution task targets:</p>
+<ul>
+<li>a single IP address,</li>
+<li>a defined set of ports,</li>
+<li>associated hostnames (kept as metadata).</li>
+</ul>
+<p>Prepared tasks are published to the <strong>Queue</strong>.</p>
+<p><strong>Queue</strong> stores execution tasks until they are picked up by workers.</p>
+<p><strong>Workers</strong> consume tasks from the queue and execute scans.<br />
+Each worker runs on its own machine or network environment and uses its own network path to the target.</p>
+<p>This is critical for <a href="../concepts/distribution">Distribution</a>: workers must have independent network paths for parallel execution to be effective.  </p>
+<p>Scan Execution scales by adding workers.</p>
 <hr />
-<h2 id="system-diagram">System Diagram<a class="headerlink" href="#system-diagram" title="Permanent link">&para;</a></h2>
-<p><img src="../images/architecture.png" alt="Falcoria Architecture" width="850"></p>
+<h3 id="data-aggregation">Data Aggregation<a class="headerlink" href="#data-aggregation" title="Permanent link">&para;</a></h3>
+<p>Data Aggregation is responsible for maintaining the shared scan dataset.</p>
+<p>It receives scan results from workers and applies them to a single shared state used by the entire team.</p>
+<p>Data Aggregation consists of one core component:</p>
+<ul>
+<li><strong>ScanLedger</strong></li>
+</ul>
+<p><strong>ScanLedger</strong> stores scan data as a shared dataset with unique records.<br />
+New results update existing entries or extend them, rather than creating duplicates.</p>
+<p>All logic related to:</p>
+<ul>
+<li>incremental updates,</li>
+<li>partial updates,</li>
+<li>replacement of scanned data,</li>
+<li>and change tracking</li>
+</ul>
+<p>is handled inside ScanLedger.</p>
+<p>→ See:</p>
+<ul>
+<li><a href="../concepts/import-modes">Import Modes</a></li>
+<li><a href="../concepts/track-history">History Tracking</a></li>
+</ul>
+<p>ScanLedger is the single source of truth for hosts, IPs, ports, services, and their change history.</p>
 <hr />
-<h2 id="scan-workflow">Scan Workflow<a class="headerlink" href="#scan-workflow" title="Permanent link">&para;</a></h2>
+<h2 id="scan-flow">Scan Flow<a class="headerlink" href="#scan-flow" title="Permanent link">&para;</a></h2>
 <ol>
-<li>The user runs <code>falcli</code> with a list of targets and optional scan configuration.</li>
-<li><code>falcli</code> sends the request to Tasker via API.</li>
-<li>Tasker validates the request, links it to a project, applies deduplication, and prepares scan tasks.</li>
-<li>Tasks are pushed to RabbitMQ.</li>
-<li>Workers receive tasks and execute scans using Nmap.</li>
-<li>Scan results are sent to ScanLedger.</li>
-<li>Results can be retrieved via <code>falcli</code>.</li>
+<li>A scan request is sent via <strong>falcli</strong> or API.</li>
+<li>The request reaches <strong>Tasker</strong>.</li>
+<li>Tasker applies deduplication and prepares execution tasks.</li>
+<li>Tasks are published to the <strong>Queue</strong>.</li>
+<li><strong>Workers</strong> pull tasks and execute scans.</li>
+<li>Scan results are sent to <strong>ScanLedger</strong>.</li>
+<li>ScanLedger merges results into the shared dataset.</li>
+<li>Users retrieve data from ScanLedger via API or <code>falcli</code>.</li>
 </ol>
 <hr />
-<h2 id="scalability">Scalability<a class="headerlink" href="#scalability" title="Permanent link">&para;</a></h2>
+<h2 id="key-properties">Key Properties<a class="headerlink" href="#key-properties" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Workers can be added or removed dynamically.</li>
-<li>Each Worker supports parallel execution.</li>
-<li>The architecture has no fixed upper limit on Worker count.</li>
-</ul>
-<hr />
-<h2 id="extensibility">Extensibility<a class="headerlink" href="#extensibility" title="Permanent link">&para;</a></h2>
-<p>Falcoria is built for modularity and scan chaining. Planned or supported extensions include:</p>
-<ul>
-<li>Tool chaining (e.g., Nmap → Nuclei)</li>
-<li>Conditional workflows and multi-stage task logic</li>
-<li>Reusable scan templates with structured logic</li>
+<li>Scan execution and data aggregation are cleanly separated.</li>
+<li>Execution scales by adding workers with independent network paths.</li>
+<li>All scan data is merged into one shared dataset.</li>
+<li>Partial rescans and incremental updates do not break existing data.</li>
+<li>The entire team always works with the same current view.</li>
 </ul>
 
 
@@ -1050,6 +1220,12 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1079,7 +1255,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.instant", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

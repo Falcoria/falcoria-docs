@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../worker/">
+        <link rel="prev" href="../deduplication/">
       
       
-        <link rel="next" href="../../workflow/">
+        <link rel="next" href="../distribution/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>CLI (falcli) - Falcoria Documentation</title>
+        <title>History Tracking - Falcoria Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#falcli" class="md-skip">
+        <a href="#history-tracking" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CLI (falcli)
+              History Tracking
             
           </span>
         </div>
@@ -346,8 +346,6 @@
       
   
   
-    
-  
   
   
     
@@ -374,15 +372,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../installation/" class="md-nav__link ">
               
   
   
@@ -401,7 +401,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Installation
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scanledger/" class="md-nav__link">
+      <a href="../../installation/scanledger/" class="md-nav__link">
         
   
   
@@ -440,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tasker/" class="md-nav__link">
+      <a href="../../installation/tasker/" class="md-nav__link">
         
   
   
@@ -463,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker/" class="md-nav__link">
+      <a href="../../installation/worker/" class="md-nav__link">
         
   
   
@@ -483,19 +483,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../installation/falcli/" class="md-nav__link">
         
   
   
@@ -506,7 +497,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -640,6 +630,8 @@
       
   
   
+    
+  
   
   
     
@@ -666,17 +658,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -695,7 +685,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -711,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/deduplication/" class="md-nav__link">
+      <a href="../deduplication/" class="md-nav__link">
         
   
   
@@ -731,10 +721,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../concepts/track-history/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    History Tracking
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -745,6 +757,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-recorded" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Recorded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Matters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -757,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/distribution/" class="md-nav__link">
+      <a href="../distribution/" class="md-nav__link">
         
   
   
@@ -810,7 +869,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/import-modes/" class="md-nav__link ">
+            <a href="../import-modes/" class="md-nav__link ">
               
   
   
@@ -845,7 +904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/insert/" class="md-nav__link">
+      <a href="../import-modes/insert/" class="md-nav__link">
         
   
   
@@ -868,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/replace/" class="md-nav__link">
+      <a href="../import-modes/replace/" class="md-nav__link">
         
   
   
@@ -891,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/update/" class="md-nav__link">
+      <a href="../import-modes/update/" class="md-nav__link">
         
   
   
@@ -914,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/import-modes/append/" class="md-nav__link">
+      <a href="../import-modes/append/" class="md-nav__link">
         
   
   
@@ -965,6 +1024,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-recorded" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Recorded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Matters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -979,12 +1073,32 @@
 
 
 
-<h1 id="falcli">falcli<a class="headerlink" href="#falcli" title="Permanent link">&para;</a></h1>
-<p><strong>falcli</strong> is the CLI client used to interact with ScanLedger and manage scans in Falcoria. It provides command-line tools for launching scans, retrieving results, and managing scan configurations.</p>
-<p><a href="https://github.com/Falcoria/falcli">GitHub repository</a></p>
-<blockquote>
-<p>For installation and usage instructions, see the <a href="https://github.com/Falcoria/falcli">GitHub repository</a>.</p>
-</blockquote>
+<h1 id="history-tracking">History Tracking<a class="headerlink" href="#history-tracking" title="Permanent link">&para;</a></h1>
+<p>In Falcoria, history tracking records changes to port state, service, and banner data as scan results update the shared network state.</p>
+<p><img align="center" alt="History Tracking" src="../../images/history.png" width="700" /></p>
+<hr />
+<h2 id="what-is-recorded">What Is Recorded<a class="headerlink" href="#what-is-recorded" title="Permanent link">&para;</a></h2>
+<p>A history entry is created for a port when one of its attributes changes:</p>
+<ul>
+<li><strong>Port State</strong> — for example, from <code>open</code> to <code>closed</code>.</li>
+<li><strong>Service</strong> — the detected service on the port.</li>
+<li><strong>Banner</strong> — application banner or version string.</li>
+</ul>
+<p>History is recorded only for attributes that were re-scanned and changed.
+Ports that were not included in a scan retain their previous state.</p>
+<hr />
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>When scan results are imported, they are compared against the existing network state stored in <strong>ScanLedger</strong>.</p>
+<p>For scanned targets, detected changes are written to the history log with a timestamp.
+Ports and services that were not part of the scan remain unchanged.</p>
+<p>The history log is available through the API and the <code>falcli</code> command-line client.</p>
+<hr />
+<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
+<ul>
+<li>On large scopes with many IPs and ports, rescans can produce large result sets.</li>
+<li>History shows only what changed between scans.</li>
+<li>This makes follow-up checks faster and reduces the risk of missing important changes.</li>
+</ul>
 
 
 
