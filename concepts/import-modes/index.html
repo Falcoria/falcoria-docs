@@ -1061,23 +1061,23 @@ Only port-level logic is shown. IP logic is handled separately.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">22/tcp open OpenSSH</td>
-<td style="text-align: left;">22/tcp open —</td>
+<td style="text-align: left;">22/tcp open</td>
 <td style="text-align: left;">⚪ <code>22/tcp open OpenSSH</code></td>
 <td style="text-align: left;">⚪ <code>22/tcp open OpenSSH</code></td>
-<td style="text-align: left;">🟡 <code>22/tcp open —</code></td>
+<td style="text-align: left;">🟡 <code>22/tcp open</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">22/tcp open —</td>
+<td style="text-align: left;">22/tcp open</td>
 <td style="text-align: left;">22/tcp open OpenSSH</td>
-<td style="text-align: left;">⚪ <code>22/tcp open —</code></td>
+<td style="text-align: left;">⚪ <code>22/tcp open</code></td>
 <td style="text-align: left;">🟡 <code>22/tcp open OpenSSH</code></td>
 <td style="text-align: left;">🟡 <code>22/tcp open OpenSSH</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">22/tcp open —</td>
+<td style="text-align: left;">22/tcp open</td>
 <td style="text-align: left;">22/tcp closed</td>
-<td style="text-align: left;">⚪ <code>22/tcp open —</code></td>
-<td style="text-align: left;">⚪ <code>22/tcp open —</code></td>
+<td style="text-align: left;">⚪ <code>22/tcp open</code></td>
+<td style="text-align: left;">⚪ <code>22/tcp open</code></td>
 <td style="text-align: left;">🔴 <code>22/tcp closed</code></td>
 </tr>
 <tr>
@@ -1088,22 +1088,22 @@ Only port-level logic is shown. IP logic is handled separately.</p>
 <td style="text-align: left;">🟢 <code>22/tcp open OpenSSH</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">22/tcp open —</td>
+<td style="text-align: left;">22/tcp open</td>
 <td style="text-align: left;">empty</td>
-<td style="text-align: left;">⚪ <code>22/tcp open —</code></td>
-<td style="text-align: left;">⚪ <code>22/tcp open —</code></td>
-<td style="text-align: left;">⚪ <code>22/tcp open —</code></td>
+<td style="text-align: left;">⚪ <code>22/tcp open</code></td>
+<td style="text-align: left;">⚪ <code>22/tcp open</code></td>
+<td style="text-align: left;">⚪ <code>22/tcp open</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="legend">Legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
 <ul>
-<li>🟢 <strong>new</strong> — port was added  </li>
-<li>🟡 <strong>changed</strong> — existing port was updated  </li>
-<li>⚪ <strong>unchanged</strong> — existing port was not modified  </li>
-<li>🔴 <strong>removed</strong> — port state changed to <code>closed</code>  </li>
-<li><code>empty</code> — port does not exist in ScanLedger or incoming report</li>
+<li>🟢 <strong>new</strong>  port was added  </li>
+<li>🟡 <strong>changed</strong>  existing port was updated  </li>
+<li>⚪ <strong>unchanged</strong>  existing port was not modified  </li>
+<li>🔴 <strong>removed</strong>  port state changed to <code>closed</code>  </li>
+<li><code>empty</code>  port does not exist in ScanLedger or incoming report</li>
 </ul>
 <hr />
 <h2 id="how-to-read-this-short-but-critical">How to read this (short, but critical)<a class="headerlink" href="#how-to-read-this-short-but-critical" title="Permanent link">&para;</a></h2>
@@ -1137,10 +1137,12 @@ Only port-level logic is shown. IP logic is handled separately.</p>
 <h3 id="insert_1">INSERT<a class="headerlink" href="#insert_1" title="Permanent link">&para;</a></h3>
 <p>Use when you need to <strong>merge multiple scans with overlapping hosts</strong><br />
 and only want to <strong>add IPs</strong>, without touching port data.</p>
-<p>Typical scenarios:
-- merging recon scans that partially overlap by hosts
-- importing repeated scans of the same scope
-- aggregating host lists from different sources</p>
+<p>Typical scenarios:</p>
+<ul>
+<li>merging recon scans that partially overlap by hosts</li>
+<li>importing repeated scans of the same scope</li>
+<li>aggregating host lists from different sources</li>
+</ul>
 <hr />
 <h3 id="append_1">APPEND<a class="headerlink" href="#append_1" title="Permanent link">&para;</a></h3>
 <p>Use when scan results may be <strong>incomplete</strong><br />
