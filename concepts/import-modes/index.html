@@ -1027,17 +1027,15 @@
 
 
 <h1 id="import-modes">Import modes<a class="headerlink" href="#import-modes" title="Permanent link">&para;</a></h1>
-<p>Managing scan results as separate files leads to fragmented and unclear network views.<br />
-On large, evolving scopes, scans are often partial, repeated,
-or use varied techniques, making manual tracking impractical.</p>
+<p>Managing scan results as separate files leads to a fragmented and unclear view of your network. This problem becomes especially acute on large, dynamic scopes, where scans are often partial, repeated, or performed using varied scanning techniques.</p>
 <p>Falcoria maintains a shared network state that represents all known hosts,
-ports, and services.<br />
-This approach, referred to as Data Aggregation, allows
-scan results to be accumulated into a single, consistent view.<br />
+ports, and services. Instead of treating scans as standalone events, scan
+results are applied to this shared state and accumulated into a single,
+consistent view. This approach is referred to as Data Aggregation.
 The shared state is stored and maintained by ScanLedger.</p>
-<p>Import modes define how incoming scan reports update this shared state.<br />
+<p>Import modes define how incoming scan reports update this shared state.
 They control how new data is applied to existing IPs and ports.</p>
-<p>Falcoria provides four import modes: INSERT, APPEND, UPDATE, and REPLACE.<br />
+<p>Falcoria provides four import modes: INSERT, APPEND, UPDATE, and REPLACE.
 Each mode represents a distinct strategy for applying new scan data.</p>
 <hr />
 <h2 id="ip-level-behavior-applies-to-all-modes">IP-level behavior (applies to all modes)<a class="headerlink" href="#ip-level-behavior-applies-to-all-modes" title="Permanent link">&para;</a></h2>
