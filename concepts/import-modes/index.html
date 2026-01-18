@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../distribution/">
+        <link rel="prev" href="../">
       
+      
+        <link rel="next" href="../deduplication/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -721,6 +723,66 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    Import Modes
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Import Modes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -781,66 +843,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
-  
-  
-  <span class="md-ellipsis">
-    Import Modes
-    
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Import Modes
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1046,7 +1048,8 @@ Each mode represents a distinct strategy for applying new scan data.</p>
 </ul>
 <hr />
 <h2 id="port-level-import-semantics">Port-level import semantics<a class="headerlink" href="#port-level-import-semantics" title="Permanent link">&para;</a></h2>
-<p>This table explains how a <strong>single port</strong> is processed depending on the import mode.
+<p>This table shows how existing data and an incoming scan report are combined
+for a single port, depending on the selected import mode.
 Only port-level logic is shown. IP logic is handled separately.</p>
 <table>
 <thead>
@@ -1155,8 +1158,7 @@ and you want to <strong>add new ports without changing existing ones</strong>.</
 </ul>
 <hr />
 <h3 id="update_1">UPDATE<a class="headerlink" href="#update_1" title="Permanent link">&para;</a></h3>
-<p>Use when you want to <strong>update services and open ports</strong>,<br />
-but <strong>do not want closed ports to affect existing data</strong>.</p>
+<p>Use when you want to <strong>update services and open ports</strong>, but <strong>do not want closed ports to affect existing data</strong>.</p>
 <p>Typical scenarios:</p>
 <ul>
 <li>service detection and version scanning</li>
@@ -1165,8 +1167,7 @@ but <strong>do not want closed ports to affect existing data</strong>.</p>
 </ul>
 <hr />
 <h3 id="replace_1">REPLACE<a class="headerlink" href="#replace_1" title="Permanent link">&para;</a></h3>
-<p>Use when scan results are <strong>reliable</strong><br />
-and should be <strong>applied as-is to the current state</strong>.</p>
+<p>Use when scan results are <strong>reliable</strong> and should be <strong>applied as-is to the current state</strong>.</p>
 <p>Typical scenarios:</p>
 <ul>
 <li>low-rate, high-confidence scans</li>
