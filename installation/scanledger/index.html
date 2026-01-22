@@ -1093,7 +1093,6 @@
 <p>ScanLedger is the component responsible for aggregating scan data into a single shared, living report.  </p>
 <p>If you want to quickly try the workflow described in the article, use the Docker Compose quick start below.
 It is the recommended way to run ScanLedger locally.</p>
-<p><a href="https://github.com/Falcoria/scanledger">GitHub repository</a></p>
 <p>This guide walks you through the practical scenarios described in the article, showing how ScanLedger solves the problem of fragmented scan data in team-based engagements.</p>
 <h2 id="quick-start-recommended">Quick Start (Recommended)<a class="headerlink" href="#quick-start-recommended" title="Permanent link">&para;</a></h2>
 <p>The fastest way to get ScanLedger up and running is using the automated quickstart script. Follow these steps:</p>
@@ -1155,7 +1154,7 @@ Admin Token: abc123def456ghi7
 ./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>-f<span class="w"> </span>scan_report_samples/full_tcp.xml<span class="w"> </span>--mode<span class="w"> </span>append<span class="w"> </span>--no-history
 
 <span class="c1"># Replace with fresh scan results (tracks changes over time)</span>
-./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>-f<span class="w"> </span>scan_report_samples/Erescan.xml<span class="w"> </span>--mode<span class="w"> </span>replace
+./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span>import<span class="w"> </span>-f<span class="w"> </span>scan_report_samples/rescan.xml<span class="w"> </span>--mode<span class="w"> </span>replace
 
 <span class="c1"># View historical changes tracked by replace mode</span>
 ./falcli.py<span class="w"> </span>project<span class="w"> </span>ips<span class="w"> </span><span class="nb">history</span>
@@ -1167,8 +1166,8 @@ Admin Token: abc123def456ghi7
 <p>ScanLedger supports flexible import modes for different scenarios. For detailed import modes behavior, see <a href="../../concepts/import-modes/">Import Modes Documentation</a>.</p>
 <blockquote>
 <p><strong>Note on Scanning</strong>: ScanLedger specializes in storing and managing scan results. To initiate new scans (commands like <code>scan start</code> and <code>scan status</code>), you would use the separate <strong>Falcoria Tasker</strong> component. This architectural separation keeps the system clean and scalable.</p>
+<p><strong>Additional Resources</strong>: For advanced configuration and alternative installation options, see the <a href="https://github.com/Falcoria/scanledger">ScanLedger GitHub repository</a>.</p>
 </blockquote>
-<p>For advanced configuration and alternative installation options, see the GitHub repository. <a href="https://github.com/Falcoria/scanledger#quick-start">GitHub repository</a>.</p>
 
 
 
