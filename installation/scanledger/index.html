@@ -492,13 +492,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#quick-start-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Start
+      Quick Start (Recommended)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quick Start">
+    <nav class="md-nav" aria-label="Quick Start (Recommended)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -999,13 +999,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#quick-start-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Start
+      Quick Start (Recommended)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quick Start">
+    <nav class="md-nav" aria-label="Quick Start (Recommended)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1090,10 +1090,12 @@
 
 
 <h1 id="scanledger">scanledger<a class="headerlink" href="#scanledger" title="Permanent link">&para;</a></h1>
-<p><strong>Scanledger</strong> is the central storage for scan results and deduplication logic in Falcoria. It manages the database of discovered hosts, ports, and services, and ensures data consistency across scans.  </p>
+<p>ScanLedger is the component responsible for aggregating scan data into a single shared, living report.  </p>
+<p>If you want to quickly try the workflow described in the article, use the Docker Compose quick start below.
+It is the recommended way to run ScanLedger locally.</p>
 <p><a href="https://github.com/Falcoria/scanledger">GitHub repository</a></p>
 <p>This guide walks you through the practical scenarios described in the article, showing how ScanLedger solves the problem of fragmented scan data in team-based engagements.</p>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<h2 id="quick-start-recommended">Quick Start (Recommended)<a class="headerlink" href="#quick-start-recommended" title="Permanent link">&para;</a></h2>
 <p>The fastest way to get ScanLedger up and running is using the automated quickstart script. Follow these steps:</p>
 <h3 id="1-clone-the-repository">1. Clone the Repository<a class="headerlink" href="#1-clone-the-repository" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Falcoria/scanledger.git
@@ -1123,8 +1125,17 @@ Admin Token: abc123def456ghi7
 </code></pre></div>
 <p><strong>Important</strong>: Copy and save this token securely! You'll need it to authenticate with the ScanLedger API and use the console client tools.</p>
 <h3 id="4-using-with-console-client">4. Using with Console Client<a class="headerlink" href="#4-using-with-console-client" title="Permanent link">&para;</a></h3>
-<p>Once ScanLedger is running, you can use the admin token with the Falcoria CLI tool for falcli: follow installation and configuration instructions. Use the Admin Token generated in the previous step as your API token.</p>
+<p>Once ScanLedger is running, you can use the admin token with the Falcoria CLI tool:</p>
 <p><a href="https://github.com/Falcoria/falcli">Falcoria CLI (falcli)</a></p>
+<p>Follow the installation instructions from the repository above.</p>
+<p>After installation, modify the configuration file:</p>
+<div class="highlight"><pre><span></span><code>./app/data/profiles/default.yaml
+</code></pre></div>
+<p>Set the following values:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">backend_base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://localhost</span><span class="w"> </span><span class="c1"># the root URL of your ScanLedger instance</span>
+<span class="nt">tasker_base_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;tasker_url&gt;</span><span class="w">   </span><span class="c1"># not used in this guide</span>
+<span class="nt">token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;ADMIN TOKEN FROM THE STEP ABOVE&gt;</span>
+</code></pre></div>
 <h4 id="example-workflow">Example Workflow<a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h4>
 <p>With your admin token configured, you can now manage projects and data in ScanLedger:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Create a new project</span>
@@ -1157,7 +1168,7 @@ Admin Token: abc123def456ghi7
 <blockquote>
 <p><strong>Note on Scanning</strong>: ScanLedger specializes in storing and managing scan results. To initiate new scans (commands like <code>scan start</code> and <code>scan status</code>), you would use the separate <strong>Falcoria Tasker</strong> component. This architectural separation keeps the system clean and scalable.</p>
 </blockquote>
-<p>For more detailed installation options and advanced configuration, see the <a href="https://github.com/Falcoria/scanledger#quick-start">GitHub repository</a>.</p>
+<p>For advanced configuration and alternative installation options, see the GitHub repository. <a href="https://github.com/Falcoria/scanledger#quick-start">GitHub repository</a>.</p>
 
 
 
