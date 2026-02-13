@@ -1,103 +1,52 @@
 # Architecture
 
-Falcoria is built around two main components:
+Falcoria has two subsystems: **Scan Execution** and **Data Aggregation**. They communicate through APIs and can run independently.
 
-- **Scan Execution**
-- **Data Aggregation**
-
-They are implemented as separate API services.
-Scan execution and data aggregation communicate only through API calls.
-
-<!-- Architecture diagram -->
 ![Architecture overview](images/arch_falcoria_15.png){ width="700" align=center }
 
+## Data Aggregation
 
----
+The center of the system is **[ScanLedger](https://github.com/Falcoria/scanledger)** — the shared dataset where all scan results end up. Data is organized by project. Each project maintains its own shared state with unique records per IP, port, and hostname. Scans, imports, exports — everything is scoped to a project. When new scan data comes in, it gets merged into existing records according to [import mode](concepts/import-modes.md) rules.
 
-## Core Components
+ScanLedger also tracks [change history](concepts/change-history.md) — if a port state, service, or banner changes between scans, the change is recorded.
 
-### Scan Execution
+ScanLedger can be used on its own, without the scan execution subsystem. If you already run your own scans with Nmap or other tools, you can import reports into ScanLedger directly and use it purely for data aggregation.
 
-Scan Execution is responsible for running scans.
+## Scan Execution
 
-Its role is to prepare scan tasks, execute them, and deliver raw results for aggregation.
+Handles everything from accepting a scan request to delivering results to ScanLedger. Three components:
 
-Scan Execution consists of three parts:
+**[Tasker](https://github.com/Falcoria/tasker)** accepts scan requests via API or [`falcli`](https://github.com/Falcoria/falcli). It prepares targets before anything gets scanned: expands CIDRs, resolves hostnames, removes duplicates, and checks what's already been scanned or queued. The output is a set of discrete scan tasks, each targeting a single IP address with a defined port range and associated hostnames kept as metadata.
 
-- **Tasker**
-- **Queue**
-- **Workers**
+**Queue** holds prepared tasks until workers pick them up. If the same target is already queued, the duplicate is rejected.
 
-**Tasker** accepts scan requests (via API or `falcli`), performs target preparation, and applies [target deduplication](../concepts/deduplication) before execution.  
-Duplicate IPs, hostnames, and subnets are removed at this stage.  
+**[Workers](https://github.com/Falcoria/worker)** pull tasks from the queue and execute scans. Each worker runs on its own machine with its own network path and IP address. Results go straight to ScanLedger via API. Workers don't talk to each other — the queue handles assignment, ScanLedger handles merging.
 
-Each execution task targets:
+Adding workers scales throughput linearly. Ten workers finish roughly ten times faster than one, until target-side rate limits or network saturation become the bottleneck.
 
-- a single IP address,
-- a defined set of ports,
-- associated hostnames (kept as metadata).
+## Data flow
 
-Prepared tasks are published to the **Queue**.
+1. User submits targets and a scan config to **Tasker** (via `falcli` or API)
+2. Tasker deduplicates targets and creates scan tasks
+3. Tasks enter the **Queue**
+4. **Workers** pick up tasks and execute scans
+5. Workers send results to **ScanLedger** via API
+6. ScanLedger merges results into the shared state
+7. Team queries current data via `falcli`, API, or export (Nmap XML, JSON)
 
-**Queue** stores execution tasks until they are picked up by workers.
+<!-- TODO: image — data flow diagram.
+Left: user with "falcli / API" label.
+Arrow to "Tasker" (dedup, task creation).
+Arrow to "Queue".
+Arrow to three "Worker" boxes (cloud-eu, cloud-us, vpn-1), each with its own IP.
+All workers → "ScanLedger".
+ScanLedger → outputs: API, falcli, Export (XML, JSON).
+ScanLedger should be visually prominent — it's the center of the system. -->
 
-**Workers** consume tasks from the queue and execute scans.  
-Each worker runs on its own machine or network environment and uses its own network path to the target.
+## Deployment
 
-This is critical for [Distribution](../concepts/distribution): workers must have independent network paths for parallel execution to be effective.  
+Tasker and ScanLedger are FastAPI applications. Each exposes API docs at `/docs` when running.
 
-Scan Execution scales by adding workers.
+Workers can be deployed anywhere — cloud VMs, VPSes, VPN endpoints. The only requirement is network access to the queue and to ScanLedger. The number of workers determines how fast the scope gets covered.
 
----
-
-### Data Aggregation
-
-Data Aggregation is responsible for maintaining the shared scan dataset.
-
-It receives scan results from workers and applies them to a single shared state used by the entire team.
-
-Data Aggregation consists of one core component:
-
-- **ScanLedger**
-
-**ScanLedger** stores scan data as a shared dataset with unique records.  
-New results update existing entries or extend them, rather than creating duplicates.
-
-All logic related to:
-
-- incremental updates,
-- partial updates,
-- replacement of scanned data,
-- and change tracking
-
-is handled inside ScanLedger.
-
-→ See:
-
-- [Import Modes](../concepts/import-modes)
-- [History Tracking](../concepts/track-history)
-
-ScanLedger is the single source of truth for hosts, IPs, ports, services, and their change history.
-
----
-
-## Scan Flow
-
-1. A scan request is sent via **falcli** or API.
-2. The request reaches **Tasker**.
-3. Tasker applies deduplication and prepares execution tasks.
-4. Tasks are published to the **Queue**.
-5. **Workers** pull tasks and execute scans.
-6. Scan results are sent to **ScanLedger**.
-7. ScanLedger merges results into the shared dataset.
-8. Users retrieve data from ScanLedger via API or `falcli`.
-
----
-
-## Key Properties
-
-- Scan execution and data aggregation are cleanly separated.
-- Execution scales by adding workers with independent network paths.
-- All scan data is merged into one shared dataset.
-- Partial rescans and incremental updates do not break existing data.
-- The entire team always works with the same current view.
+For data aggregation only (no scanning), ScanLedger and `falcli` are enough.

@@ -1,59 +1,41 @@
-# Deduplication Behavior
+# Deduplication
 
-Falcoria applies deduplication at several stages of the workflow.  
-This prevents redundant work, reduces scan time, avoids unnecessary tasks, and lowers the likelihood of hitting rate limits.
+Deduplication ensures each target is scanned only once. It operates at multiple stages across [Tasker](../architecture.md) and [ScanLedger](../architecture.md).
 
-**Deduplication:**  
+## Why it matters
 
-- [String duplicates in input files](#string-duplicates-in-input-files)  
-- [Unification of subnets and hostnames](#unification-of-subnets-and-hostnames)  
-- [Skipping already stored targets (ScanLedger)](#skipping-already-stored-targets-scanledger)  
-- [Skipping duplicate tasks in the queue](#skipping-duplicate-tasks-in-the-queue)
+Target lists often contain duplicates — the same host under different names, CIDRs overlapping with individual IPs, overlapping scopes from different team members. Without deduplication, the same target gets scanned multiple times, wasting time and adding load on the target network.
 
----
+## Target deduplication
 
-## String duplicates in input files
+### 1. String duplicates
 
-![Deduplication of string duplicates](../images/deduplication_1.png){ align=center }
+Identical entries in the target list are removed. Each entry is normalized for comparison: CIDRs are expanded to their first host address, IPs are canonicalized (leading zeros removed), hostnames are compared as-is.
 
-When a user provides a list of targets, duplicate string entries are removed.  
-If the same hostname or IP address appears multiple times, only one entry is kept.
+### 2. Resolution and IP-level unification
 
----
+After string deduplication, all entries are resolved into IP addresses:
 
-## Unification of subnets and hostnames
+- CIDRs are expanded into individual host IPs
+- Hostnames are resolved via DNS (IPv4, with retries on failure)
+- When multiple hostnames resolve to the same IP, they are collapsed into a single target. The resolved IP becomes the key, all originating hostnames are kept as metadata.
 
-Falcoria normalizes mixed input before creating scan tasks:  
+If `single_resolve` is enabled, only the first resolved IP per hostname is used — useful for CDN cases where one hostname resolves to many IPs.
 
-- Subnets (CIDR) are expanded into full lists of IP addresses.  
-- Hostnames are resolved to IP addresses.  
-- The final dataset contains only unique IPs and the hostnames associated with them.  
+![Deduplication](../images/deduplication_1.png){ width="700" align=center }
 
-This ensures each address is scanned only once. It also shortens scan time and lowers the chance of triggering blocking mechanisms.  
+## System-level deduplication
 
-**Image placeholder:** show subnet expansion and hostname resolution → resulting unique IP/hostname map.  
+### 3. Skipping already stored targets
 
----
+Targets already present in ScanLedger for the current project are excluded from scanning. This includes hostnames that resolve to an already known IP. If an excluded target carried new hostnames, those hostnames are still merged into the existing record without triggering a new scan.
 
-## Skipping already stored targets (ScanLedger)
+This applies when using [Insert](import-modes.md#insert) mode. Other modes rescan existing targets to update their data.
 
-If a target already exists in **ScanLedger**, it is not scanned again.
+### 4. Queue deduplication
 
-This applies to:
+Targets already queued for the current project are skipped. This is checked both before dispatching and immediately before sending each task, to handle race conditions between concurrent scan requests.
 
-- new scan launches,
-- imported scan results.
+## Effect
 
-By default, this behavior is active in **Insert mode**.  
-For details about other modes, see [Import Modes](../import-modes/index.md).  
-
-**Image placeholder:** show ScanLedger with already stored IPs → new incoming data skipped.  
-
----
-
-## Skipping duplicate tasks in the queue
-
-If an identical scan task is already queued, a new task is not created.
-This prevents multiple users or processes from scanning the same target at the same time.
-
-**Image placeholder:** show queue with existing tasks → duplicate request rejected.  
+The result: raw target lists with duplicates, overlapping ranges, and mixed hostnames are reduced to a set of unique targets that haven't been scanned yet. Team members can submit overlapping scopes without coordination — duplicates are filtered automatically.

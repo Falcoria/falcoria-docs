@@ -38,36 +38,16 @@ markdown_extensions:
       permalink: true
   - attr_list
 
-extra_css:
-  - stylesheets/extra.css
-
 nav:
-  - Overview:
-      - index.md
-      - Architecture: architecture.md
-      - Quick Start: quick-start.md
-      - Benchmarks: benchmarks.md
-
-  - Installation:
-      - installation/index.md
-      - ScanLedger: installation/scanledger.md
-      - Tasker: installation/tasker.md
-      - Worker: installation/worker.md
-      - CLI (falcli): installation/falcli.md
-
-  - Workflow:
-      - workflow/index.md
-      - Typical Workflow: workflow/typical-workflow.md
-      - Import Reports: workflow/import-reports.md
-
+  - Home: index.md
+  - Architecture: architecture.md
+  - Getting Started: getting-started.md
+  - Workflows: workflows.md
   - Concepts:
       - concepts/index.md
+      - Import Modes: concepts/import-modes.md
       - Deduplication: concepts/deduplication.md
-      - History Tracking: concepts/track-history.md
+      - Change History: concepts/change-history.md
       - Distribution: concepts/distribution.md
-      - Import Modes:
-          - concepts/import-modes/index.md
-          - Insert: concepts/import-modes/insert.md
-          - Replace: concepts/import-modes/replace.md
-          - Update: concepts/import-modes/update.md
-          - Append: concepts/import-modes/append.md
+      - Scan Configs: concepts/scan-configs.md
+  - Benchmarks: benchmarks.md

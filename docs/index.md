@@ -1,107 +1,43 @@
-# What is Falcoria
+# Falcoria
 
-Falcoria is a system for team-based network scanning for large and dynamic scopes.  
-Each scan run updates a shared map of hosts, ports, and services used by the entire team.
+Falcoria is a system for team-based port scanning on large scopes. It maintains one shared report that every scan updates — no separate files to merge.
 
----
+## The problem
 
-Falcoria centralizes network scanning work and keeps scan results in one shared place.  
-Each new scan updates existing data instead of creating isolated output files.
+On a large engagement, scan output multiplies fast. Different people use different tools, the scope gets split into chunks, rescans add more files. After a few days, there's no single place to check what's open — the answer is spread across dozens of files from different people and points in time.
 
-It addresses two practical problems:
+Teams deal with this using whatever is at hand — shared folders, spreadsheets, Notion, Slack. None of these are built for scan data, and the results still have to be merged.
 
-- scan execution speed,
-- consistency and sharing of scan results across the team.
+![Traditional vs Falcoria](images/algo_diff.png){ width="700" align=center }
 
-This is handled by two main parts:
+## How Falcoria approaches this
 
-- **Scan execution** — runs scans and collects data  
-- **Data aggregation** — merges scan results into a single shared view  
+Falcoria treats scans as state updates. Each scan — whether Falcoria's own or an imported scan report — writes directly into a shared dataset called [ScanLedger](architecture.md). New results extend or update existing records. Additions, removals, and changes are tracked over time. There is no intermediate file step.
 
-![Falcoria Core Components](images/main_falcoria.png){ width="620" align=center }
+### Key features
 
----
+- **[Import modes](concepts/import-modes.md)** — control how each scan updates ScanLedger. Add ports without overwriting, or replace the current view entirely.
+- **[Change tracking](concepts/change-history.md)** — records what changed between scans: ports opening/closing, services updating.
+- **[Deduplication](concepts/deduplication.md)** — filters out duplicate and already-scanned targets before scanning starts, reducing scan time and network load.
+- **[Distributed execution](concepts/distribution.md)** — splits work across multiple workers, each on its own network path.
+- **[Resumable scans](workflows.md#resuming-interrupted-scans)** — interrupted scans pick up where they left off.
 
-## Scan Execution
+All of this runs from a single scan command — deduplication, distribution, result merging, and change tracking happen automatically. The scope state can be exported as Nmap XML or JSON when needed.
 
-Scan execution runs scans and produces scan data.
-It is designed to be fast, reliable, and to avoid unnecessary network load.
+![Shared report evolution](images/state_evolution.png){ width="700" align=center }
 
----
+At any point, querying ScanLedger returns the current scope state across every scan that's been done.
 
-### Scan Execution mechanisms
+## Who it is for
 
-- **Distributed scanning**  
-  Scan tasks can be executed across multiple workers.
-  This allows scans to finish earlier by spreading work across different machines.  
-  → [Learn more about distribution](concepts/distribution)
+- Penetration testers managing large scopes with a team
+- Red team operators running repeated discovery across changing networks
+- Security engineers maintaining current host/port/service visibility
+- Security automation teams looking for an API-driven backend to aggregate scan data from various sources
 
-- **Target deduplication**  
-  Duplicate targets are removed before scanning starts.  
-  The same IP address, hostname, or subnet is not scanned more than once unintentionally.  
-  This reduces unnecessary network load and lowers the risk of triggering rate limits.  
-  → [Learn more about deduplication](concepts/deduplication)
+## Next steps
 
-- **Optimized scan configurations**  
-  Predefined scan configurations are used to run scans with consistent and tested settings.  
-  These configs provide a balance between speed and coverage.  
-  → [Learn more about scan configs](concepts/configs)
-
-→ [**Benchmarks**](benchmarks)
-
----
-
-## Data Aggregation
-
-Data aggregation is responsible for combining scan results into one shared view of the network.  
-Each new scan updates the existing dataset rather than producing a separate report.
-
-This ensures that the team always works with a single, up-to-date set of hosts, ports, and services,
-even when scans are repeated, extended, or run by different people.
-
----
-
-### Data Aggregation mechanisms
-
-- **State-based data model**  
-  All scan data is stored as a single set of unique records.
-  Entries are updated automatically, so the entire team works with the same current view.
-
-- **Incremental updates**  
-  Scan results are applied incrementally to the shared dataset.
-  New data extends or updates existing records without affecting unrelated entries.
-  For example, scanning additional ports on known hosts adds only the new ports,
-  while previously collected data remains unchanged.  
-  → [Learn more about Import Modes](concepts/import-modes)
-
-- **Focused change log**
-  Tracks only actual changes in port state, service, or banner.
-  Each entry shows the previous and new value for a single change.
-  Full scan output and unchanged ports are excluded.  
-  → [Learn more about Track History](concepts/track-history)
-
-- **API and export access**  
-  Aggregated scan data is available via an API and standardized export formats, including Nmap XML and JSON.  
-  This allows teams to retrieve a unified network view and integrate it into existing tools, automation, and reporting pipelines.
-
-- **CLI-based data exploration**  
-  Scan data can be explored using a dedicated CLI, providing structured output and controlled navigation through large result sets.
-
-## Who It's For
-
-- Penetration testers working with large or frequently changing scopes
-- Red team operators performing repeated network discovery
-- Security engineers maintaining a current view of exposed hosts, ports, and services
-
----
-
-## Get Started
-
-To understand how Falcoria is used in practice, start here:  
-[Common Workflow — Step-by-Step Example](workflow/typical-workflow)
-
-- [Installation Guide](installation)  
-- [Import Modes](concepts/import-modes)
-- [Architecture Overview](architecture)  
-
----
+- [Getting Started](getting-started.md) — setup and first scan
+- [Architecture](architecture.md) — how the system is structured
+- [Concepts](concepts/index.md) — how the pipeline works end to end
+- [Workflows](workflows.md) — common usage patterns
