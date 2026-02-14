@@ -45,6 +45,7 @@ nav:
   - Workflows: workflows.md
   - Concepts:
       - concepts/index.md
+      - Scope State: concepts/scope-state.md
       - Import Modes: concepts/import-modes.md
       - Deduplication: concepts/deduplication.md
       - Change History: concepts/change-history.md
