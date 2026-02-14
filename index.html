@@ -832,7 +832,6 @@
 <p>On a large engagement, scan output multiplies fast. Different people use different tools, the scope gets split into chunks, rescans add more files. After a few days, there's no single place to check what's open — the answer is spread across dozens of files from different people and points in time.</p>
 <p>Teams deal with this using whatever is at hand — shared folders, spreadsheets, Notion, Slack. None of these are built for scan data, and the results still have to be merged.</p>
 <p><img align="center" alt="Traditional vs Falcoria" src="images/algo_diff.png" width="700" /></p>
-<p><em>Each scan updates the scope state directly.</em></p>
 <h2 id="how-falcoria-approaches-this">How Falcoria approaches this<a class="headerlink" href="#how-falcoria-approaches-this" title="Permanent link">&para;</a></h2>
 <p>Falcoria treats scans as state updates. Each scan — whether Falcoria's own or an imported report — writes directly into a shared dataset called <a href="architecture/">ScanLedger</a>. There is no intermediate file step.</p>
 <h3 id="what-this-gives-you">What this gives you<a class="headerlink" href="#what-this-gives-you" title="Permanent link">&para;</a></h3>
