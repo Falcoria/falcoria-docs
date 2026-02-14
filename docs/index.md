@@ -10,7 +10,7 @@ Teams deal with this using whatever is at hand — shared folders, spreadsheets,
 
 ![Traditional vs Falcoria](images/algo_diff.png){ width="700" align=center }
 
-*Traditional: scan → file → merge → scope state. Falcoria: scan → scope state.*
+*Each scan updates the scope state directly.*
 
 ## How Falcoria approaches this
 
