@@ -22,7 +22,7 @@ Falcoria treats scans as state updates. Each scan — whether Falcoria's own or 
 
 - **[Change tracking](concepts/change-history.md)** — records state transitions between scans: newly opened ports, closures, service changes. No manual diffing of scan outputs.
 
-- **[Deduplication](concepts/deduplication.md)** — eliminates redundant targets before scanning starts. Different team members can submit overlapping targets — each is scanned only once. Deduplication cuts the scope by [~20% to nearly 50%](concepts/deduplication.md) before a single packet is sent. Fewer duplicate probes, lower network noise, reduced risk of triggering rate limits.
+- **[Deduplication](concepts/deduplication.md)** — eliminates redundant targets before scanning starts. Different team members can submit overlapping targets — each is scanned only once. Deduplication cuts the scope by [~20% to nearly 50%](https://medium.com/@2s1one/scan-less-find-more-dns-deduplication-for-large-scopes-efbe1cdf57e9) before a single packet is sent. Fewer duplicate probes, lower network noise, reduced risk of triggering rate limits.
 
 - **[Distributed execution](concepts/distribution.md)** — splits work across multiple workers on separate machines and network paths. Ten workers scan roughly ten times faster than one, without increasing the rate on any single target. See [Benchmarks](benchmarks.md) for measured results.
 
