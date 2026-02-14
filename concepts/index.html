@@ -671,7 +671,7 @@
 
 
 <h1 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h1>
-<p>This section covers the mechanisms behind Falcoria's scan pipeline — from targets to shared state.</p>
+<p>This section covers the mechanisms behind Falcoria's scan pipeline — from targets to <a href="scope-state/">shared scope state</a>.</p>
 <div class="highlight"><pre><span></span><code>Targets
   ↓
 Deduplication  — removes duplicates, resolves hostnames,
@@ -681,7 +681,7 @@ Distribution   — splits work across workers
   ↓
 Workers        — execute scans
   ↓
-Import Modes   — merge results into ScanLedger
+Import Modes   — merge results into scope state
   ↓
 Change History — records what changed
 </code></pre></div>
@@ -691,10 +691,10 @@ Change History — records what changed
 <ol>
 <li>Targets go through <a href="deduplication/">deduplication</a> — duplicates are removed, hostnames are resolved and unified by IP, and already-scanned targets are skipped by default</li>
 <li>Remaining targets are <a href="distribution/">distributed</a> across workers, each scanning from its own IP. The task queue tracks progress, so interrupted scans resume without rescanning</li>
-<li>Each worker's results are merged into <a href="../architecture/">ScanLedger</a> (shared state database) through <a href="import-modes/">import modes</a> — the merge strategy determines whether ports are added, updated, or replaced</li>
+<li>Each worker's results are merged into the <a href="scope-state/">scope state</a> through <a href="import-modes/">import modes</a> — the merge strategy determines whether ports are added, updated, or replaced</li>
 <li><a href="change-history/">Change history</a> records what changed since the last run</li>
 </ol>
-<p>The result is one shared dataset that stays current without manual file management. The scope state can be exported as Nmap XML or JSON at any point. See <a href="../benchmarks/">Benchmarks</a> for measured examples.</p>
+<p>The result is one <a href="scope-state/">shared scope state</a> that stays current without manual file management. It can be exported as Nmap XML or JSON at any point. See <a href="../benchmarks/">Benchmarks</a> for measured examples.</p>
 
 
 
