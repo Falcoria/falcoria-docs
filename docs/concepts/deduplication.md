@@ -39,3 +39,5 @@ Targets already queued for the current project are skipped. This is checked both
 ## Effect
 
 The result: raw target lists with duplicates, overlapping ranges, and mixed hostnames are reduced to a set of unique targets that haven't been scanned yet. Team members can submit overlapping scopes without coordination — duplicates are filtered automatically.
+
+In practice, host deduplication alone provided ~20% reduction in one scenario and nearly 50% in another. See [Scan Less, Find More: DNS Deduplication for Large Scopes](https://medium.com/@2s1one/scan-less-find-more-dns-deduplication-for-large-scopes-efbe1cdf57e9) for measured examples.
