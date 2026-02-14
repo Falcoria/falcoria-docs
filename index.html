@@ -846,7 +846,7 @@
 <p><strong><a href="concepts/change-history/">Change tracking</a></strong> — records state transitions between scans: newly opened ports, closures, service changes. No manual diffing of scan outputs.</p>
 </li>
 <li>
-<p><strong><a href="concepts/deduplication/">Deduplication</a></strong> — eliminates redundant targets before scanning starts. Different team members can submit overlapping targets — each is scanned only once. Deduplication cuts the scope by <a href="https://medium.com/@2s1one/scan-less-find-more-dns-deduplication-for-large-scopes-efbe1cdf57e9">~20% to nearly 50%</a> before a single packet is sent. Fewer duplicate probes, lower network noise, reduced risk of triggering rate limits.</p>
+<p><strong><a href="concepts/deduplication/">Deduplication</a></strong> — eliminates redundant targets before scanning starts. Different team members can submit overlapping targets — each is scanned only once. Deduplication cuts the scope by <a href="concepts/deduplication/">~20% to nearly 50%</a> before a single packet is sent. Fewer duplicate probes, lower network noise, reduced risk of triggering rate limits.</p>
 </li>
 <li>
 <p><strong><a href="concepts/distribution/">Distributed execution</a></strong> — splits work across multiple workers on separate machines and network paths. Ten workers scan roughly ten times faster than one, without increasing the rate on any single target. See <a href="benchmarks/">Benchmarks</a> for measured results.</p>
