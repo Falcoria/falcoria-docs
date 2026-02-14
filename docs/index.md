@@ -10,8 +10,6 @@ Teams deal with this using whatever is at hand — shared folders, spreadsheets,
 
 ![Traditional vs Falcoria](images/algo_diff.png){ width="700" align=center }
 
-*Each scan updates the scope state directly.*
-
 ## How Falcoria approaches this
 
 Falcoria treats scans as state updates. Each scan — whether Falcoria's own or an imported report — writes directly into a shared dataset called [ScanLedger](architecture.md). There is no intermediate file step.
